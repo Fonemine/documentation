@@ -1,3 +1,3 @@
-# [ServiceVelocity:tm: Field Service Management Software](fsm.html)
-# [CPQ+:tm: Configure, Price, Quote Software](cpq.html)
-# [AppVelocity:tm: Custom Web Portals and Mobile App Publisher Software](apps.html)
+# [ServiceVelocity&trade; Field Service Management Software](fsm.html)
+# [CPQ&trade; Configure, Price, Quote Software](cpq.html)
+# [AppVelocity&trade; Custom Web Portals and Mobile App Publisher Software](apps.html)
