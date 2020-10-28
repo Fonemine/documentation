@@ -613,3 +613,10 @@ Additionally, the following special variables are defined
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
 
+#### 7.3.4.1 Macro syntax
+
+The source files in document template sections will use [Open TBS](http://www.tinybutstrong.com/opentbs.php?doc) for macro expressions.  The macro expressions have the form `[{block-name}.{field-name};{options}]`, where `{block-name}` is the name of a section or block of data, `{field-name}` is the name of an input in that block, and `{options} are OpenTBS options for formatting the expression or expanding the macro,
+
+All top-level inputs in the quote are accessible using the `q` block.  For example, the effective data can be accessed by the macro `[q.cpq_eff_date;frm=’mm/dd/yyyy’]`, (the `;frm=’mm/dd/yyyy’` part is OpenTBS option describing how to format the date).
+
+Any input in a table, such product groups, are accessed by using the table's name as the block name.  For example, to access the net price for an element in the `line_items` product group, use the macro `[line_items.cpq_net_total_price;frm=’$ 0,000.00’]`.  Note that to get the table row to expand properly in the document to list all product group items, one of the items in the row must have the OpenTBS option ';block=tbs:row'
