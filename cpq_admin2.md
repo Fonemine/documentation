@@ -33,135 +33,6 @@ A product or service category can be nested within another category. Products/Se
 ![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
 
 Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@tklakshman 
-Fonemine
-/
-documentation 
-lines
-1.4k
-6
-0
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-documentation
-/
-cpq_admin.md
- 
-
-Spaces
-
-1
-
-Soft wrap
-1
-# Configure, Price, Quote Admin Guide
-2
-An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
-3
-​
-4
-## 1. Price Books
-5
-​
-6
-Typically, the first thing a CPQ Administrator does is to create one or more price books. 
-7
-MobileForce CPQ supports the creation of multiple price books that can also be related to one another via a hierarchical parent relationship. For instance, Businesses could create one price book for local or national use with the local currency, and another price book for each international market they operate in (each with its own currency). Price books allow one to assign different prices for products for different regions with different currencies or for different markets. In order to create a quote, a user **must** select a price book.
-8
-​
-9
-![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
-10
-​
-11
-Each MobileForce CPQ price book has a (required) **name** field. In addition, price books typically have the following fields:
-12
-​
-13
-* **Currency**: specifying the currency used for all prices in the price book. For now, only "USA" is activated as default as a valid value for the currency field.
-14
-​
-15
-The following fields of a MobileForce CPQ price book are found in almost all CPQ entities. For brevity, they are described once here, and not described again in other entities that also have these fields. 
-16
-​
-17
-* **Effective Date**: The date starting which  products listed in the price book can be sold
-18
-* **Expiration Date**: The date after which products listed in the price book can no longer be sold.
-19
-* **Active**: a toggle indicating whether the price book is ready for use in CPQ systems or is still being developed.
-20
-* **ACL**: indicating the user roles for the users that are allowed access to the price book. For instance, the US price book may be accessible only by sales user roles who are employed and selling within the USA, and hence not accessible to sales reps who are not members of the sales-USA role, because they sell in the Japan market.
-21
-​
-22
-Once a price book is created, the next step is to create product categories,then create products and services within their respective product categories.
-23
-Finally we create pricing for the products where we specify the price specific to one or more price books to reflect the different prices for the product in the different markets that these different price books represent.
-24
-​
-25
-## 2. Product/Service Categories
-26
-​
-27
-Product/Service Categories in MobileForce CPQ are hierarchal groupings of products or services that are configured and sold to the customer. 
-28
-​
-29
-In the MobileForce CPQ UI, it is simply called a **Product Category** to represent both products and service categories. 
-30
-​
-31
-A product or service category can be nested within another category. Products/Services can belong to multiple categories. For a Product/Service to be usable and added to a Quote, it must belong to at least one category.
-32
-​
-33
-![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
-34
-​
-35
-Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
-36
-​
-@tklakshman
-Commit changes
-Commit summary
-Update cpq_admin.md
-Optional extended description
-Add an optional extended description…
- Commit directly to the main branch.
- Create a new branch for this commit and start a pull request. Learn more about pull requests.
- 
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
 
 ## 3. Products/Services
 
@@ -376,33 +247,70 @@ This section enables the administrator to choose which input variables to show a
 
 ### 4.2. Quote Templates
 
+A **Quote Template** is a template that is used to create any quote in the CPQ System. It contains the structure and logic of what products/services can go into a Quote, what price book to use, what rules constrain products/services that can be added or how they can be priced/discounted, and finally what approvals need to be processed based on various conditions.
+
+The CPQ System comes with a built-in Default Quote Template that uses the Default Quote UI Layout. A fully functional Default Quote Template enables an administrator to easily copy and customize the template extending it to meet their specific needs. The following sections describe the component sections of a Quote Template.
+
 #### 4.2.1. General Section
+
+This section primarily consists of informational attributes such as **Name** and a **Unique Form ID** that are required to create a Quote Template. In addition, it also has a **Access Control** subsection that has the following attributes that can be optionally specified.
+
+- **Active**: A switch to *Activate* or *De-activate* a template. Only Active templates can be used by the end-user to create Quotes.
+- **ACL**: A logical combination (Any or All) of roles that dictate which end-user roles this template is visible to and who can use them to create Quotes.
+- **Effective Date**: A date starting which this template is available to authorized end-users to create Quotes.
+- **Expiration Date**: A date after which this template will no longer be available to authorized end-users to create Quotes.
 
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_general.png)
 
 #### 4.2.2. Configuration Section
 
+This section consists of constraints and rules that govern how the CPQ System renders a Quote and validates. Every Quote Template must have an associated **Quote UI Layout** that is specified here.
+
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration.png)
 
 ##### 4.2.2.1. Line Item Tables
 
+A **Line Item Table (also called Product Group)** holds the Product/Service items that the end-user adds while creating a Quote in the Configure, Price, Quote workflow.
+
+One or more **Product Groups or Line Item Tables** must be added to the Quote template which will enable the end-user to choose select **Product/Service** items from the catalog and store them here. Each such **Product Group or Line Item Table** is uniquely identified by the **Name** field. This name is internally represented as a system variable that can be used in **Rule Expressions** and **Document Templates** to refer to the added line items and their attributes. It is typically represented as a JSON-style array and can be accessed using JSON array notation. For ex: if the table name is *line_items* and there 3 Product/Service items added to it, then it will be represented as a 3-item array accessible as *line_items[0], line_items[1] and line_items[2]* in any expression. To access a specific attribute of a specific item, one can use JSON-style dot-notation. For example, *line_items[1].cpq_quantity* will give you the user-entered Quantity of the 2nd Product/Service line item they added in the quote.
+
+Each **Product Group or Line Item Table** can be configured to only allow adding **Product/Service** items from specific **Product/Service Categories** and can also be constrained to have a **Minimum** and **Maximum** number of items.
+
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_line_item_table.png)
 
 ##### 4.2.2.2. Product Rules
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_rule.png)
+
+This subsection enables an administrator to specify any number of **Configuration Rules** that govern what types of **Product/Service** items can be added together in the **Line Item Tables**. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
+
+Please refer to the **Product, Pricing and Approval Rules Specification** below to learn how to create and configure Product Rules.
 
 #### 4.2.3. Pricing Section
+
+This section enables an administrator to specify the **Price Book** that is associated with this Quote Template. When an end-user creates a Quote using this template, all **Product/Service Items** added to the Quote will only derive the corresponding Pricing Item from the associated **Price Book**. Typically, a **Product/Service** item in the catalog can have multiple Price Book entries. For example, one for USA region specified in USD, one for EMEA region specified in EUR etc. Accordingly, two different Quote Templates must be created (one for USA Price Book and a separate one associated with the EMA Price Book) that will enable the CPQ System to appropriately pick up the right Price Book Entry for an added Product/Service item.
+
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_pricing.png)
 
 ##### 4.2.3.1. Pricing Rules
 
+This subsection enables an administrator to specify any number of **Pricing Rules** that govern what pricing changes must be made for **Product/Service** items in the **Global Quote Adjustments**. For example, one can specify a rule based on the current date to automatically add a *End of Month* or *End of Quarter* promotional discount to the Quote. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
+
 #### 4.2.4. Approvals Section
+
+This section enables the administrator to specify the appropriate **Email Templates** to be be used for **Approved**, **Declined** and **Cancelled** approval requests. In addition, the administrator can optionally set the initial approval status of all Quotes to a custom value. They can also optionally specify a numerical value for **Close After (Days)** that instructs the CPQ System to close the quote (set its status to **Closed**) automatically after the specified number of days from its creation.
+
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval.png)
 
 ##### 4.2.4.1. Approval Rules
 
+This subsection enables an administrator to specify any number of **Approval Rules** that govern under what conditions Approvals are needed. For example, a discount beyond 20% may require a Manager approval. Once can also specify multiple levels of approvals depending on increased discount (escalated approvals) by specifying them in a particular evaluation order. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
+
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval_rule.png)
 
+#### 4.2.5. Product, Pricing and Approval Rules Specification
+
+When creating a **Product Rule**, a **Pricing Rule** or an **Approval Rule** the following attributes must be specified.
+
+First, one must specify what type of action in the CPQ System triggers this rule.
 
 * **Triggered By**: The type of the event that triggers this rule.  Can be one of the following:
   * **Page Load**: This rule should trigger whenever the page is first loaded.
@@ -413,13 +321,25 @@ This section enables the administrator to choose which input variables to show a
   * **User Action**: This rule should trigger whenever the user performs a user-defined action.  The name of the action is specified in the **triggerAction** field.
   * **Approval Check**: This rule should be triggered whenever the cpq_needs_approval field needs updating. Generally, this is done any time whenever the quote needs to perform a server-side operation, (i.e., any of the above **Triggered By** values).
 
-* **Trigger Action**: Name of the user-defined action that should trigger the rule.  This field is ignored if the **Triggered By** field is not **User Action**.
+**Pricing Rules** can only be triggered by **Price Computation**.
+**Approval Rules** can only be triggered by **Approval Check**.
 
-* **Trigger Condition**: An rule expression that should be evaluated to determine whether the rule should trigger or not.  The syntax of this expression is described later. (see **CPQ Rules, Functions and Variables** section below) 
+![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_rule.png)
 
+In a **Product Rule** if the **Triggered By** field is set to a **User Action**, then the following additional action type must be specified.
+* **Trigger Action**: Name of the user-defined action that should trigger the rule. 
+
+In all cases, one must specify the condition under which a Rule is triggered. This can be specified using a **Rule Expression**.
+* **Trigger Condition**: An rule expression that should be evaluated to determine whether the rule should trigger or not.  The syntax of this expression is described later. (see **CPQ Rules, Expressions, Functions and Variables** section below) 
+
+A Rule Evaluation Order (numerical value) must be specified so the CPQ System knows the order of rule evaluation when multiple rules are specified.
 * **Evaluation Order**: A number specifying the order in which rules should be evaluated.  Rules with a lower order value will be evaluated before rules with a higher order value.
 
+When multiple rules are specified, and a rule is triggered, one can optionally instruct the CPQ System to abort subsequent rule processing down the evaluation order by setting the following option to true.
 * **Skip Later Rules After Trigger**: True/False boolean value. If set to true, then if this rule is triggered, no more rules will be checked.  That is, if there are two rules A and B that can be triggered when an event occurs, if **Skip Later Rules After Trigger** is true for A, rule evaluation will be stopped after A and rule B will never be evaluated.  Note that **Skip Later Rules After Trigger** only prevents execution of roles in the same scope.  Rules in other scopes will still be executed.
+
+Finally, in the **Response** subsection, the administrator can specify what type of action to take.
+
 * **Action Type**: Type of the action to perform if the rule triggers.  Can be one of the following values:
   * **Show Error**: Generate an error message and abort the triggering operation.
   * **Show Warning**: Generate an warning message.  The triggering operation will not be aborted.
@@ -429,20 +349,27 @@ This section enables the administrator to choose which input variables to show a
   * **Add Discount**: Automatically add a pricing discount to the parent product or quote. One can specify the discount type as a fixed **percent** or a fixed **amount** or a dynamically computed formula using an expression (see **CPQ Rules, Functions and Variables** section for syntax of expressions).
   * **Needs Approval**: Mark this quote as needing approval along with a specific reason (user-friendly description why the quote needs approval). This description can contain macro expressions using fields from the quote. These macro expressions written as `${expr}` where `expr` is a valid CPQ expression. In addition, one can specify a specific **Email Template** to use and an **Approver Group** to send this approval to.
 
+For **Approval Rules**, only a **Needs Approval** action type is supported.
+For **Pricing Rules**, **Add Product**, **Delete Product** and **Needs Approval** action types are not available as they are all product or approval related.
+
+
 ## 5. Approvals
+
 Once a quote is generated, it sometimes needs to be approved, especially if the quote used non-standard pricing or it is inaccurate because it is missing some key details. While the quote may be valid, (based on application of the validation rules), it may still not meet the business objectives. To address this issue, the MobileForce CPQ system provides a mechanism for human intervention: whereby valid quotes are sent through a business chain of command for approval. The idea is that the approvers would eyeball the quote to make sure that business objectives are met, thus approving or rejecting the quote. While quote approvals can quickly morph into complex approval workflows, it is important to keep the approval process simple, transparent, and easy to understand and program.
 
-In MobileForce CPQ, Approval rules can be attached to a quote, a product, or a product group to specify the conditions under which the quote needs approval. The MobileForce CPQ Approval process supports  multiple levels of approvals, where approvers at one level will need to approve the quote before an approval request is sent to the next level. If multiple approval rules trigger, approval is required from the highest approval level specified by the rules.
+Approval rules can be attached to a quote, a product, or a product group to specify the conditions under which the quote needs approval. The CPQ Approval process supports  multiple levels of approvals, where approvers at one level will need to approve the quote before an approval request is sent to the next level. If multiple approval rules trigger, approval is required from the highest approval level specified by the rules.
+
+The CPQ System manages multiple levels of approvals for Quotes. An approval request can be sent to a specific individual or a group of individuals (**Approver Groups**). The actual email that is sent out in each of the approval workflow steps can be customized by the administrator. 
 
 ### 5.1. Approver Groups
 
-**Approval Rules** :  An approval rule specifies the conditions on which an approval is required as well as who needs to perform the approval. Approval rules use the Rule objects, described in section 7.
+This section enables administrators to create a named **Approver Group** that consists of a combination of individuals specified by direct emails or role names. An approver group identifies a set of one or more users than can approve a quote. The CPQ System also supports escalated approvals workflow. For example, an approval is first sent to a Manager before it is set to a Vice President and then to a CEO.
 
-**Approval Groups** An approver group identifies a set of one or more users than can approve a quote.
+In addition to specifying whom to notify for approvals, the CPQ System enables an administrator to specify authorized additional approvers who are not notified in the regular approval workflow process but are authorized to login to the system to approve requests on a contingency basis. For example, if a regular approver is out of office and unavailable, an authorized additional approver can step in and approve the request on their behalf.
 
-Each MobileForce CPQ Approval Group has a (required) **name** field. In addition, Approval Groups typically have the following fields:
+Each Approval Group has a (required) **Name** field. In addition, Approval Groups typically have the following fields:
 
-* **level** : Numerical approval level. When a quote needs approval from multiple approval groups, it will request approval from groups with lower approval levels before requesting approval from groups with higher approval levels. For example, if a quote needs approval from a 'Manager' approval group at level 1 and a 'VP' approval group at level 2, an approval request to the 'VP' group will not be sent until after the 'Manager' approval group has approved it.
+* **Level** : Numerical approval level. When a quote needs approval from multiple approval groups, it will request approval from groups with lower approval levels before requesting approval from groups with higher approval levels. For example, if a quote needs approval from a 'Manager' approval group at level 1 and a 'VP' approval group at level 2, an approval request to the 'VP' group will not be sent until after the 'Manager' approval group has approved it.
 
 Approvers can be individual users or roles. In addition, approvers can be notified approvers, who get notified, or additional approvers who do not get notified of approvals. The following kinds of approvers are supported, each allowing optional notification. Thus, you can specify approvers in three ways, by explicit email addresses, by MobileForce roles, or by a form expression that evaluates to an email address.
 
@@ -458,27 +385,28 @@ In future, MobileForce CPQ will support approval history, where every quote will
 
 ### 5.2. Email Templates
 
-Since quotes are sent for approval by email, it is natural to provide email templates that can be used to generate the approval requests as well as the approval/rejection. MobileForce CPQ not only supports email templates for various approval workflows, it also supports distinct email templates that can be created and saved for subsequent use by different users for different purposes.
+Since quotes are sent for approval by email, it is natural to provide email templates that can be used to generate the approval requests as well as the approval/rejection. The CPQ System not only supports email templates for various approval workflows, it also supports distinct email templates that can be created and saved for subsequent use by different users for different purposes.
 
 Quotes can have one or more email templates. These templates are used to generate emails as part of the quote process, such as approvals.
 
 The subject and body of email templates can contain macro variables of the form '${form-expr}', where form-expr is a valid  form expression that can reference fields in the quote.
 
-Each MobileForce CPQ Email Template has a (required) **name** field. In addition, Email Templates typically have the following fields:
+Each MobileForce CPQ Email Template has a (required) **Name** field. In addition, Email Templates typically have the following fields:
 
-* **purpose** : Purpose of the email template. Can be one of the following:
-  * approvalRequest: Approval request sent to an approver.
-  * approvalRequestCanceled: Email sent to an approver to indicate that an approval has been cancelled.
-  * approvalApproved: Email sent to the quote owner indicating that the quote is approved.
-  * approvalDeclined: Email sent to the quote owner indicating that the quote is declined.
-  * approvalCancelled: Email sent to the quote owner indicating that the quote's approval process was cancelled.
+* **Purpose** : Purpose of the email template. Can be one of the following:
+  * Approval Request: Approval request sent to an approver.
+  * Cancel a Pending Approval Request: Email sent to an approver to indicate that an approval has been cancelled.
+  * Approved Confirmation: Email sent to the quote owner indicating that the quote is approved.
+  * Declined Confirmation: Email sent to the quote owner indicating that the quote is declined.
+  * Approval Cancelled Confirmation: Email sent to the quote owner indicating that the quote's approval process was cancelled.
 
-* **subject** : Email subject. Can contain macro variables.
-* **body** : Email body. Can contain macro variables
-* **bodyFormat** : Format of the email body. Can be one of the following:
-  * text: Body is plain text
-  * html: Body is a HTML document
+* **Subject** : Email subject. Can contain macro variables.
+* **Body** : Email body. Can contain macro variables
+* **Body Format** : Format of the email body. Can be one of the following:
+  * Text: Body is plain text
+  * Html: Body is a HTML document
 
+The CPQ System provides a default built-in HTML content for each of the different types of template that can be used as a starting point by an administrator. An administrator can set the email to default content by clicking on *Set Content to Default* button.
 
 ![Create Email Templates in MobileForce CPQ](/images/add_edit_email_template.png)
 
@@ -491,7 +419,7 @@ Starting from a quote, MobileForce CPQ can generate a set of documents. Each doc
 
 The following document template is used to generate a proposal for a customer that is based on their use of SugarCRM CRM. This document template has the following sections
 
-Each MobileForce document template has a (required) **name** field. In addition, document templates typically have the following fields:
+Each MobileForce document template has a (required) **Name** field. In addition, document templates typically have the following fields:
 
 ![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
 
@@ -502,7 +430,6 @@ Each MobileForce document template has a (required) **name** field. In addition,
 * **Disabled Condition** : An optional rule expression that should be evaluated to determine whether this document template should be disabled, (i.e., shown but unselectable), in the list of documents that can be generated.
 
 * **Generated File Format** : Format of the target document generated from this template. Can be one of the following:
-
   * docx: A MS Word document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Word document.
   * xlsx: A MS Excel document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Excel document.
   * pdf: A PDF document. Templates using this format can have one or more sections.
@@ -685,3 +612,4 @@ Additionally, the following special variables are defined
 #### 7.3.4. OpenTBS Variables in Document Templates
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
+
