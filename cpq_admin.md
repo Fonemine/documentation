@@ -303,12 +303,12 @@ Each quote in MobileForce CPQ is specified through a UI consisting of 5 sections
 
 4. Actions Section
 
-![Create Quote Actions Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_actions.png)
+![Create Quote Actions Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_action.png)
 
 
 5. Summary Section
 
-![Create Quote Summary Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_summary.png)
+![Create Quote Summary Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_summary.png)
 
 
 ### Quote Templates and Rules
