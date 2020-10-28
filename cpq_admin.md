@@ -1,7 +1,7 @@
 # Configure, Price, Quote Admin Guide
 An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
 
-## Step 1: Price Books
+## 1. Price Books
 
 Typically, the first thing a CPQ Administrator does is to create one or more price books. 
 MobileForce CPQ supports the creation of multiple price books that can also be related to one another via a hierarchical parent relationship. For instance, Businesses could create one price book for local or national use with the local currency, and another price book for each international market they operate in (each with its own currency). Price books allow one to assign different prices for products for different regions with different currencies or for different markets. In order to create a quote, a user **must** select a price book.
@@ -22,7 +22,7 @@ The following fields of a MobileForce CPQ price book are found in almost all CPQ
 Once a price book is created, the next step is to create product categories,then create products and services within their respective product categories.
 Finally we create pricing for the products where we specify the price specific to one or more price books to reflect the different prices for the product in the different markets that these different price books represent.
 
-## Step 2: Product/Service Categories
+## 2. Product/Service Categories
 
 Product/Service Categories in MobileForce CPQ are hierarchal groupings of products or services that are configured and sold to the customer. 
 
@@ -34,7 +34,7 @@ A product or service category can be nested within another category. Products/Se
 
 Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
 
-## Step 3: Products/Services
+## 3. Products/Services
 
 A product/service is anything that is sold by the business, irrespective of whether it is free or has a price. A product/service belongs to a category. Typically products are individual **line items** in *quotes*. When an end-user creates a new Quote, they can add one or more products or service items by browsing or searching this catalog.
 
@@ -46,11 +46,11 @@ Products may contain nested products, representing bundled products or product f
 
 Products can be broken down into two types: **Simple** and **Configurable**. Simple products have no attributes nor nested products. Configurable products may have attributes, nested products, or both. Configurable products have an associated **Product UI Layout** describing their attributes, nested products, and UIs that will be rendered to the end-user to configure the product after they have added it to the quote.
 
-### Products, Configurations and Rules
+### 3.1. Products, Configurations and Rules
 
 Each product or service item in MobileForce CPQ is specified through a UI consisting of 4 sections.
 
-#### General Section
+#### 3.1.1. General Section
 
 This section includes the (required) **Name** field, and in addition, the unique product code or SKU.
 An optional field, "Product Category" is used to provide one or more previously created product categories that the product belongs to.
@@ -58,7 +58,7 @@ Additional optional fields include **Description** and **Image**.
 
 ![Create Product General Section in MobileForce CPQ](/images/add_product_general.png)
 
-#### Configuration Section
+#### 3.1.2. Configuration Section
 
 This section describes whether the product is a simple or a configurable product and in each case, additional configuration attributes.
 
@@ -78,11 +78,11 @@ The quantity attribute has the following fields:
 
 ![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
 
-#### Pricing Section
+#### 3.1.3. Pricing Section
 
 This section specifies the different ways that the product can be priced.
 
-- **priceRecurrence**: Specifies how often the user is charged.  Can be one of the following:
+- **Price Recurrence**: Specifies how often the user is charged.  Can be one of the following:
  - **One Time**: Price is applied only once.
  - **Per Minute**: Price is applied per minute.
  - **Hourly**: Price is applied per hour.
@@ -123,7 +123,7 @@ Under **Prices** sub-section, the two fields that can be specified are **List Pr
   - **Block**: Similar to the **volume** method except the value read from the table is not multiplied by the quantity.  For example, if the table has $500 for 51-100 items, then the subtotal for 70 items will be $500.
 - **List Price**: Unit price for the product.  Used by the **Flat Fee** and **Per Unit** methods.
 
-#### Price Book Item Tier
+##### 3.1.3.1. Price Book Item Tier
 
 For the **Volume**, **Tiered**, and **Block** methods, the price book item will have an associated matrix of prices, which provide a list price for a given range of quantities.
 
@@ -137,7 +137,7 @@ Each row in this matrix will have the following fields.
 
 ![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing_pricebook.png)
 
-#### Approval Section
+#### 3.1.4. Approval Section
 
 Here, one can specify the **rules** that are used to decide how the product pricing in a quote is approved. Note that ONLY individual product-related rules are specified here. Most **rules** are typically specified at the Quote level (see **Quote Templates** under the **Quotes** section below). Product-level rules typically only make sense for **Configurable Products** or products with nested child products.  They only apply within scope of the product itself. You can use them to validate custom fields, (e.g., end date must be less than start date), or make constraints or actions for line tables inside the product. 
 
@@ -160,11 +160,11 @@ In addition, the following **Optional** fields can be specified.
 ![Create Product Approval Rule in MobileForce CPQ](/images/CPQApprovalRule.png)
 
 
-### Product UI Layouts
+### 3.2. Product UI Layouts
 
 Product or Service items that are of type **Configurable** must have an associated **Product UI Layout**. A **Product UI Layout** is very similar to a **Quote UI Layout** and share the same underlying **Form Configurator Specification and Engine**. Please refer to the **Quote UI Layout** section below for more details on how to create a UI Layout. For convenience, CPQ System has *Export*, *Import* and *Copy* functions built-in so UI Layouts can be easily created, copied, and modified fast. These UI Layouts are specified in a familiar XML specification that can even be modified by hand in your editor of choice.
 
-## Step 4: Quotes
+## 4. Quotes
 
 A **Quote** in the CPQ System consists of two separate modular components designed for ease of use, ease of maintenance and scalability:
 - **Quote Template**: This represents the structure, state and logic of what products/services can go into a Quote, what price book to use, what rules constrain products/services that can be added or how they can be priced/discounted, and finally what approvals need to be processed based on various conditions.
@@ -176,7 +176,7 @@ From an end-user perspective, the CPQ system enables the end-user to create a Qu
 
 It is recommended that the administrator first setup a **Quote UI Layout** and then proceed to setup a **Quote Template** as the layout will need to be specified when creating a template.
 
-### Quote UI Layouts
+### 4.1. Quote UI Layouts
 
 A **Quote UI Layout** and a **Product UI Layout** are essentially **UI Layout** specifications that share the same underlying **Form Configurator Specification and Engine**. For convenience, CPQ System has built-in *Export*, *Import* and *Copy* functions so UI Layouts can be easily created, copied, and modified fast. The CPQ System provides a **Graphical UI Layout Builder** for ease of use in constructing customized UI Layouts and previewing them. These UI Layouts are specified in a familiar XML specification that can even be modified by hand in your editor of choice by first exporting them out of the CPQ System and later importing the modified versions.
 
@@ -184,93 +184,93 @@ UI Layouts are essentially a HTML Form-type responsive layout specified using a 
 
 A **Quote UI Layout** in MobileForce CPQ Graphical UI Layout Builder has 5 sections.
 
-#### General Section
+#### 4.1.1. General Section
 
 This has general information such as **Name** and the choices to show/hide or enable/disable explicit user-action buttons to **Save**, **Validate** and **Close/Reopen** a Quote.
 
 ![Create Quote General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_general.png)
 
-#### Types Section
+#### 4.1.2. Types Section
 
 This section enabled the administrator to create their own **Custom Data Types** that extend the CPQ Systems built-in input field types. For example: you can define your own compound type called **Address** made up of 5 primitive data types in it - **Street Address**, **City**, **State or Province**, **Postal Code**, **Country**. This custom **Address** type can then be used as a type for an input field specified in the form described in the next section. The CPQ System will detect that it is a custom type and render all the component fields at once so an end-user can populate all the components when specifying an **Address**.
 
 ![Create Quote Types Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_types.png)
 
-#### Form Section
+#### 4.1.3. Form Section
 
 This section is the core of the **UI Layout**. It specifies exactly how the Quote or the Product Configuration UI is to be rendered to the end-user. It typically has a collapsible, tree-like structure on the left panel that starts with **Tabs** each of which contain one or more **Sections**, each of which in-turn contain one or more **Input Fields**. **Sections** can be of different layouts like a **Multi-column** or **Table** layout. It is modeled after a **HTML DOM** structure. The right panel gives a **Preview** of the entire Form in different form factors - **Phone**, **Tablet** or **Computer**. It also provides complete **Details** of a specific item selected in the left panel such as a **Tab**, **Section**, **Table** or an **Input Field**. The left panel supports drag-n-drop functionality to easily re-order tabs, sections and input fields.
 
 The CPQ System comes with a built-in **Default Quote UI Layout** that has the following tabs, sections and input fields.
 
-##### Customer Tab
+##### 4.1.3.1. Customer Tab
 
 This is where the end-user can select an Account, Opportunity and Contact to prepare the Quote for. It also has their own contact information and their company information.
 
 ![Create Quote Forms General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_general.png)
 
-##### Quote Tab
+##### 4.1.3.2. Quote Tab
 
 This tab has a combination of common Quote fields such as dates, status etc. at the top followed by one or more **Line Items** tables where the end-user can add Product/Service line items from the catalog. This table also has sub-totals and total fields. It also has designated areas to specify line-item level discounts or global discounts.
 
 ![Create Quote Forms Quote Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_quote.png)
 
-##### Approvals Tab
+##### 4.1.3.3. Approvals Tab
 
 This tab shows the history of all Quote Approvals including approval requests that are pending. It enables the end-user to submit and track quote approvals status in one place.
 
 ![Create Quote Forms Approvals Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_approvals.png)
 
-##### Signatures Tab
+##### 4.1.3.4. Signatures Tab
 
 This tab enables the end-user to collect Digital Signatures. This is especially helpful in scenarios where sales or service personnel are at customer premises and would like to capture a digital signature on a touch-enabled device like a Tablet or a Smartphone, so they can accelerate the contracting process.
 
 ![Create Quote Forms Signature Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_signatures.png)
 
-##### Generated Docs
+##### 4.1.3.5. Generated Docs
 
 This tab enables the end-user to Generate the final quote, proposal or a multi-page contract document in a PDF format by utilizing a pre-configured document template (see **Document Templates** section below). The CPQ System will utilize all the information from the Quote and infuse appropriate values into the selected document template to generate a PDF document. The end-user can then view the generated document, share it with the customer via email and also click on the *Save to CRM* button to save this entire quote with line items and generated document to a CRM Opportunity.
 
 ![Create Quote Forms Documents Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_generated_docs.png)
 
-#### Actions Section
+#### 4.1.4. Actions Section
 
 This section in the Graphical Form Builder UI contains built-in and custom actions to be performed by the CPQ System, each of which are tied to specific **Events** during the CPQ process. For example, there are built-in actions like *Validate Action* that get triggered when the end-user clicks on the *Validate* button in the UI, that results in the CPQ System validating all elements of the Quote configured thus far. Similarly, an administrator can define custom actions that are specific to their business and can extend the system easily by writing server-side action scripts that are coded to the CPQ System specification.
 
 ![Create Quote Actions Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_action.png)
 
 
-#### Summary Section
+#### 4.1.5. Summary Section
 
 This section enables the administrator to choose which input variables to show as columns in the list view of all the Quotes. It comes with default columns such as name, status and id. The administrator can add and tailor the columns to what the end-users would like to see in the list view.
 
 ![Create Quote Summary Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_summary.png)
 
-### Quote Templates
+### 4.2. Quote Templates
 
-#### General Section
+#### 4.2.1. General Section
 
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_general.png)
 
-#### Configuration Section
+#### 4.2.2. Configuration Section
 
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration.png)
 
-##### Line Item Tables
+##### 4.2.2.1. Line Item Tables
 
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_line_item_table.png)
 
-##### Product Rules
+##### 4.2.2.2. Product Rules
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_rule.png)
 
-#### Pricing Section
+#### 4.2.3. Pricing Section
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_pricing.png)
 
-##### Pricing Rules
+##### 4.2.3.1. Pricing Rules
 
-#### Approvals Section
+#### 4.2.4. Approvals Section
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval.png)
 
-##### Approval Rules
+##### 4.2.4.1. Approval Rules
 
 ![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval_rule.png)
 
@@ -308,11 +308,11 @@ This section enables the administrator to choose which input variables to show a
 ### Template Files
 ### Document Templates
 
-## CPQ Rules, Expressions, Functions and Variables
+## 7. CPQ Rules, Expressions, Functions and Variables
 
 Products and Quotes may have one or more rules that are used in **Configuration**, **Pricing** and **Approvals**. A rule specifies an automated action that should be performed on a product or quote when some event occurs on that product or quote.
 
-### Rule Expressions and Formula Syntax
+### 7.1. Rule Expressions and Formula Syntax
 
 Rule expressions can be composed using a combination of built-in system variables, user-specified custom variables, built-in functions and built-in operators (logical and arithmetic). Rule expressions are modeled after the familiar Microsoft Excel formula syntax.  More exactly, only string and numeric scalar data types are supported and the set of allowed functions are listed below.  The variables in the formula can be referenced by their names.  A formula can only reference variables that are either built-in system variables listed below or input field names that are specified in **Quote UI Layout** or a **Product UI Layout**. 
 
@@ -363,7 +363,7 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
-### Built-in Formula Functions
+### 7.2. Built-in Formula Functions
 
 The following standard Microsoft Excel-like functions are supported:
 
@@ -407,11 +407,11 @@ In addition, the following CPQ-specific functions are supported:
 * **HAS_CAT(productCode [, productGroup])**: Returns true if there is a product in the given category in the named group.  If the group name is blank, then this is for all missing.  This is basically just a shorthand for `(CAT_COUNT(productCode, productGroup) > 0)`.
 * **QTY([productGroup])**: Returns a the sum of the quantities of all products in the named group.  If the group name is missing, then this is for all groups.
 
-###  Built-in Formula Variables
+###  7.3. Built-in Formula Variables
 
 One can access any attribute, group, or CPQ-computed value using the formula and naming syntax described in the previous section. In the CPQ system, all the variables and values in the entire Quote is stored as a JSON object with nested fields. The top level JSON object will contain data for the entire quote.  Each attribute or product group (line items array) defined for the quote will be a field in this JSON object. So, a standard JSON notation can be used to refer to any variable contained in the quote using nested level references for hierarchy. In general, for non-primitive system or input variables, say, **arrays**, a JSON-object notation can be used to refer to variables inside them. For example: **line_items[1].cpq_quantity** will refer to the value of the Quantity field of the 2nd line item added in the Quote. By convention, the names of all CPQ-specific inputs will be prefixed with or contain 'cpq_'. Users are free to define their own inputs (variables) in **Product UI Layouts** or **Quote UI Layouts** with names that do not have 'cpq_' in them.
 
-#### Quote Level System Variables
+#### 7.3.1. Quote Level System Variables
 
 The quote object will have the following CPQ specific fields:
 
@@ -427,7 +427,7 @@ The quote object will have the following CPQ specific fields:
 * **cpq_user_discount_type**: Type of the user discount.  Can be either "percent" or "amount".
 * **cpq_total**: Total price of the quote after discounts.
 
-#### Product Group (Line Items in a Quote) System Variables
+#### 7.3.2. Product Group (Line Items in a Quote) System Variables
 
 A product or quote can have one or more product groups, each of which can contain one or more products.  The data for a product group named '{PG}' will be stored in fields starting with '{PG}'.  CPQ specific fields will start with '{PG}\_cpq\_'.  For example, the ID field for a product group named 'line_items' will be stored in 'line_items_cpq_id'.  These fields are as follows.
 
@@ -441,7 +441,7 @@ A product or quote can have one or more product groups, each of which can contai
 * **{PG}_user_discount_subtotal**: Total percentage user discount for all products in the product group.  This is computed via the formula (**{PG}_cpq_system_subtotal** - **{PG}_cpq_net_subtotal**) / **{PG}_cpq_system_subtotal**
 * **{PG}_cpq_system_total**:  **{PG}_cpq_net_subtotal** with product-group system discounts (price-rules) applied.
 
-#### Product-related System Variables
+#### 7.3.3. Product-related System Variables
 
 Each configured product is stored as a JSON object.  Each attribute or product group defined for the product will be a field in this JSON object.
 
@@ -463,6 +463,6 @@ Additionally, the following special variables are defined
 
 * **this**: The object that the condition or formula is attached to.
 
-#### OpenTBS Variables in Document Templates
+#### 7.3.4. OpenTBS Variables in Document Templates
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
