@@ -70,11 +70,44 @@ The quantity attribute has the following fields:
 
 ![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
 
-3. Pricing Section:
+3. Pricing Section: This section specifies the different ways that the product can be priced.
+
+* **priceRecurrence**: Specifies how often the user is charged.  Can be one of the following:
+  * **oneTime**: Price is applied only once.
+  * **perMinute**: Price is applied per minute.
+  * **hourly**: Price is applied per hour.
+  * **weekly**: Price is applied per week
+  * **biweekly**: Price is applied every two weeks.
+  * **semimonthly**: Price is applied twice a month.
+  * **monthly**: Price is applied once a month.
+  * **quarterly**: Price is applied every three months.
+  * **halfYearly**: Price is applied twice a year.
+  * **yearly**: Price is applied once a year.
+* **Allow Discount**: Boolean indicating whether the user can specify a discount for this product.
+* **discount Unit**: Unit type of discount.  Can be one of the following
+  * **amount**: Discount is a fixed amount.
+  * **percent**: Discount is a percentage.
+  * **both**: Discount can be either a fixed amount or percentage.  The sales rep will select the type in the quote.
+
+If the discount unit is percentage, then two additional fields provide the range of allowed discount percentage.
+
+* **discount Percentage Min**: Minimum percent discount that a user can enter.  Default is 0.
+* **discount Percentage Max**: Maximum percent discount that a user can enter.  Default is 100%.
+
+If the discount unit is an amount, then two additional fields provide the range of allowed discount amount.
+
+* **discount Amount Min**: Minimum fixed discount that a user can enter.  Default is 0.
+* **discount Amount Max**: Maximum fixed discount that a user can enter.  Default is 1,000,000.
 
 ![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing.png)
 
+The price book entries sub-section within pricing section enables the product pricing to be specified in multiple price books. The following UI describes how this is done. First, the price book for which pricing is being provided is specified. Next, the product is specified. Both are required fields.
+Under "Prices" sub-section, the two fields that can be specified are **List Price** and **Method** 
+
+
 ![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing_pricebook.png)
+
+
 
 4. Approval Section:
 
