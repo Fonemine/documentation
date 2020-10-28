@@ -5,7 +5,7 @@ An important aspect of the sales process for any business is the systematization
 
 MobileForce CPQ supports the creation of multiple price books.
 
-![Create Price Book in MobileForce CPQ](/images/sugar_oauth_key_create.png)
+![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
 
 ## Products/Services
 ### Product Categories
