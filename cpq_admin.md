@@ -34,7 +34,7 @@ Products can be broken down into two types: simple and configurable. Simple prod
 
 ### Product Categories
 
-Product Categories  are hierarchal groupings of products. A product category can be nested within another category. Products can belong to multiple product categories. For a product to be usable, it must belong to at least one product category.
+Product Categories in MobileForce CPQ are hierarchal groupings of products. A product category can be nested within another category. Products can belong to multiple product categories. For a product to be usable, it must belong to at least one product category.
 
 ![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
 
@@ -43,10 +43,32 @@ Each MobileForce CPQ Product Category has a (required) **name** field. In additi
 
 ### Products, Configurations and Rules
 
+Each product in MobileForce CPQ is specified through a UI consisting of 4 sections.
+
+1. General Section: 
+This section includes the (required) **name** field, and in addition, the unique product code or SKU.
+An optional field, "Product Category" is used to provide one or more previously created product categories that the product belongs to.
+Additional optional fields include **description** and **Image**.  
+
+![Create Product General Section in MobileForce CPQ](/images/add_product_general.png)
+
+2. Configuration Section:
+
+![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
+
+3. Pricing Section:
+
+![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing.png)
+
+![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing_pricebook.png)
+
+4. Approval Section:
+
+![Create Product Approval Section in MobileForce CPQ](/images/add_product_approval.png)
 
 ### Product UI Layouts
 
-## Quotes
+## Quotes. 
 ### Quote UI Layouts
 ### Quote Templates and Rules
 
