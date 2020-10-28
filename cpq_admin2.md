@@ -33,6 +33,135 @@ A product or service category can be nested within another category. Products/Se
 ![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
 
 Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@tklakshman 
+Fonemine
+/
+documentation 
+lines
+1.4k
+6
+0
+0
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+documentation
+/
+cpq_admin.md
+ 
+
+Spaces
+
+1
+
+Soft wrap
+1
+# Configure, Price, Quote Admin Guide
+2
+An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
+3
+​
+4
+## 1. Price Books
+5
+​
+6
+Typically, the first thing a CPQ Administrator does is to create one or more price books. 
+7
+MobileForce CPQ supports the creation of multiple price books that can also be related to one another via a hierarchical parent relationship. For instance, Businesses could create one price book for local or national use with the local currency, and another price book for each international market they operate in (each with its own currency). Price books allow one to assign different prices for products for different regions with different currencies or for different markets. In order to create a quote, a user **must** select a price book.
+8
+​
+9
+![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
+10
+​
+11
+Each MobileForce CPQ price book has a (required) **name** field. In addition, price books typically have the following fields:
+12
+​
+13
+* **Currency**: specifying the currency used for all prices in the price book. For now, only "USA" is activated as default as a valid value for the currency field.
+14
+​
+15
+The following fields of a MobileForce CPQ price book are found in almost all CPQ entities. For brevity, they are described once here, and not described again in other entities that also have these fields. 
+16
+​
+17
+* **Effective Date**: The date starting which  products listed in the price book can be sold
+18
+* **Expiration Date**: The date after which products listed in the price book can no longer be sold.
+19
+* **Active**: a toggle indicating whether the price book is ready for use in CPQ systems or is still being developed.
+20
+* **ACL**: indicating the user roles for the users that are allowed access to the price book. For instance, the US price book may be accessible only by sales user roles who are employed and selling within the USA, and hence not accessible to sales reps who are not members of the sales-USA role, because they sell in the Japan market.
+21
+​
+22
+Once a price book is created, the next step is to create product categories,then create products and services within their respective product categories.
+23
+Finally we create pricing for the products where we specify the price specific to one or more price books to reflect the different prices for the product in the different markets that these different price books represent.
+24
+​
+25
+## 2. Product/Service Categories
+26
+​
+27
+Product/Service Categories in MobileForce CPQ are hierarchal groupings of products or services that are configured and sold to the customer. 
+28
+​
+29
+In the MobileForce CPQ UI, it is simply called a **Product Category** to represent both products and service categories. 
+30
+​
+31
+A product or service category can be nested within another category. Products/Services can belong to multiple categories. For a Product/Service to be usable and added to a Quote, it must belong to at least one category.
+32
+​
+33
+![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
+34
+​
+35
+Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
+36
+​
+@tklakshman
+Commit changes
+Commit summary
+Update cpq_admin.md
+Optional extended description
+Add an optional extended description…
+ Commit directly to the main branch.
+ Create a new branch for this commit and start a pull request. Learn more about pull requests.
+ 
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
 
 ## 3. Products/Services
 
