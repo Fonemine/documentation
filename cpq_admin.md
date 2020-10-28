@@ -145,6 +145,8 @@ In addition, the following **optional** fields can be specified.
 
 * **Skip later rules after trigger** : Once a specific rule is triggered, this toggle enables the remaining rules to be skipped. The default is that the remaining rules are not skipped, and instead evaluated.
 
+![Create Product Approval Rule in MobileForce CPQ](/images/CPQApprovalRule.png)
+
 #### Rules 
 
 Products and quotes may have one or more rules.  A rule specifies an automated action that should be performed on a
