@@ -3,7 +3,7 @@ An important aspect of the sales process for any business is the systematization
 
 ## Price Books
 
-MobileForce CPQ supports the creation of multiple price books that can be related to one another via a hierarchical parent-child relationship. Businesses could create one price book for local or national use and another price book for each international market they operate in (each with its own currency). 
+MobileForce CPQ supports the creation of multiple price books that can be related to one another via a hierarchical parent relationship. Businesses could create one price book for local or national use and another price book for each international market they operate in (each with its own currency). 
 
 Each MobileForce CPQ price book has a (required) **name** field. In addition, price books typically have the following fields:
 
