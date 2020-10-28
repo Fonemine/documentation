@@ -301,6 +301,9 @@ This section enables the administrator to choose which input variables to show a
   * **Needs Approval**: Mark this quote as needing approval along with a specific reason (user-friendly description why the quote needs approval). This description can contain macro expressions using fields from the quote. These macro expressions written as `${expr}` where `expr` is a valid CPQ expression. In addition, one can specify a specific **Email Template** to use and an **Approver Group** to send this approval to.
 
 ## 5. Approvals
+Once a quote is generated, it sometimes needs to be approved, especially if the quote used non-standard pricing or it is inaccurate because it is missing some key details. While the quote may be valid, (based on application of the validation rules), it may still not meet the business objectives. To address this issue, the MobileForce CPQ system provides a mechanism for human intervention: whereby valid quotes are sent through a business chain of command for approval. The idea is that the approvers would eyeball the quote to make sure that business objectives are met, thus approving or rejecting the quote. While quote approvals can quickly morph into complex approval workflows, it is important to keep the approval process simple, transparent, and easy to understand and program.
+
+
 ### 5.1. Approver Groups
 ### 5.2. Email Templates
 
