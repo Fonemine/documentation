@@ -7,7 +7,7 @@
 - Add a new consumer key with secret and save it safely
 - Send the chosen *Consumer Key* and *Consumer Secret* to MobileForce team
 
-![Create OAuth Key in SugarCRM](/images/sugar_oauth_key_create.png | width=500)
+![Create OAuth Key in SugarCRM](images/sugar_oauth_key_create.png | width=500)
 
 ## Step 2: Create a MobileForce Custom Package and Module in SugarCRM
 - Login to SugarCRM instance as an admin user
@@ -34,7 +34,7 @@
 - Move **CPQ** from **Hidden Modules** list to **Displayed Modules** list
 - Move it up the list to just after **Leads** module
 
-![Display Modules and Subpanels in SugarCRM](/images/sugar_display_modules_admin.png | width=500)
+![Display Modules and Subpanels in SugarCRM](images/sugar_display_modules_admin.png | width=500)
 
 ## Step 4: Enable the CPQ on the Main Menu for the Logged-in User
 - Login to SugarCRM instance as any test user
@@ -43,6 +43,8 @@
 - Go to **Advanced** tab
 - Under **Layout Options**, move the **CPQ** from Hide Modules to Display Modules
 - Move it up the list to just after **Leads** module
+
+![Display Modules in User Preferences in SugarCRM](images/sugar_display_modules_user.png | width=500)
 
 ## Step 5: Customize the Module Menu and Module Layout/View in Navigation Bar (Mega Menu) 
 
@@ -130,7 +132,7 @@ $viewdefs[$module_name]['base']['layout']['records'] = array(
 - Please wait. This will take 15-30 seconds to rebuild the system and will print out the log.
 - This will deploy the changes we made in the instance
 
-![Quick Build and Repair in SugarCRM](/images/sugar_quick_repair_rebuild.png | width=500)
+![Quick Build and Repair in SugarCRM](images/sugar_quick_repair_rebuild.png | width=500)
 
 ## Step 7: Login and Use Your SugarCRM Instance with MobileForce CPQ
 - Login to SugarCRM instance as a regular user
