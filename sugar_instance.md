@@ -7,7 +7,7 @@
 - Add a new consumer key with secret and save it safely
 - Send the chosen *Consumer Key* and *Consumer Secret* to MobileForce team
 
-![Create OAuth Key in SugarCRM](/images/sugar_oauth_key_create.png | width=500)
+![Create OAuth Key in SugarCRM](/images/sugar_oauth_key_create.png)
 
 ## Step 2: Create a MobileForce Custom Package and Module in SugarCRM
 - Login to SugarCRM instance as an admin user
