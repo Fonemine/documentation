@@ -128,9 +128,148 @@ Each row in this matrix will have the following fields.
 
 
 
-4. Approval Section:
+4. Approval Section: Here, one can specify the rules that are used to decide how the product pricing in a quote is approved. 
 
 ![Create Product Approval Section in MobileForce CPQ](/images/add_product_approval.png)
+
+The individual approval rules are specified as follows. Each rule has the following **required** fields:
+
+* **Name** : A descriptive name for the quote approval rule
+* **Rule Evaluation Order** : A number indicating the order in which multiple rules are evaluated: higher numbered rules are evaluated first, followed by lower numbered rules.
+* **Approval Request Email Template** : an email template used to send a request for approval of the quote.
+* **Approval Request Cancel Template** : an email sent to an approver to indicate that an approval has been cancelled.
+* **Approvers** : A comma separated list of email addresses of users that can approve the quote. These users will be notified on approval requests.
+* **Approval Reason** : User-friendly description why the quote needs approval. This description can contain macro expressions using fields from the quote. These macro expressions written as ${expr} where expr is a valid expression.
+
+In addition, the following **optional** fields can be specified.
+
+* **Skip later rules after trigger** : Once a specific rule is triggered, this toggle enables the remaining rules to be skipped. The default is that the remaining rules are not skipped, and instead evaluated.
+
+#### Rules 
+
+Products and quotes may have one or more rules.  A rule specifies an automated action that should be performed on a
+product or quote when some event occurs on that product or quote.
+
+#### Rule table
+
+In addition to the common database fields described above, a rule will have the following fields:
+
+* **sourceType**: Type of the source object that this rule is associated with.  This type may be one of the following:
+  * **Product**: The rule is associated with a Product
+  * **Quote**: The rule is associated with a Quote
+* **sourceId**: ID of the source object this rule is associated with.
+* **scope**: Scope or context for this rule.  Rules in different scopes will be executed independently of each other.  That is, a triggered rule in one scope cannot affect the triggering of another rule in another scope.  This can be one of the following values:
+  * **configuration**: This rule is invoked as part of configuration validation.
+  * **pricing**: This rule is invoked as part of pricing validation or computation.
+  * **approval**: This rule is invoked to determine whether approvals are needed.
+* **triggerType**: The type of the event that triggers this rule.  Can be one of the following:
+  * **pageLoad**: This rule should trigger whenever the page is first loaded.
+  * **save**: This rule should trigger whenever the user saves the source object.
+  * **validate**: This rule should trigger whenever the user request validation for the source object or performs an action that requires validation.
+  * **updateProductGroup**: This rule should trigger whenever a product is added to or deleted from a product group.
+  * **updatePrice**: This rule should trigger when prices are computed or recomputed in the quote.
+  * **action**: This rule should trigger whenever the user performs a user-defined action.  The name of the action is specified in the **triggerAction** field.
+  * **checkApproval**: This rule should be triggered whenever the cpq_needs_approval field needs updating.  Generally, this is done any time whenever the quote needs to perform a server-side operation, (i.e., any of the above **triggerType** values).
+  * **any**: This rule should be triggered for any event listed above.
+* **triggerAction**: Name of the user-defined action that should trigger the rule.  This field is ignored if the **triggerType** field is not **triggerAction**.
+* **triggerCondition**: An ADL Form expression that should be evaluated to determine whether the rule should trigger or not.  The syntax of this expression is described later.
+* **triggerParams**: A JSON object specifying additional parameters in determining whether to trigger this rule.  The meaning of these parameters vary based on the value of the **triggerType** field.
+* **triggerOrder**: A number specifying the order in which rules should be evaluated.  Rules with a lower order value will be evaluated before rules with a higher order value.
+* **triggerStop**: A boolean value.  If set to true, then if this rule is triggered, no more rules will be checked.  That is, if there are two rules A and B that can be triggered when an event occurs, if **triggerStop** is true for A, rule evaluation will be stopped after A and rule B will never be evaluated.  Note that **triggerStop** only prevents execution of roles in the same scope.  Rules in other scopes will still be executed.
+* **actionType**: Type of the action to perform if the rule triggers.  Can be one of the following values:
+  * **fatal**: Generate an error message and abort the triggering operation.  Also perform no more rule checks.  This option is intended for developers only and should be only be used for serious, un-recoverable errors.  For most cases, one should use the **error** option below instead.  End users should not be allowed to select this option.
+  * **error**: Generate an error message and abort the triggering operation.
+  * **warning**: Generate an warning message.  The triggering operation will not be aborted.
+  * **info**: Generate an informational message.  The triggering operation will not be aborted.
+  * **debug**: Generate a debugging message.  The triggering operation will not be aborted.  This option is intended for developers only.  End users should not be allowed to select this option.
+  * **addProduct**: Automatically add a product to the parent product or quote.
+  * **deleteProduct**: Automatically delete a product to the parent product or quote.
+  * **addDiscount**: Automatically add a pricing discount to the parent product or quote.
+  * **needsApproval**: Mark this quote as needing approval.
+* **actionParams**: A JSON object specifying additional parameters needed to peform the action.  The meaning of these parameters vary based on the value of the **actionType** field.
+
+#### Trigger condition syntax
+
+Trigger conditions in rules will use the formula syntax specified the [[ADL Form Objects]] document.
+
+##### Formula variables
+
+One can access any attribute, group, or CPQ-computed value using the naming syntax described in the previous section.
+
+Additionally, the following special variables are defined
+
+* **this**: The object that the condition or formula is attached to.
+
+##### Formula functions
+
+In addition to the standard ADL Form Object formula functions, the following functions will be supported:
+
+* **PROD_COUNT(productCode [, productGroup])**: Returns a count of all products with the given code in the named group.  If the group name is missing, then this is for all groups.
+* **PROD_QTY(productCode [, productGroup])**: Returns a the sum of the quantities of all products with the given code in the named group.  If the group name is missing, then this is for all groups.
+* **HAS_PROD(productCode [, productGroup])**: Returns true if there is a product with the given code in the named group.  If the group name is missing, then this is for all groups.  This is basically just a shorthand for `(PROD_COUNT(productCode, productGroup) > 0)`.
+* **CAT_COUNT(categoryName [, productGroup])**: Returns a count of all products in the given category in the named group.  If the group name is missing, then this is for all groups.
+* **CAT_QTY(categoryName [, productGroup])**: Returns a the sum of the quantities of all products in the given category in the named group.  If the group name is missing, then this is for all groups.
+* **HAS_CAT(productCode [, productGroup])**: Returns true if there is a product in the given category in the named group.  If the group name is blank, then this is for all missing.  This is basically just a shorthand for `(CAT_COUNT(productCode, productGroup) > 0)`.
+* **QTY([productGroup])**: Returns a the sum of the quantities of all products in the named group.  If the group name is missing, then this is for all groups.
+
+#### Rule trigger parameters
+
+This section describes the allowed parameters in the **triggerParams** JSON object field of a rule.  The parameters allowed  vary based on the value of the **triggerType** field.
+
+##### updatePrice trigger parameters
+
+* **priceBook**: If specified, then this rule will only be applied to quotes that use this named price book.
+* **stage**: This identifies at what time during the pricing computation that this rule should be executed.  This field can take one of the following values:
+  * **lineItemSubtotal**:  This rule will be evaluated just after the subtotal (cpq_list_total_price) for a single line-item is computed, just before user-specified discounts are applied.
+  * **lineItemTotal**: This rule will be evaluated just after the net price (cpq_net_total_price) for a single line-item is computed.  
+  * **productGroupSubtotal**: This rule will be evaluated just after the subtotals for a product group are computed.
+  * **quoteStart**: This rule will before any pricing computations in the quote have been performed.
+  * **quoteEnd**: This rule will after all pricing computations in the quote have been performed.
+
+##### checkApproval triggerParameters
+
+* **watchedInputs**: Comma separated list of quote input fields that will be watched by this rule.  When a rule is approved, the values of all watched inputs will be saved.  If the quote is later modified, the rule will not be triggered unless one of the watched inputs change since the last approval.
+
+#### Rule action parameters
+
+This section describes the allowed parameters in the **actionParams** JSON object field of a rule.  The parameters allowed  vary based on the value of the **actionType** field.
+
+##### Error action parameters
+
+* **message**: Error message to display to the user.
+
+##### Warning action parameters
+
+* **message**: Informational message to display to the user.
+
+##### Info action parameters
+
+* **message**: Informational message to display to the user.
+
+##### addProduct action parameters
+
+* **product**: Name of the product to add to the parent product or quote.  If this product is already present, no action is taken.
+* **group**: Name of the product group to add the product to.
+
+##### addDiscount action parameters
+
+* **label**: Label to display for this discount in the quote
+* **disUnit**: Unit type of discount.  Can be one of the following
+  * **amount**: Discount is a fixed amount.
+  * **percent**: Discount is a percentage.
+* **disMethod**: Method to use to compute the discount.  It can be one of the following:
+  * **fixed**: Discount is a fixed value read from the **disValue** field.
+  * **formula**: Discount is computed from the **disFormula** field.
+* **disValue**: Amount of the discount.
+* **disFormula**: ADL form expression to use to compute the discount
+
+##### needsApproval action parameters
+
+* **reason**: User-friendly description why the quote needs approval.  This description can contain macro expressions using fields from the quote.  These macro expressions written as `${expr}` where `expr` is a valid ADL form expression.
+* **approver**: Approver Group that needs to approve this quote.
+* **requestTemplate**: Email template for the approval request.
+* **requestCancelledTemplate**: Email template sent to approvers when the request is cancelled.
+
 
 ### Product UI Layouts
 
