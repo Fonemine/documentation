@@ -303,8 +303,30 @@ This section enables the administrator to choose which input variables to show a
 ## 5. Approvals
 Once a quote is generated, it sometimes needs to be approved, especially if the quote used non-standard pricing or it is inaccurate because it is missing some key details. While the quote may be valid, (based on application of the validation rules), it may still not meet the business objectives. To address this issue, the MobileForce CPQ system provides a mechanism for human intervention: whereby valid quotes are sent through a business chain of command for approval. The idea is that the approvers would eyeball the quote to make sure that business objectives are met, thus approving or rejecting the quote. While quote approvals can quickly morph into complex approval workflows, it is important to keep the approval process simple, transparent, and easy to understand and program.
 
+In MobileForce CPQ, Approval rules can be attached to a quote, a product, or a product group to specify the conditions under which the quote needs approval. The MobileForce CPQ Approval process supports  multiple levels of approvals, where approvers at one level will need to approve the quote before an approval request is sent to the next level. If multiple approval rules trigger, approval is required from the highest approval level specified by the rules.
 
 ### 5.1. Approver Groups
+
+**Approval Rules** :  An approval rule specifies the conditions on which an approval is required as well as who needs to perform the approval. Approval rules use the Rule objects, described in section 7.
+
+**Approval Groups** An approver group identifies a set of one or more users than can approve a quote.
+
+Each MobileForce CPQ Approval Group has a (required) **name** field. In addition, Approval Groups typically have the following fields:
+
+* **level** : Numerical approval level. When a quote needs approval from multiple approval groups, it will request approval from groups with lower approval levels before requesting approval from groups with higher approval levels. For example, if a quote needs approval from a 'Manager' approval group at level 1 and a 'VP' approval group at level 2, an approval request to the 'VP' group will not be sent until after the 'Manager' approval group has approved it.
+
+Approvers can be individual users or roles. In addition, approvers can be notified approvers, who get notified, or additional approvers who do not get notified of approvals. The following kinds of approvers are supported, each allowing optional notification. Thus, you can specify approvers in three ways, by explicit email addresses, by MobileForce roles, or by a form expression that evaluates to an email address.
+
+* **User Emails** :A comma separated list of email addresses of users that can approve the quote. These users will be NOT be notified on approval requests.
+* **User Roles** : A comma separated list of MobileForce roles. All MobileForce users in these roles can approve the quote. These users will be NOT be notified on approval requests.
+* **Dynamic Expression** : An  form expression that returns a comma separated list of email addresses that can approve the quote. These users will be NOT be notified on approval requests.
+
+![Create Approval Groups in MobileForce CPQ](/images/add_edit_approver_groups.png)
+
+Approval Groups splits approvers into two categories: notified approvers and un-notified approvers. Both kinds of approvers can approve the quote. However, only notified approvers receive notifications on approval requests. For example, one may wish to make a supervisor be a notified approver but the supervisor's manager be an un-notified approver. This is done so that the supervisor's manager does not get spammed by day-to-day approval requests but can approve a quote for exceptional cases, (e.g., the supervisor is sick that day.)
+
+In future, MobileForce CPQ will support approval history, where every quote will have an associated approval history, for the purposes of creating an audit trail.
+
 ### 5.2. Email Templates
 
 ## 6. Quote and Contract Documents
