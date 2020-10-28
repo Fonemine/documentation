@@ -22,7 +22,7 @@ The following fields of a MobileForce CPQ price book are found in almost all CPQ
 * **ACL**: indicating the user roles for the users that are allowed access to the price book. For instance, the US price book may be accessible only by sales user roles who are employed and selling within the USA, and hence not accessible to sales reps who are not members of the sales-USA role, because they sell in the Japan market.
 
 Once a price book is created, the next step is to create product categories,then create products and services within their respective product categories.
-Finally we create pricing for the products in different price books to reflect the differences in the markets that these different price books represent.
+Finally we create pricing for the products where we specify the price specific to one or more price books to reflect the different prices for the product in the different markets that these different price books represent.
 
 ## Products/Services
 
@@ -38,10 +38,12 @@ Product Categories  are hierarchal groupings of products. A product category can
 
 ![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
 
-Each MobileForce CPQ Product Category has a (required) **name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs.
+Each MobileForce CPQ Product Category has a (required) **name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **description** and **Image**.
 
 
 ### Products, Configurations and Rules
+
+
 ### Product UI Layouts
 
 ## Quotes
