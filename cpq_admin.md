@@ -365,7 +365,7 @@ Starting from a quote, MobileForce CPQ can generate a set of documents. Each doc
 
 The following document template is used to generate a proposal for a customer that is based on their use of SugarCRM CRM. This document template has the following sections
 
-Each MobileForce document template has a (required) **name** field. In addition, document templates typically have the following fields:
+Each MobileForce document template has a (required) **Name** field. In addition, document templates typically have the following fields:
 
 ![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
 
@@ -376,7 +376,6 @@ Each MobileForce document template has a (required) **name** field. In addition,
 * **Disabled Condition** : An optional rule expression that should be evaluated to determine whether this document template should be disabled, (i.e., shown but unselectable), in the list of documents that can be generated.
 
 * **Generated File Format** : Format of the target document generated from this template. Can be one of the following:
-
   * docx: A MS Word document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Word document.
   * xlsx: A MS Excel document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Excel document.
   * pdf: A PDF document. Templates using this format can have one or more sections.
