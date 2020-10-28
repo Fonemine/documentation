@@ -52,7 +52,8 @@ Additional optional fields include **description** and **Image**.
 
 ![Create Product General Section in MobileForce CPQ](/images/add_product_general.png)
 
-2. Configuration Section:
+2. Configuration Section: This section describes whether the product is a simple or a configurable product.
+
 
 ![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
 
