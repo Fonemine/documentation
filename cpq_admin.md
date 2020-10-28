@@ -20,15 +20,15 @@ The following fields of a MobileForce CPQ price book are found in almost all CPQ
 * **ACL**: indicating the user roles for the users that are allowed access to the price book. For instance, the US price book may be accessible only by sales user roles who are employed and selling within the USA, and hence not accessible to sales reps who are not members of the sales-USA role, because they sell in the Japan market.
 
 Once a price book is created, the next step is to create product categories,then create products and services within their respective product categories.
-Finally we create pricing for the products where we specify the price specific to one or more price books to reflect the different prices for the product in the different markets that these different price books represent.
+Finally we create pricing for the products where we specify the price relative to a price book to reflect the price for the product in the specific market that this price book represents. A product may have different pricing entries and price values for different price books.
 
 ## 2. Product/Service Categories
 
-Product/Service Categories in MobileForce CPQ are hierarchal groupings of products or services that are configured and sold to the customer. 
+Product/Service Categories in MobileForce CPQ are hierarchal groupings of products or services that are sold to the customer. 
 
-In the MobileForce CPQ UI, it is simply called a **Product Category** to represent both products and service categories. 
+In the MobileForce CPQ, this entity is simply called a **Product Category** to represent both products and service categories. 
 
-A product or service category can be nested within another category. Products/Services can belong to multiple categories. For a Product/Service to be usable and added to a Quote, it must belong to at least one category.
+A product or service category can be nested within another category. Products/Services can belong to multiple categories. For a Product/Service to be usable and added to a Quote, it must belong to at least one product category.
 
 ![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
 
@@ -36,13 +36,13 @@ Each MobileForce CPQ Product Category has a (required) **Name** field. In additi
 
 ## 3. Products/Services
 
-A product/service is anything that is sold by the business, irrespective of whether it is free or has a price. A product/service belongs to a category. Typically products are individual **line items** in *quotes*. When an end-user creates a new Quote, they can add one or more products or service items by browsing or searching this catalog.
+A product/service is anything that is sold by the business, irrespective of whether it is free or has a price. A product/service belongs to a category. Typically products are individual **line items** in *quotes*. When a MobileForce CPQ end-user creates a new Quote, they can add one or more products or service items by browsing or searching this catalog.
 
-In the MobileForce CPQ UI, a Product/Service are collectively simply called a **Products** to represent both product and service items.
+In the MobileForce CPQ, Products/Services are collectively simply called **Products** to represent both product and service items.
 
-A product item in this catalog can represent a physical product, a software product or a virtual/online product or a recurring subscription product. Similarly, a service item can represent a one-time setup or installation service, a design consultation service, professional services, a maintenance/repair service or a recurring warranty service.
+A product item can represent a physical product, a software product or a virtual/online product or a recurring subscription product. Similarly, a service item can represent a one-time setup or installation service, a design consultation service, professional services, a maintenance/repair service or a recurring warranty service.
 
-Products may contain nested products, representing bundled products or product features. Such nested products are stored in objects known as product groups. Products may also have attributes, (e.g., color). Rules can be specified on products to ensure valid configuration. To ease the management of products in the product catalog, products are organized in hierarchical categories.
+Products may be nested i.e., a product may contain other products, representing bundled products or product features. Such nested products are stored in objects known as product groups. Products may also have attributes, (e.g., color). Rules can be specified on products to ensure valid configuration. To ease the management of products in the product catalog, products are organized in hierarchical categories.
 
 Products can be broken down into two types: **Simple** and **Configurable**. Simple products have no attributes nor nested products. Configurable products may have attributes, nested products, or both. Configurable products have an associated **Product UI Layout** describing their attributes, nested products, and UIs that will be rendered to the end-user to configure the product after they have added it to the quote.
 
@@ -127,7 +127,7 @@ Under **Prices** sub-section, the two fields that can be specified are **List Pr
 
 For the **Volume**, **Tiered**, and **Block** methods, the price book item will have an associated matrix of prices, which provide a list price for a given range of quantities.
 
-Each row in this matrix will have the following fields.
+Each row in this matrix has the following fields.
 
 - **Id**: Internal unique numerical ID for this table row.
 - **Price Book Item Id**: Id of the price book item owning this tier
@@ -139,7 +139,7 @@ Each row in this matrix will have the following fields.
 
 #### 3.1.4. Approval Section
 
-Here, one can specify the **rules** that are used to decide how the product pricing in a quote is approved. Note that ONLY individual product-related rules are specified here. Most **rules** are typically specified at the Quote level (see **Quote Templates** under the **Quotes** section below). Product-level rules typically only make sense for **Configurable Products** or products with nested child products.  They only apply within scope of the product itself. You can use them to validate custom fields, (e.g., end date must be less than start date), or make constraints or actions for line tables inside the product. 
+In this section, we specify the **rules** that are used to decide how the product pricing in a quote is approved. Note that ONLY individual product-related rules are specified here. Most **rules** are typically specified at the Quote level (see **Quote Templates** under the **Quotes** section below). Product-level rules typically only make sense for **Configurable Products** or products with nested child products.  They only apply within scope of the product itself. You can use them to validate custom fields, (e.g., end date must be less than start date), or make constraints or actions for line tables inside the product. 
 
 ![Create Product Approval Section in MobileForce CPQ](/images/add_product_approval.png)
 
@@ -166,11 +166,11 @@ Product or Service items that are of type **Configurable** must have an associat
 
 ## 4. Quotes
 
-A **Quote** in the CPQ System consists of two separate modular components designed for ease of use, ease of maintenance and scalability:
+A **Quote** in the MobileForce CPQ System consists of two separate modular components designed for ease of use, ease of maintenance and scalability:
 - **Quote Template**: This represents the structure, state and logic of what products/services can go into a Quote, what price book to use, what rules constrain products/services that can be added or how they can be priced/discounted, and finally what approvals need to be processed based on various conditions.
 - **Quote UI Layout**: This represents the UI that guides the end-user to create a valid quote and go through the whole Configure, Price, Quote, Approvals and Document Generation workflow as quickly and efficiently as possible.
 
-In the CPQ system, both the **Quote Template** and the **Quote UI Layout** come with a Default Template and a Default Layout, respectively. This enables administrators to quickly get started and customize them by simply copying and modifying them.
+In the MobileForce CPQ system, both the **Quote Template** and the **Quote UI Layout** come with a Default Template and a Default Layout, respectively. This enables administrators to quickly get started and customize them by simply copying and modifying them.
 
 From an end-user perspective, the CPQ system enables the end-user to create a Quote for a specific Quote Template. In essence, the user implicitly creates a Quote from a Quote Template. In the end-user UI, the CPQ system maintains different sections, where it lists all Quotes created from a specific Quote Template separately from Quotes created from a different Quote Template.
 
@@ -406,7 +406,7 @@ Each MobileForce CPQ Email Template has a (required) **Name** field. In addition
   * Text: Body is plain text
   * Html: Body is a HTML document
 
-The CPQ System provides a default built-in HTML content for each of the different types of template that can be used as a starting point by an administrator. An administrator can set the email to default content by clicking on *Set Content to Default* button.
+The MobileForce CPQ System provides a default built-in HTML content for each of the different types of template that can be used as a starting point by an administrator. An administrator can set the email to default content by clicking on *Set Content to Default* button.
 
 ![Create Email Templates in MobileForce CPQ](/images/add_edit_email_template.png)
 
@@ -612,3 +612,4 @@ Additionally, the following special variables are defined
 #### 7.3.4. OpenTBS Variables in Document Templates
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
+
