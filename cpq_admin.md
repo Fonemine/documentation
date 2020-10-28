@@ -2,7 +2,7 @@
 
 ## Price Books
 
-## Products
+## Products/Services
 ### Product Categories
 ### Products, Configurations and Rules
 ### Product UI Layouts
