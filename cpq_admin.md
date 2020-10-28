@@ -64,10 +64,9 @@ The quantity attribute has the following fields:
 2. **Default**: Default value of the quantity. By default, it is 1.
 3. **Minimum quantity** : Minimum allowed value of the quantity. By default, it is 1.
 4. **Maximum quantity** : Maximum allowed value of the quantity. By default, it is 1,000,000.
-
-
-qtyListitems: If specified, the quantity will be displayed as a dropdown list with the given list of items. The value of this attribute takes the format "value1|label1|value2|label2|..."
-qtyParentMul: Boolean indicating whether the final quantity should be this product's quantity times the parent product's final quantity. For example, if one adds 3 PC computers with 2 hard-disks each, the quote should use a final quantity of 6 to compute the price. By default this field is 0, (false).
+5. **Unit of Measurement** : This is an optional string to display after a quantity. Example values are ea, users, ft, lbs.
+6. **Multiply with Parent Product's quantity** : Boolean indicating whether the final quantity should be this product's quantity times the parent product's final quantity. For example, if one adds 3 PC computers with 2 hard-disks each, the quote should use a final quantity of 6 to compute the price. By default this field is 0, (false).
+7. **QuantityStep** : Numerical step value of the quantity. An entered quantity must be an integer multiple of the step. This step can be fractional, (e.g., 0.01). By default, it is 1.
 
 ![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
 
