@@ -329,6 +329,30 @@ In future, MobileForce CPQ will support approval history, where every quote will
 
 ### 5.2. Email Templates
 
+Since quotes are sent for approval by email, it is natural to provide email templates that can be used to generate the approval requests as well as the approval/rejection. MobileForce CPQ not only supports email templates for various approval workflows, it also supports distinct email templates that can be created and saved for subsequent use by different users for different purposes.
+
+Quotes can have one or more email templates. These templates are used to generate emails as part of the quote process, such as approvals.
+
+The subject and body of email templates can contain macro variables of the form '${form-expr}', where form-expr is a valid  form expression that can reference fields in the quote.
+
+Each MobileForce CPQ Email Template has a (required) **name** field. In addition, Email Templates typically have the following fields:
+
+* **purpose** : Purpose of the email template. Can be one of the following:
+  * approvalRequest: Approval request sent to an approver.
+  * approvalRequestCanceled: Email sent to an approver to indicate that an approval has been cancelled.
+  * approvalApproved: Email sent to the quote owner indicating that the quote is approved.
+  * approvalDeclined: Email sent to the quote owner indicating that the quote is declined.
+  * approvalCancelled: Email sent to the quote owner indicating that the quote's approval process was cancelled.
+
+* **subject** : Email subject. Can contain macro variables.
+* **body** : Email body. Can contain macro variables
+* **bodyFormat** : Format of the email body. Can be one of the following:
+  * text: Body is plain text
+  * html: Body is a HTML document
+
+
+![Create Email Templates in MobileForce CPQ](/images/add_edit_email_template.png)
+
 ## 6. Quote and Contract Documents
 A sales contract is a formal agreement between the seller and a buyer, where the seller provides products or services, for payment or a promise of payment from the buyer. Since sales contracts cover legal aspects of a sale, they often have distinct sections such as legal provisions (state laws and arbitration) as well terms and conditions of the sale. In order to simplify the creation of sales contracts, document templates are used. These templates contain customizable sections that provide the presentation of sales  records such as line items, signature fields, and terms and conditions. The sections can be included or excluded.
 
