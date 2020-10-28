@@ -1,13 +1,13 @@
 ## End-user Guides
 
-- [ServiceVelocity&trade; Field Service Management Software](fsm_user.html)
-- [CPQ&trade; Configure, Price, Quote Software](cpq_user.html)
+- [ServiceVelocity&trade; Field Service Management Software]
+- [CPQ&trade; Configure, Price, Quote Software]
 
 ## Admin Guides
 
-- [ServiceVelocity&trade; Field Service Management Software](fsm_admin.html)
-- [CPQ&trade; Configure, Price, Quote Software](cpq_admin.html)
-- [AppVelocity&trade; Custom Web Portals and Mobile App Publisher Software](apps_admin.html)
+- [ServiceVelocity&trade; Field Service Management Software]
+- [CPQ&trade; Configure, Price, Quote Software]
+- [AppVelocity&trade; Custom Web Portals and Mobile App Publisher Software]
 
 ## Integration Guides
 
