@@ -300,14 +300,55 @@ This section enables the administrator to choose which input variables to show a
   * **Add Discount**: Automatically add a pricing discount to the parent product or quote. One can specify the discount type as a fixed **percent** or a fixed **amount** or a dynamically computed formula using an expression (see **CPQ Rules, Functions and Variables** section for syntax of expressions).
   * **Needs Approval**: Mark this quote as needing approval along with a specific reason (user-friendly description why the quote needs approval). This description can contain macro expressions using fields from the quote. These macro expressions written as `${expr}` where `expr` is a valid CPQ expression. In addition, one can specify a specific **Email Template** to use and an **Approver Group** to send this approval to.
 
-## Approvals
-### Approver Groups
-### Email Templates
+## 5. Approvals
+### 5.1. Approver Groups
+### 5.2. Email Templates
 
-## Contract Documents
-### Template Files
-### Document Templates
+## 6. Quote and Contract Documents
+A sales contract is a formal agreement between the seller and a buyer, where the seller provides products or services, for payment or a promise of payment from the buyer. Since sales contracts cover legal aspects of a sale, they often have distinct sections such as legal provisions (state laws and arbitration) as well terms and conditions of the sale. In order to simplify the creation of sales contracts, document templates are used. These templates contain customizable sections that provide the presentation of sales  records such as line items, signature fields, and terms and conditions. The sections can be included or excluded.
 
+Starting from a quote, MobileForce CPQ can generate a set of documents. Each document is generated from a document template which contains one or more sections. Each section has an associated MS word or excel file containing macro variables that are expanded upon generation. Users  have the option to include or exclude sections from the document.
+
+### 6.1. Document Templates
+
+The following document template is used to generate a proposal for a customer that is based on their use of SugarCRM CRM. This document template has the following sections
+
+Each MobileForce document template has a (required) **name** field. In addition, document templates typically have the following fields:
+
+![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
+
+* **Owning Quote**: the quote from which the proposal is being generated
+* **Quote must be valid**: a toggle which ensures that only valid quotes can be used to generate a proposal. If set to true, and the owning quote is not a valid quote, then the proposal will not be generated. By default, it is set to True.
+* **Can generate when locked**: a toggle which if set to true permits the proposal to be generated from this template even if the current quote instance is locked. By default, it is set to True. 
+* **Hidden Condition** : An optional rule expression that should be evaluated to determine whether this document template should be displayed when displaying the list of documents that can be generated.
+* **Disabled Condition** : An optional rule expression that should be evaluated to determine whether this document template should be disabled, (i.e., shown but unselectable), in the list of documents that can be generated.
+
+* **Generated File Format** : Format of the target document generated from this template. Can be one of the following:
+
+  * docx: A MS Word document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Word document.
+  * xlsx: A MS Excel document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Excel document.
+  * pdf: A PDF document. Templates using this format can have one or more sections.
+
+* **Generated Filename** : File name of the generated document.
+
+* **Generated File ACL** : Access Control List (ACL) for the generated document. Users that are authorized by this ACL can view the generated document. Note that this is different than the acl field for this object, which identifies which users can generate the document.
+
+* **Generated File Hidden Condition** : An optional rule expression which will determine if the generated document will be visible to the user.
+
+* **Document Sections** : the various sections in the document template, indicating the order in which they appear, and whether they are optional or not. Furthermore, each section has an associated filename, which describes the file from which the section is generated. Different sections can use different files.
+ Document template sections  have the following required fields:
+ 
+ ![Create section in document template for a proposal in MobileForce CPQ](/images/add_edit_proposal_document_template_section.png)
+
+  * **Name** : Displayed name for this section.
+  * **Order** : Order of this section within the parent document template. Sections within a document template are ordered by this field in ascending order.
+   * **SourceFilename** : Name of the template file to use to generate this section. This file must be either a MS Word file, a MS Excel file, or a PDF file. If this is a MS Word or Excel file, it can include macro expressions.
+   
+In addition, the following optional fields are supported in a document template section:
+
+  * **Hidden Condition** : An optional rule expression which determines whether this section should be hidden from the user. Hidden senctions will never be included in the generated document.
+  * **Optional** : Boolean value indicating whether the user is allowed to exclude this section from the document on document generation. 
+ 
 ## 7. CPQ Rules, Expressions, Functions and Variables
 
 Products and Quotes may have one or more rules that are used in **Configuration**, **Pricing** and **Approvals**. A rule specifies an automated action that should be performed on a product or quote when some event occurs on that product or quote.
