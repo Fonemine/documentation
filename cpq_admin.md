@@ -458,7 +458,7 @@ In addition, the following optional fields are supported in a document template 
 
 Products and Quotes may have one or more rules that are used in **Configuration**, **Pricing** and **Approvals**. A rule specifies an automated action that should be performed on a product or quote when some event occurs on that product or quote.
 
-### 7.1. Rule Expressions and Formula Syntax
+### 7.1. Rule Expressions and  Syntax
 
 Rule expressions can be composed using a combination of built-in system variables, user-specified custom variables, built-in functions and built-in operators (logical and arithmetic). Rule expressions are modeled after the familiar Microsoft Excel formula syntax.  More exactly, only string and numeric scalar data types are supported and the set of allowed functions are listed below.  The variables in the formula can be referenced by their names.  A formula can only reference variables that are either built-in system variables listed below or input field names that are specified in **Quote UI Layout** or a **Product UI Layout**. 
 
@@ -509,7 +509,7 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
-### 7.2. Built-in Formula Functions
+### 7.2. Built-in  Functions
 
 The following standard Microsoft Excel-like functions are supported:
 
@@ -553,9 +553,9 @@ In addition, the following CPQ-specific functions are supported:
 * **HAS_CAT(productCode [, productGroup])**: Returns true if there is a product in the given category in the named group.  If the group name is blank, then this is for all missing.  This is basically just a shorthand for `(CAT_COUNT(productCode, productGroup) > 0)`.
 * **QTY([productGroup])**: Returns a the sum of the quantities of all products in the named group.  If the group name is missing, then this is for all groups.
 
-###  7.3. Built-in Formula Variables
+###  7.3. Built-in  Variables
 
-One can access any attribute, group, or CPQ-computed value using the formula and naming syntax described in the previous section. In the CPQ system, all the variables and values in the entire Quote is stored as a JSON object with nested fields. The top level JSON object will contain data for the entire quote.  Each attribute or product group (line items array) defined for the quote will be a field in this JSON object. So, a standard JSON notation can be used to refer to any variable contained in the quote using nested level references for hierarchy. In general, for non-primitive system or input variables, say, **arrays**, a JSON-object notation can be used to refer to variables inside them. For example: **line_items[1].cpq_quantity** will refer to the value of the Quantity field of the 2nd line item added in the Quote. By convention, the names of all CPQ-specific inputs will be prefixed with or contain 'cpq_'. Users are free to define their own inputs (variables) in **Product UI Layouts** or **Quote UI Layouts** with names that do not have 'cpq_' in them.
+One can access any attribute, group, or CPQ-computed value using the naming syntax described in the previous section. In the CPQ system, all the variables and values in the entire Quote is stored as a JSON object with nested fields. The top level JSON object will contain data for the entire quote.  Each attribute or product group (line items array) defined for the quote will be a field in this JSON object. So, a standard JSON notation can be used to refer to any variable contained in the quote using nested level references for hierarchy. In general, for non-primitive system or input variables, say, **arrays**, a JSON-object notation can be used to refer to variables inside them. For example: **line_items[1].cpq_quantity** will refer to the value of the Quantity field of the 2nd line item added in the Quote. By convention, the names of all CPQ-specific inputs will be prefixed with or contain 'cpq_'. Users are free to define their own inputs (variables) in **Product UI Layouts** or **Quote UI Layouts** with names that do not have 'cpq_' in them.
 
 #### 7.3.1. Quote Level System Variables
 
@@ -607,7 +607,7 @@ The CPQ specific fields for a product will be stored in the following fields:
 
 Additionally, the following special variables are defined
 
-* **this**: The object that the condition or formula is attached to.
+* **this**: The object that the condition is attached to.
 
 #### 7.3.4. OpenTBS Variables in Document Templates
 
