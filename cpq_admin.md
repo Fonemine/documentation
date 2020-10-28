@@ -352,9 +352,63 @@ Finally, in the **Response** subsection, the administrator can specify what type
 For **Approval Rules**, only a **Needs Approval** action type is supported.
 For **Pricing Rules**, **Add Product**, **Delete Product** and **Needs Approval** action types are not available as they are all product or approval related.
 
+
 ## 5. Approvals
+
+Once a quote is generated, it sometimes needs to be approved, especially if the quote used non-standard pricing or it is inaccurate because it is missing some key details. While the quote may be valid, (based on application of the validation rules), it may still not meet the business objectives. To address this issue, the MobileForce CPQ system provides a mechanism for human intervention: whereby valid quotes are sent through a business chain of command for approval. The idea is that the approvers would eyeball the quote to make sure that business objectives are met, thus approving or rejecting the quote. While quote approvals can quickly morph into complex approval workflows, it is important to keep the approval process simple, transparent, and easy to understand and program.
+
+Approval rules can be attached to a quote, a product, or a product group to specify the conditions under which the quote needs approval. The CPQ Approval process supports  multiple levels of approvals, where approvers at one level will need to approve the quote before an approval request is sent to the next level. If multiple approval rules trigger, approval is required from the highest approval level specified by the rules.
+
+The CPQ System manages multiple levels of approvals for Quotes. An approval request can be sent to a specific individual or a group of individuals (**Approver Groups**). The actual email that is sent out in each of the approval workflow steps can be customized by the administrator. 
+
 ### 5.1. Approver Groups
+
+This section enables administrators to create a named **Approver Group** that consists of a combination of individuals specified by direct emails or role names. An approver group identifies a set of one or more users than can approve a quote. The CPQ System also supports escalated approvals workflow. For example, an approval is first sent to a Manager before it is set to a Vice President and then to a CEO.
+
+In addition to specifying whom to notify for approvals, the CPQ System enables an administrator to specify authorized additional approvers who are not notified in the regular approval workflow process but are authorized to login to the system to approve requests on a contingency basis. For example, if a regular approver is out of office and unavailable, an authorized additional approver can step in and approve the request on their behalf.
+
+Each Approval Group has a (required) **Name** field. In addition, Approval Groups typically have the following fields:
+
+* **Level** : Numerical approval level. When a quote needs approval from multiple approval groups, it will request approval from groups with lower approval levels before requesting approval from groups with higher approval levels. For example, if a quote needs approval from a 'Manager' approval group at level 1 and a 'VP' approval group at level 2, an approval request to the 'VP' group will not be sent until after the 'Manager' approval group has approved it.
+
+Approvers can be individual users or roles. In addition, approvers can be notified approvers, who get notified, or additional approvers who do not get notified of approvals. The following kinds of approvers are supported, each allowing optional notification. Thus, you can specify approvers in three ways, by explicit email addresses, by MobileForce roles, or by a form expression that evaluates to an email address.
+
+* **User Emails** :A comma separated list of email addresses of users that can approve the quote. These users will be NOT be notified on approval requests.
+* **User Roles** : A comma separated list of MobileForce roles. All MobileForce users in these roles can approve the quote. These users will be NOT be notified on approval requests.
+* **Dynamic Expression** : An  form expression that returns a comma separated list of email addresses that can approve the quote. These users will be NOT be notified on approval requests.
+
+![Create Approval Groups in MobileForce CPQ](/images/add_edit_approver_groups.png)
+
+Approval Groups splits approvers into two categories: notified approvers and un-notified approvers. Both kinds of approvers can approve the quote. However, only notified approvers receive notifications on approval requests. For example, one may wish to make a supervisor be a notified approver but the supervisor's manager be an un-notified approver. This is done so that the supervisor's manager does not get spammed by day-to-day approval requests but can approve a quote for exceptional cases, (e.g., the supervisor is sick that day.)
+
+In future, MobileForce CPQ will support approval history, where every quote will have an associated approval history, for the purposes of creating an audit trail.
+
 ### 5.2. Email Templates
+
+Since quotes are sent for approval by email, it is natural to provide email templates that can be used to generate the approval requests as well as the approval/rejection. The CPQ System not only supports email templates for various approval workflows, it also supports distinct email templates that can be created and saved for subsequent use by different users for different purposes.
+
+Quotes can have one or more email templates. These templates are used to generate emails as part of the quote process, such as approvals.
+
+The subject and body of email templates can contain macro variables of the form '${form-expr}', where form-expr is a valid  form expression that can reference fields in the quote.
+
+Each MobileForce CPQ Email Template has a (required) **Name** field. In addition, Email Templates typically have the following fields:
+
+* **Purpose** : Purpose of the email template. Can be one of the following:
+  * Approval Request: Approval request sent to an approver.
+  * Cancel a Pending Approval Request: Email sent to an approver to indicate that an approval has been cancelled.
+  * Approved Confirmation: Email sent to the quote owner indicating that the quote is approved.
+  * Declined Confirmation: Email sent to the quote owner indicating that the quote is declined.
+  * Approval Cancelled Confirmation: Email sent to the quote owner indicating that the quote's approval process was cancelled.
+
+* **Subject** : Email subject. Can contain macro variables.
+* **Body** : Email body. Can contain macro variables
+* **Body Format** : Format of the email body. Can be one of the following:
+  * Text: Body is plain text
+  * Html: Body is a HTML document
+
+The CPQ System provides a default built-in HTML content for each of the different types of template that can be used as a starting point by an administrator. An administrator can set the email to default content by clicking on *Set Content to Default* button.
+
+![Create Email Templates in MobileForce CPQ](/images/add_edit_email_template.png)
 
 ## 6. Quote and Contract Documents
 A sales contract is a formal agreement between the seller and a buyer, where the seller provides products or services, for payment or a promise of payment from the buyer. Since sales contracts cover legal aspects of a sale, they often have distinct sections such as legal provisions (state laws and arbitration) as well terms and conditions of the sale. In order to simplify the creation of sales contracts, document templates are used. These templates contain customizable sections that provide the presentation of sales  records such as line items, signature fields, and terms and conditions. The sections can be included or excluded.
