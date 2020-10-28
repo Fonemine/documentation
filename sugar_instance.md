@@ -63,7 +63,7 @@
 
 ```php
 <?php
-$module_name='mfcpq_MobileForce_CPQ’;
+$module_name='mfcpq_MobileForce_CPQ';
 $viewdefs[$module_name]['base']['menu']['header'] = array();
 ```
 
