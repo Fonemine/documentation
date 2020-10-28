@@ -321,9 +321,6 @@ A sales contract is a formal agreement between the seller and a buyer, where the
 
 Starting from a quote, MobileForce CPQ can generate a set of documents. Each document is generated from a document template which contains one or more sections. Each section has an associated MS word or excel file containing macro variables that are expanded upon generation. Users  have the option to include or exclude sections from the document.
 
-### Template Files
-
-
 ### Document Templates
 
 The following document template is used to generate a proposal for a customer that is based on their use of SugarCRM CRM. This document template has the following sections
