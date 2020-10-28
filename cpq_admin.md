@@ -12,17 +12,35 @@ MobileForce CPQ supports the creation of multiple price books that can also be r
 
 Each MobileForce CPQ price book has a (required) **name** field. In addition, price books typically have the following fields:
 
-* **Currency**: specifying the currency used for all prices in the price book
+* **Currency**: specifying the currency used for all prices in the price book. For now, only "USA" is supported as a valid value for the currency field.
+
+The following fields of a MobileForce CPQ price book are found in almost all CPQ entities. For brevity, they are described once here, and not described again in other entities that also have these fields. 
+
 * **Effective Date**: The date starting which  products listed in the price book can be sold
 * **Expiration Date**: The date after which products listed in the price book can no longer be sold.
 * **Active**: a toggle indicating whether the price book is ready for use in CPQ systems or is still being developed.
 * **ACL**: indicating the user roles for the users that are allowed access to the price book. For instance, the US price book may be accessible only by sales user roles who are employed and selling within the USA, and hence not accessible to sales reps who are not members of the sales-USA role, because they sell in the Japan market.
 
-Once a price book is created, the next step is to add to the price book, the prices for products and services being sold.
+Once a price book is created, the next step is to create product categories,then create products and services within their respective product categories.
+Finally we create pricing for the products in different price books to reflect the differences in the markets that these different price books represent.
 
 ## Products/Services
 
+A product/service is anything that is sold by the business, irrespective of whether it has a price. Typically products are individual "line items" in *quotes*.
+
+Products may contain nested products, representing bundled products or product features. Such nested products are stored in objects known as product groups. Products may also have attributes, (e.g., color). Rules can be specified on products to ensure valid configuration. To ease the management of products in the product catalog, products are organized in hierarchical categories.
+
+Products can be broken down into two types: simple and configurable. Simple products have no attributes nor nested products. Configurable products may have attributes, nested products, or both. Configurable products  have an associated layout describing their attributes, nested products, and UIs.
+
 ### Product Categories
+
+Product Categories  are hierarchal groupings of products. A product category can be nested within another category. Products can belong to multiple product categories. For a product to be usable, it must belong to at least one product category.
+
+![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
+
+Each MobileForce CPQ Product Category has a (required) **name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs.
+
+
 ### Products, Configurations and Rules
 ### Product UI Layouts
 
