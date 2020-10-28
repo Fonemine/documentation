@@ -52,8 +52,22 @@ Additional optional fields include **description** and **Image**.
 
 ![Create Product General Section in MobileForce CPQ](/images/add_product_general.png)
 
-2. Configuration Section: This section describes whether the product is a simple or a configurable product.
+2. Configuration Section: This section describes whether the product is a simple or a configurable product and in each case, additional configuration attributes.
 
+The following fields are required:
+
+**type** indicating whether this product is simple or can be configured. That is, whether this product has editable attributes.
+
+The quantity attribute has the following fields:
+
+1. **editable** : Boolean indicating whether the quantity field is editable by the user. By default, it is 0, (editable).
+2. **Default**: Default value of the quantity. By default, it is 1.
+3. **Minimum quantity** : Minimum allowed value of the quantity. By default, it is 1.
+4. **Maximum quantity** : Maximum allowed value of the quantity. By default, it is 1,000,000.
+
+
+qtyListitems: If specified, the quantity will be displayed as a dropdown list with the given list of items. The value of this attribute takes the format "value1|label1|value2|label2|..."
+qtyParentMul: Boolean indicating whether the final quantity should be this product's quantity times the parent product's final quantity. For example, if one adds 3 PC computers with 2 hard-disks each, the quote should use a final quantity of 6 to compute the price. By default this field is 0, (false).
 
 ![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
 
