@@ -1,10 +1,11 @@
 # MobileForce in SugarCRM Instance Integration Guide
 
-## Step 1: Setup OAuth Keys
+## Step 1: Setup OAuth2 Keys
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon (top right) > Admin > System > OAuth Keys*
 - Click *OAuth Keys* tab on the Main Menu Navbar and in the drop down sub-menu, click on *Create OAuth Key*
 - Add a new consumer key with secret and save it safely
+- Make sure the OAuth type is set to OAuth2
 - Send the chosen *Consumer Key* and *Consumer Secret* to MobileForce team
 
 ![Create OAuth Key in SugarCRM](/images/sugar_oauth_key_create.png)
