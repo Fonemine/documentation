@@ -330,6 +330,8 @@ The following document template is used to generate a proposal for a customer th
 
 Each MobileForce document template has a (required) **name** field. In addition, document templates typically have the following fields:
 
+![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
+
 * **Owning Quote**: the quote from which the proposal is being generated
 * **Quote must be valid**: a toggle which ensures that only valid quotes can be used to generate a proposal. If set to true, and the owning quote is not a valid quote, then the proposal will not be generated. By default, it is set to True.
 * **Can generate when locked**: a toggle which if set to true permits the proposal to be generated from this template even if the current quote instance is locked. By default, it is set to True. 
@@ -349,10 +351,18 @@ Each MobileForce document template has a (required) **name** field. In addition,
 * **Generated File Hidden Condition** : An optional ADL form expression which will determine if the generated document will be visible to the user.
 
 * **Document Sections** : the various sections in the document template, indicating the order in which they appear, and whether they are optional or not. Furthermore, each section has an associated filename, which describes the file from which the section is generated. Different sections can use different files.
+ Document template sections  have the following required fields:
+ 
+ ![Create section in document template for a proposal in MobileForce CPQ](/images/add_edit_proposal_document_template_section.png)
 
-![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
+  * **Name** : Displayed name for this section.
+  * **Order** : Order of this section within the parent document template. Sections within a document template are ordered by this field in ascending order.
+   * **SourceFilename** : Name of the template file to use to generate this section. This file must be either a MS Word file, a MS Excel file, or a PDF file. If this is a MS Word or Excel file, it can include macro expressions.
+   
+In addition, the following optional fields are supported in a document template section:
 
-
+  * **hidden condition** : An optional  form expression which determines whether this section should be hidden from the user. Hidden senctions will never be included in the generated document.
+  * **Optional** : Boolean value indicating whether the user is allowed to exclude this section from the document on document generation. 
  
 ## CPQ Functions and Variables
 ### Built-in Variables
