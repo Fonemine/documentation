@@ -1,6 +1,9 @@
 # Configure, Price, Quote Admin Guide
+An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, the starting point of all CPQ systems.
 
 ## Price Books
+
+MobileForce CPQ supports the creation of multiple price books.
 
 ## Products/Services
 ### Product Categories
