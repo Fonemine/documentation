@@ -104,6 +104,25 @@ If the discount unit is an amount, then two additional fields provide the range 
 The price book entries sub-section within pricing section enables the product pricing to be specified in multiple price books. The following UI describes how this is done. First, the price book for which pricing is being provided is specified. Next, the product is specified. Both are required fields.
 Under "Prices" sub-section, the two fields that can be specified are **List Price** and **Method** 
 
+* **method**: Method to use to compute the product's subtotal from the product's quantity.  It can be one of the following:
+  * **flatFee**: Subtotal is a flat fee.  Quantity is ignored.
+  * **perUnit**: Subtotal is the list price multiplied by the quantity.
+  * **volume**: Subtotal is determined by looking up the list price from the price matrix, then multiplying it by the quantity.
+  * **tiered**: Similar to the **volume** method except the subtotal is computed by summing up the per tier prices.  For example, if tier 1 is $10 for 1-50 items and tier 2 is $8 for 51-100 items, then the price for a 70 items would be 50 x $10 + 20 x $8 = $660.  This is different from the **volume** method, where the subtotal would be 70 * $8 = $560.
+  * **block**: Similar to the **volume** method except the value read from the table is not multiplied by the quantity.  For example, if the table has $500 for 51-100 items, then the subtotal for 70 items will be $500.
+* **listPrice**: Unit price for the product.  Used by the **flatFee** and **perUnit** methods.
+
+#### Price book item tier
+
+For the **volume**, **tiered**, and **block** methods, the price book item will have an associated matrix of prices, which provide a list price for a given range of quantities.
+
+Each row in this matrix will have the following fields.
+
+* **id**: Internal unique numerical ID for this table row.
+* **priceBookItemId**: Id of the price book item owning this tier
+* **from**: Start quantity of this tier.
+* **to**: End quantity of this tier.
+* **listPrice**: Unit price for this tier.
 
 ![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing_pricebook.png)
 
