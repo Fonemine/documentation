@@ -290,7 +290,15 @@ Each quote in MobileForce CPQ is specified through a UI consisting of 5 sections
 
 3. Forms Section
 
-![Create Quote Forms Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_forms.png)
+![Create Quote Forms General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_general.png)
+
+![Create Quote Forms Quote Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_quote.png)
+
+![Create Quote Forms Approvals Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_approvals.png)
+
+![Create Quote Forms Signature Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_signatures.png)
+
+![Create Quote Forms Signature Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_generated_docs.png)
 
 
 4. Actions Section
