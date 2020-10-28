@@ -277,6 +277,20 @@ This section describes the allowed parameters in the **actionParams** JSON objec
 
 ## Quotes. 
 ### Quote UI Layouts
+
+Each quote in MobileForce CPQ is specified through a UI consisting of 5 sections.
+
+1. General Section
+
+2. Types Section
+
+3. Forms Section
+
+4. Actions Section
+
+5. Summary Section
+
+
 ### Quote Templates and Rules
 
 ## Approvals
