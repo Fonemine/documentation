@@ -10,6 +10,11 @@
 
 ![Create OAuth Key in SugarCRM](/images/sugar_oauth_key_create.png)
 
+### Step 1a: Disable Client IP Change
+- Login to SugarCRM instance as an admin user
+- Go to *User Icon (top right) > Admin > System Settings* screen
+- Make sure you uncheck (clear) the setting *Validate user IP Address* under *Advanced* section
+
 ## Step 2: Create a MobileForce Custom Package and Module in SugarCRM
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Module Builder*
