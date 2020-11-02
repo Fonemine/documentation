@@ -623,7 +623,9 @@ Any input in a table, such product groups, are accessed by using the table's nam
 
 ### 7.4 Example Rule Expressions
 
-Here are some example rule expressions.
+#### 7.4.1 Example Rule Trigger Expressions
+
+Here are some example expressions used in rule triggers.
 
 * Trigger if product with product code 'apple' is in quote:<br/>
   `HAS_PROD('apple')`
@@ -637,3 +639,15 @@ Here are some example rule expressions.
   `B < C`
 * Trigger if the total discount is greater than 10%:<br/>
   `line_items_cpq_user_discount_subtotal > 10`
+
+#### 7.4.2 Example value expressions
+
+Here are some example expressions used to compute values for read-only form inputs.
+
+* Multiple input 'X' containing a price with an input 'Y' containing a percentage discount and round it to the nearest penny:<br/>
+  `ROUND(X * Y / 100, 2)`
+* If switch input 'F' is set to 1 ('Yes'), return 'X' plus the value 'Y, else return just 'X':<br/>
+  `IF(F = 1, X + Y, X)`
+* Add 30 days to the date input 'D':<br/>
+  `DATEADD(D, 30, 'd')`
+  
