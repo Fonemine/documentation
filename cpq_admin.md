@@ -620,3 +620,20 @@ The source files in document template sections will use [Open TBS](http://www.ti
 All top-level inputs in the quote are accessible using the `q` block.  For example, the effective data can be accessed by the macro `[q.cpq_eff_date;frm=’mm/dd/yyyy’]`, (the `;frm=’mm/dd/yyyy’` part is OpenTBS option describing how to format the date).
 
 Any input in a table, such product groups, are accessed by using the table's name as the block name.  For example, to access the net price for an element in the `line_items` product group, use the macro `[line_items.cpq_net_total_price;frm=’$ 0,000.00’]`.  Note that to get the table row to expand properly in the document to list all product group items, one of the items in the row must have the OpenTBS option ';block=tbs:row'
+
+### 7.4 Example Rule Expressions
+
+Here are some example rule expressions.
+
+* Trigger if product with product code 'apple' is in quote:<br/>
+  `HAS_PROD('apple')`
+* Trigger if product with product code 'apple' is in quote but not product with code 'bananas':<br/>
+  `HAS_PROD('apple') && ! HAS_PROD('bananas')`
+* Trigger if there is no product in category 'fruit' in the quote:<br/>
+  `! HAS_CAT('fruit')`
+* Trigger if Line Items Table 'line_items' has a quantity less than 5 of a product with code 'oranges':<br/>
+  `PROD_QTY('oranges', 'line_items') < 5`
+* Trigger if custom input named 'B' is less than custom input named 'C':<br/>
+  `B < C`
+* Trigger if the total discount is greater than 10%:<br/>
+  `line_items_cpq_user_discount_subtotal > 10`
