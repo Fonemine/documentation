@@ -129,7 +129,7 @@ $viewdefs[$module_name]['base']['layout']['records'] = array(
 - On your PC or Mac, open a Text Editor and create a local file called **mfcpq-view.hbs** with the following content and upload it to the **mfcpq-view** folder
 
 ```
-<iframe width="100%" height="750" src="https://apps.mobileforcesoftware.com/adlwebui/login.php?account=sugarmf&app=servicevelocity&al=1&target=native%3A%2F%2Fnav%3Fto%3DHome%3BCPQ&param-prefix=sugarcrm-&sugarcrm-instance={{authData.instance}}&sugarcrm-username={{authData.username}}&sugarcrm-display_name={{authData.display_name}}&sugarcrm-email={{authData.email}}&sugarcrm-accessToken={{authData.accessToken}}&sugarcrm-refreshToken={{authData.refreshToken}}&sugarcrm-downloadToken={{authData.downloadToken}}"></iframe>
+<iframe width="100%" height="900" src="https://apps.mobileforcesoftware.com/adlwebui/login.php?account=sugarmf&app=servicevelocity&al=1&target=native%3A%2F%2Fnav%3Fto%3DHome%3BCPQ&param-prefix=sugarcrm-&sugarcrm-instance={{authData.instance}}&sugarcrm-username={{authData.username}}&sugarcrm-display_name={{authData.display_name}}&sugarcrm-email={{authData.email}}&sugarcrm-accessToken={{authData.accessToken}}&sugarcrm-refreshToken={{authData.refreshToken}}&sugarcrm-downloadToken={{authData.downloadToken}}"></iframe>
 ```
 
 ## Step 6: Rebuild and Update Your SugarCRM Instance
