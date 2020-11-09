@@ -132,7 +132,31 @@ $viewdefs[$module_name]['base']['layout']['records'] = array(
 <iframe width="100%" height="900" src="https://apps.mobileforcesoftware.com/adlwebui/login.php?account=sugarmf&app=servicevelocity&al=1&target=native%3A%2F%2Fnav%3Fto%3DHome%3BCPQ&param-prefix=sugarcrm-&sugarcrm-instance={{authData.instance}}&sugarcrm-username={{authData.username}}&sugarcrm-display_name={{authData.display_name}}&sugarcrm-email={{authData.email}}&sugarcrm-accessToken={{authData.accessToken}}&sugarcrm-refreshToken={{authData.refreshToken}}&sugarcrm-downloadToken={{authData.downloadToken}}"></iframe>
 ```
 
-## Step 6: Rebuild and Update Your SugarCRM Instance
+## Step 6: Install Custom Buttons UI Module
+- Download [*wRecordButtons* Module ZIP File](/assets/wRecordButtons_v5.22.zip) to your computer
+- Login to SugarCRM instance as an admin user
+- Go to *User Icon > Admin > Module Loader*
+- Upload the Module ZIP File you downloaded to install the Module
+
+![Module Loader in SugarCRM](/images/sugar_module_loader.png)
+
+## Step 7: Add Custom Button to Opportunity Record View: A Deep Link to MobileForce CPQ
+- Login to SugarCRM instance as an admin user
+- Go to *User Icon > Admin > Studio > Opportunities Module > Fields*
+- Add a Custom Field of type wRecord Buttons
+![Custom Button Field in Opportunities Module in SugarCRM](/images/sugar_custom_button_field.png)
+
+- Configure the wRecord Custom Button as shown in the screenshot below
+![Custom Button Field Configuration in SugarCRM](/images/sugar_configure_custom_button.png)
+- For the Base URL textbox field in the custom button configuration, please copy and paste the following URL
+
+```
+https://apps.mobileforcesoftware.com/adlwebui/login.php?account=sugarcrm&target=native%3A%2F%2Fnav%3Fto%3DHome%253BNewSugarQuote%26params%3D%257B%2522form%2522%253A%257B%2522account%2522%253A%2522%257B%255C%2522key%255C%2522%253A%255C%2522{account_id}%255C%2522%252C%255C%2522value%255C%2522%253A%255C%2522{account_name}%255C%2522%257D%2522%252C%2522opportunity%2522%253A%2522%257B%255C%2522key%255C%2522%253A%255C%2522{id}%255C%2522%252C%255C%2522value%255C%2522%253A%255C%2522{name}%255C%2522%257D%2522%257D%257D
+```
+
+- Click *Save* on the Configuration screen. Then click on *Save* in the Edit Field screen.
+
+## Step 8: Rebuild and Update Your SugarCRM Instance
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Repair > Quick Repair and Rebuild*
 - Please wait. This will take 15-30 seconds to rebuild the system and will print out the log.
@@ -140,7 +164,7 @@ $viewdefs[$module_name]['base']['layout']['records'] = array(
 
 ![Quick Build and Repair in SugarCRM](/images/sugar_quick_repair_rebuild.png)
 
-## Step 7: Login and Use Your SugarCRM Instance with MobileForce CPQ
+## Step 9: Login and Use Your SugarCRM Instance with MobileForce CPQ
 - Login to SugarCRM instance as a regular user
 - **CPQ** Module names with no sub-menus will be shown in Mega Menu Navigation Bar 
 - When user clicks on the **CPQ** in Navigation Bar it will load the iframe to MobileForce
@@ -148,3 +172,7 @@ $viewdefs[$module_name]['base']['layout']['records'] = array(
 - Please login with the same credentials as the logged-in user
 - **CPQ** list of existing prosposals/quotes screen is shown. It may be empty on first login.
 - Click *Add* button on the bottom toolbar to create a new Quote/Proposal
+- Alternatively, go to any open *Opportunity* record in SugarCRM
+- Click on **+ CPQ** custom button at the top to create a new Quote/Proposal for that *Opportunity*
+
+![Create New Quote/Proposal in SugarCRM](/images/sugar_cpq_launch_points.png)
