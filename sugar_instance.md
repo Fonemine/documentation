@@ -151,7 +151,7 @@ $viewdefs[$module_name]['base']['layout']['records'] = array(
 - For the Base URL textbox field in the custom button configuration, please copy and paste the following URL
 
 ```
-https://apps.mobileforcesoftware.com/adlwebui/login.php?account=sugarcrm&target=native%3A%2F%2Fnav%3Fto%3DHome%253BNewSugarQuote%26params%3D%257B%2522form%2522%253A%257B%2522account%2522%253A%2522%257B%255C%2522key%255C%2522%253A%255C%2522{account_id}%255C%2522%252C%255C%2522value%255C%2522%253A%255C%2522{account_name}%255C%2522%257D%2522%252C%2522opportunity%2522%253A%2522%257B%255C%2522key%255C%2522%253A%255C%2522{id}%255C%2522%252C%255C%2522value%255C%2522%253A%255C%2522{name}%255C%2522%257D%2522%257D%257D
+https://apps.mobileforcesoftware.com/adlwebui/login.php?account=sugarmf&target=native%3A%2F%2Fnav%3Fto%3DHome%253BNewSugarQuote%26params%3D%257B%2522form%2522%253A%257B%2522account%2522%253A%2522%257B%255C%2522key%255C%2522%253A%255C%2522{account_id}%255C%2522%252C%255C%2522value%255C%2522%253A%255C%2522{account_name}%255C%2522%257D%2522%252C%2522opportunity%2522%253A%2522%257B%255C%2522key%255C%2522%253A%255C%2522{id}%255C%2522%252C%255C%2522value%255C%2522%253A%255C%2522{name}%255C%2522%257D%2522%257D%257D
 ```
 
 - Click *Save* on the Configuration screen. Then click on *Save* in the Edit Field screen.
