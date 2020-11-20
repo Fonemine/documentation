@@ -10,12 +10,12 @@
 
 ![Create OAuth Key in SugarCRM](/images/sugar_oauth_key_create.png)
 
-### Step 2: Disable Client IP Change Check
+## Step 2: Disable Client IP Change Check
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon (top right) > Admin > System Settings* screen
 - Make sure you uncheck (clear) the setting *Validate user IP Address* under *Advanced* section
 
-### Step 3: Add a API Platform
+## Step 3: Add a API Platform
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon (top right) > Admin > Configure API Platforms* screen
 - Add a new platform with the name *api* and *Save*
