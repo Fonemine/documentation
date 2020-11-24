@@ -79,7 +79,7 @@ https://<instance_name>/#mfdsr_MobileForce_DSR/{id}/{name}/{account_id}/{account
 - Replace <instance_name> in the above URL with your full instance domain name (ex: sg-mobileforce.demo.sugarcrm.com)
 - Click *Save* on the Configuration screen. Then click on *Save* in the Edit Field screen
 
-## Step 8: Rebuild and Update Your SugarCRM Instance
+## Step 7: Rebuild and Update Your SugarCRM Instance
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Repair > Quick Repair and Rebuild*
 - Please wait. This will take 15-30 seconds to rebuild the system and will print out the log.
@@ -87,7 +87,7 @@ https://<instance_name>/#mfdsr_MobileForce_DSR/{id}/{name}/{account_id}/{account
 
 ![Quick Build and Repair in SugarCRM](/images/sugar_quick_repair_rebuild.png)
 
-## Step 9: Login and Use Your SugarCRM Instance
+## Step 8: Login and Use Your SugarCRM Instance
 - Login to SugarCRM instance as a regular user
 - **CPQ**, **Field Service** and **Scheduler** Module names with no sub-menus will be shown in Mega Menu Navigation Bar 
 - When user clicks on the **CPQ** or **Field Service** or **Scheduler** in Navigation Bar it will load the iframe to MobileForce
@@ -98,7 +98,7 @@ https://<instance_name>/#mfdsr_MobileForce_DSR/{id}/{name}/{account_id}/{account
 
 ![Create New Quote/Proposal in SugarCRM](/images/sugar_cpq_launch_points.png)
 
-## Step 10: Move Up the MobileForce Module Tabs on the Main Menu for the Logged-in User
+## Step 9: Move Up the MobileForce Module Tabs on the Main Menu for the Logged-in User
 - Login to SugarCRM instance as any test user
 - Go to *User Icon > Profile*
 - Click on *Edit* button
