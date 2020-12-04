@@ -6,7 +6,7 @@
 ## Admin Guides
 
 - ServiceVelocity&trade; Field Service Management Software
-- CPQ Configure, Price, Quote Software
+- [CPQ Configure, Price, Quote Software](cpq_admin.html)
 - AppVelocity&trade; Custom Web Portals and Mobile App Publisher Software
 
 ## Integration Guides
