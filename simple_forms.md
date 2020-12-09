@@ -7,6 +7,13 @@ Please note that Simple Forms are distinct from Advanced Multi-screen Forms whic
 
 ## Simple Forms Creation Tool and Editor
 
+### Create Simple Forms
+From scratch.
+### Import Simple Forms
+From other existing Simple Forms
+### Import from Spreadsheet
+From Excel .xlsx spreadsheets
+
 ## Simple Forms View and Access
 
 ## A complete Simple Forms Example
