@@ -1,28 +1,28 @@
-# MobileForce Configure, Price, Quote Setup for Hubspot
+# MobileForce Configure, Price, Quote Setup for HubSpot
 
-## Step 1: Find and Install MobileForce CPQ from the Hubspot Marketplace
+## Step 1: Find and Install MobileForce CPQ from the HubSpot Marketplace
 This step is easy: Just head over to the hubspot marketplace, search for (and find) MobileForce CPQ, and click on the orange "Install app" button on the top right.
-![Install MobileForce CPQ from Hubspot Marketplace](/images/hubspot/1_MFInstallHubspotMarketplace.png)
+![Install MobileForce CPQ from HubSpot Marketplace](/images/hubspot/1_MFInstallHubspotMarketplace.png)
 
-## Step 2: Select the Hubspot Instance on which to Install MobileForce CPQ
+## Step 2: Select the HubSpot Instance on which to Install MobileForce CPQ
 If you have more than one hubspot instances, you'll be given the choice to select the one on which you'd like to access MobileForce CPQ.
-![Select the Hubspot Instance on which to Install MobileForce CPQ](/images/hubspot/2_SelectHubspotInstanceOnWhichToInstallMF.png)
+![Select the HubSpot Instance on which to Install MobileForce CPQ](/images/hubspot/2_SelectHubspotInstanceOnWhichToInstallMF.png)
 
-### Step 2a:  MobileForce   will request access to connect with your Hubspot Account
-Please accept the request which will enable MobileForce to access specific Hubspot objects as specified in the Data and Permissions section of the MobileForce CPQ listing on the Hubspot Marketplace.
-![Accept the MobileForce request to access your Hubspot instance](/images/hubspot/3_ConnectMFCPQToHubspot.png)
+### Step 2a:  MobileForce   will request access to connect with your HubSpot Account
+Please accept the request which will enable MobileForce to access specific HubSpot objects as specified in the Data and Permissions section of the MobileForce CPQ listing on the HubSpot Marketplace.
+![Accept the MobileForce request to access your HubSpot instance](/images/hubspot/3_ConnectMFCPQToHubspot.png)
 
 
-### Step 2b: A new MobileForce CPQ Instance will be created for your Hubspot Instance
+### Step 2b: A new MobileForce CPQ Instance will be created for your HubSpot Instance
 This step takes a minute or so.
 ![Creating a MobileForce CPQ instance for you](/images/hubspot/4_CreateMFCPQInstanceOnHubspot.png)
 
-### Step 2c: MobileForce CPQ Instance setup for your Hubspot Account is complete
+### Step 2c: MobileForce CPQ Instance setup for your HubSpot Account is complete
 You will receive a confirmation on the screen that your MobileForce CPQ setup is complete. 
 
 ![MobileForce CPQ setup complete](/images/hubspot/5_MFSetupOnHubspotComplete.png)
 
-In addition, you will also receive an email message (to the email address you used when you set up your Hubspot account) indicating that a free 30-day trial of the full feature MobileForce CPQ is now activated for you.  You can access your account in one of two ways, whichever way is convenient to you. You will be provided instructions to access MobileForce CPQ via
+In addition, you will also receive an email message (to the email address you used when you set up your HubSpot account) indicating that a free 30-day trial of the full feature MobileForce CPQ is now activated for you.  You can access your account in one of two ways, whichever way is convenient to you. You will be provided instructions to access MobileForce CPQ via
 
 * Embedded Access within HubSpot App
 * Direct Access on MobileForce CPQ App: accessible via SSO with your HubSpot credentials
@@ -30,7 +30,7 @@ In addition, you will also receive an email message (to the email address you us
 ![MobileForce CPQ setup complete](/images/hubspot/6_MFEmailConfirmation.png)
 
 
-# MobileForce Configure, Price, Quote  Use Guide for Hubspot
+# MobileForce Configure, Price, Quote  Use Guide for HubSpot
 An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
 
 ## 1. Price Books
