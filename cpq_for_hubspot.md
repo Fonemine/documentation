@@ -1,7 +1,7 @@
-# Configure, Price, Quote Setup
+# MobileForce Configure, Price, Quote Setup for Hubspot
 
 
-# Configure, Price, Quote  Use Guide
+# MobileForce Configure, Price, Quote  Use Guide for Hubspot
 An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
 
 ## 1. Price Books
