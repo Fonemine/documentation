@@ -1,7 +1,7 @@
 # MobileForce Configure, Price, Quote Setup for Hubspot
 
 ## Step 1: Find and Install MobileForce CPQ from the Hubspot Marketplace
-This step is easy: Just head over to the hubspot marketplace, search for (and find) MobileForce CPQ, and click on the orange "Install App" button on the top right.
+This step is easy: Just head over to the hubspot marketplace, search for (and find) MobileForce CPQ, and click on the orange "Install app" button on the top right.
 ![Install MobileForce CPQ from Hubspot Marketplace](/images/hubspot/1_MFInstallHubspotMarketplace.png)
 
 ## Step 2: Select the Hubspot Instance on which to Install MobileForce CPQ
