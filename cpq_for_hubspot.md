@@ -1,3 +1,4 @@
+
 # MobileForce Configure, Price, Quote Setup for HubSpot
 
 ## Step 1: Find and Install MobileForce CPQ from the HubSpot Marketplace
@@ -38,7 +39,9 @@ An important aspect of the sales process for any business is the systematization
 Typically, the first thing a CPQ Administrator does is to create one or more price books. 
 MobileForce CPQ supports the creation of multiple price books that can also be related to one another via a hierarchical parent relationship. For instance, Businesses could create one price book for local or national use with the local currency, and another price book for each international market they operate in (each with its own currency). Price books allow one to assign different prices for products for different regions with different currencies or for different markets. In order to create a quote, a user **must** select a price book.
 
-![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
+![Create Price Book in MobileForce CPQ](/images/hubspot/AddAPriceBook/AddAPriceBook-2.png)
+![Create Price Book in MobileForce CPQ](/images/hubspot/AddAPriceBook/AddAPriceBook-1.png)
+
 
 Each MobileForce CPQ price book has a (required) **name** field. In addition, price books typically have the following fields:
 
@@ -62,7 +65,7 @@ In the MobileForce CPQ, this entity is simply called a **Product Category** to r
 
 A product or service category can be nested within another category. Products/Services can belong to multiple categories. For a Product/Service to be usable and added to a Quote, it must belong to at least one product category.
 
-![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
+![Create Product Category in MobileForce CPQ](/images/hubspot/AddProductCategory.png)
 
 Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
 
@@ -76,6 +79,12 @@ A product item can represent a physical product, a software product or a virtual
 
 Products may be nested i.e., a product may contain other products, representing bundled products or product features. Such nested products are stored in objects known as product groups. Products may also have attributes, (e.g., color). Rules can be specified on products to ensure valid configuration. To ease the management of products in the product catalog, products are organized in hierarchical categories.
 
+![Products in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-1.png)
+
+Products can be added to the configurator by themselves or as a product in a product category.
+
+![Add Products in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-2.png)
+
 Products can be broken down into two types: **Simple** and **Configurable**. Simple products have no attributes nor nested products. Configurable products may have attributes, nested products, or both. Configurable products have an associated **Product UI Layout** describing their attributes, nested products, and UIs that will be rendered to the end-user to configure the product after they have added it to the quote.
 
 ### 3.1. Products, Configurations and Rules
@@ -88,7 +97,8 @@ This section includes the (required) **Name** field, and in addition, the unique
 An optional field, "Product Category" is used to provide one or more previously created product categories that the product belongs to.
 Additional optional fields include **Description** and **Image**.  
 
-![Create Product General Section in MobileForce CPQ](/images/add_product_general.png)
+
+![Create Product General Section in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-3.png)
 
 #### 3.1.2. Configuration Section
 
@@ -108,7 +118,7 @@ The quantity attribute has the following fields:
 - **Multiply with Parent Product's Quantity** : Yes/No indicating whether the final quantity should be this product's quantity times the parent product's final quantity. For example, if one adds 3 PC computers with 2 hard-disks each, the quote should use a final quantity of 6 to compute the price. By default this field is 0, (false).
 - **Quantity Step** : Numerical step value of the quantity. An entered quantity must be an integer multiple of the step. This step can be fractional, (e.g., 0.01). By default, it is 1.
 
-![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
+![Create Product Configuration Section in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-4.png)
 
 #### 3.1.3. Pricing Section
 
@@ -142,7 +152,8 @@ If the discount unit is an amount, then two additional fields provide the range 
 - **Discount Amount Min**: Minimum fixed discount that a user can enter.  Default is 0.
 - **Discount Amount Max**: Maximum fixed discount that a user can enter.  Default is 1,000,000.
 
-![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing.png)
+![Create Product Pricing Section in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-5.png)
+
 
 The price book entries sub-section within pricing section enables the product pricing to be specified in multiple price books. The following UI describes how this is done. First, the price book for which pricing is being provided is specified. Next, the product is specified. Both are required fields.
 Under **Prices** sub-section, the two fields that can be specified are **List Price** and **Method** 
@@ -167,13 +178,14 @@ Each row in this matrix has the following fields.
 - **To**: End quantity of this tier.
 - **List Price**: Unit price for this tier.
 
-![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing_pricebook.png)
+![Create Product Pricing Section in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-5.png)
+
 
 #### 3.1.4. Approval Section
 
 In this section, we specify the **rules** that are used to decide how the product pricing in a quote is approved. Note that ONLY individual product-related rules are specified here. Most **rules** are typically specified at the Quote level (see **Quote Templates** under the **Quotes** section below). Product-level rules typically only make sense for **Configurable Products** or products with nested child products.  They only apply within scope of the product itself. You can use them to validate custom fields, (e.g., end date must be less than start date), or make constraints or actions for line tables inside the product. 
 
-![Create Product Approval Section in MobileForce CPQ](/images/add_product_approval.png)
+![Create Product Approval Section in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProducts-6.png)
 
 The individual approval rules are specified as follows. Each rule has the following **required** fields:
 
@@ -189,7 +201,7 @@ In addition, the following **Optional** fields can be specified.
 
 * **Skip later rules after trigger** : Once a specific rule is triggered, this toggle enables the remaining rules to be skipped. The default is that the remaining rules are not skipped, and instead evaluated.
 
-![Create Product Approval Rule in MobileForce CPQ](/images/CPQApprovalRule.png)
+![Create Product Approval Rule in MobileForce CPQ](/images/hubspot/AddProductsAndConfigRules/AddProductApproval.png)
 
 
 ### 3.2. Product UI Layouts
@@ -214,72 +226,93 @@ A **Quote UI Layout** and a **Product UI Layout** are essentially **UI Layout** 
 
 UI Layouts are essentially a HTML Form-type responsive layout specified using a combination of **Tabs**, **Sections** and **Input Elements** of various types, each with its own unique name. **Input Elements** are roughly modeled after HTML form inputs but with more extensive set of types supported. These input names  that is automatically rendered by the system for the end-user are then made available by the CPQ System to be used in **Product and Pricing Rule Expressions** and also in **Quote and Contract Document Templates**.
 
+Any quote in MobileForce can have a Quote UI Layout specified.
+![Create Quote UI Layout in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-1.png)
+
 A **Quote UI Layout** in MobileForce CPQ Graphical UI Layout Builder has 5 sections.
 
 #### 4.1.1. General Section
 
 This has general information such as **Name** and the choices to show/hide or enable/disable explicit user-action buttons to **Save**, **Validate** and **Close/Reopen** a Quote.
 
-![Create Quote General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_general.png)
+![Create Quote UI Layout General Section in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-2.png)
+
 
 #### 4.1.2. Types Section
 
 This section enabled the administrator to create their own **Custom Data Types** that extend the CPQ Systems built-in input field types. For example: you can define your own compound type called **Address** made up of 5 primitive data types in it - **Street Address**, **City**, **State or Province**, **Postal Code**, **Country**. This custom **Address** type can then be used as a type for an input field specified in the form described in the next section. The CPQ System will detect that it is a custom type and render all the component fields at once so an end-user can populate all the components when specifying an **Address**.
 
-![Create Quote Types Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_types.png)
+
+![Create Quote UI Layout Types Section in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-3.png)
 
 #### 4.1.3. Form Section
 
 This section is the core of the **UI Layout**. It specifies exactly how the Quote or the Product Configuration UI is to be rendered to the end-user. It typically has a collapsible, tree-like structure on the left panel that starts with **Tabs** each of which contain one or more **Sections**, each of which in-turn contain one or more **Input Fields**. **Sections** can be of different layouts like a **Multi-column** or **Table** layout. It is modeled after a **HTML DOM** structure. The right panel gives a **Preview** of the entire Form in different form factors - **Phone**, **Tablet** or **Computer**. It also provides complete **Details** of a specific item selected in the left panel such as a **Tab**, **Section**, **Table** or an **Input Field**. The left panel supports drag-n-drop functionality to easily re-order tabs, sections and input fields.
 
 The CPQ System comes with a built-in **Default Quote UI Layout** that has the following tabs, sections and input fields.
+![Create Quote UI Layout Forms Section in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-4.png)
 
 ##### 4.1.3.1. Customer Tab
 
 This is where the end-user can select an Account, Opportunity and Contact to prepare the Quote for. It also has their own contact information and their company information.
 
-![Create Quote Forms General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_general.png)
+![Create Quote UI Layout Forms Section Customer Tab in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-forms-Customer.png)
+
 
 ##### 4.1.3.2. Quote Tab
 
 This tab has a combination of common Quote fields such as dates, status etc. at the top followed by one or more **Line Items** tables where the end-user can add Product/Service line items from the catalog. This table also has sub-totals and total fields. It also has designated areas to specify line-item level discounts or global discounts.
 
-![Create Quote Forms Quote Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_quote.png)
+![Create Quote UI Layout Forms Section Quote Tab in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-forms-Quote.png)
+
+
 
 ##### 4.1.3.3. Approvals Tab
 
 This tab shows the history of all Quote Approvals including approval requests that are pending. It enables the end-user to submit and track quote approvals status in one place.
 
-![Create Quote Forms Approvals Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_approvals.png)
+![Create Quote UI Layout Forms Section Approvals Tab in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-forms-Approvals.png)
+
 
 ##### 4.1.3.4. Signatures Tab
 
 This tab enables the end-user to collect Digital Signatures. This is especially helpful in scenarios where sales or service personnel are at customer premises and would like to capture a digital signature on a touch-enabled device like a Tablet or a Smartphone, so they can accelerate the contracting process.
 
-![Create Quote Forms Signature Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_signatures.png)
+![Create Quote UI Layout Forms Section Signature Tab in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-forms-Signature.png)
+
 
 ##### 4.1.3.5. Generated Docs
 
 This tab enables the end-user to Generate the final quote, proposal or a multi-page contract document in a PDF format by utilizing a pre-configured document template (see **Document Templates** section below). The CPQ System will utilize all the information from the Quote and infuse appropriate values into the selected document template to generate a PDF document. The end-user can then view the generated document, share it with the customer via email and also click on the *Save to CRM* button to save this entire quote with line items and generated document to a CRM Opportunity.
 
-![Create Quote Forms Documents Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_generated_docs.png)
+![Create Quote UI Layout Forms Section Generated Docs Tab in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-forms-GeneratedDocs.png)
+
 
 #### 4.1.4. Actions Section
 
 This section in the Graphical Form Builder UI contains built-in and custom actions to be performed by the CPQ System, each of which are tied to specific **Events** during the CPQ process. For example, there are built-in actions like *Validate Action* that get triggered when the end-user clicks on the *Validate* button in the UI, that results in the CPQ System validating all elements of the Quote configured thus far. Similarly, an administrator can define custom actions that are specific to their business and can extend the system easily by writing server-side action scripts that are coded to the CPQ System specification.
 
-![Create Quote Actions Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_action.png)
+![Create Quote UI Layout Actions Section in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-5.png)
+
 
 
 #### 4.1.5. Summary Section
 
 This section enables the administrator to choose which input variables to show as columns in the list view of all the Quotes. It comes with default columns such as name, status and id. The administrator can add and tailor the columns to what the end-users would like to see in the list view.
 
-![Create Quote Summary Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_summary.png)
+![Create Quote UI Layout Summary Section in MobileForce CPQ](/images/hubspot/AddAQuoteUILayout/AddAQuoteUILayout-6.png)
+
 
 ### 4.2. Quote Templates
 
 A **Quote Template** is a template that is used to create any quote in the CPQ System. It contains the structure and logic of what products/services can go into a Quote, what price book to use, what rules constrain products/services that can be added or how they can be priced/discounted, and finally what approvals need to be processed based on various conditions.
+
+
+Quote templates can be found in the CPQ setup.
+![Create Quote Template Summary Section in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-1.png)
+
+New quote templates can be created using  which quotes can be generated.
+![Create Quote Template Summary Section in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-2.png)
 
 The CPQ System comes with a built-in Default Quote Template that uses the Default Quote UI Layout. A fully functional Default Quote Template enables an administrator to easily copy and customize the template extending it to meet their specific needs. The following sections describe the component sections of a Quote Template.
 
@@ -292,13 +325,14 @@ This section primarily consists of informational attributes such as **Name** and
 - **Effective Date**: A date starting which this template is available to authorized end-users to create Quotes.
 - **Expiration Date**: A date after which this template will no longer be available to authorized end-users to create Quotes.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_general.png)
+![Create Quote Template General  Section in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-General.png)
 
 #### 4.2.2. Configuration Section
 
 This section consists of constraints and rules that govern how the CPQ System renders a Quote and validates. Every Quote Template must have an associated **Quote UI Layout** that is specified here.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration.png)
+![Create Quote Template Configuration  Section in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-Configuration.png)
+
 
 ##### 4.2.2.1. Line Item Tables
 
@@ -308,35 +342,40 @@ One or more **Product Groups or Line Item Tables** must be added to the Quote te
 
 Each **Product Group or Line Item Table** can be configured to only allow adding **Product/Service** items from specific **Product/Service Categories** and can also be constrained to have a **Minimum** and **Maximum** number of items.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_line_item_table.png)
+![Create Quote Template Configuration Section Line Items in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-Configuration-LineItems.png)
 
 ##### 4.2.2.2. Product Rules
 
 This subsection enables an administrator to specify any number of **Configuration Rules** that govern what types of **Product/Service** items can be added together in the **Line Item Tables**. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
 
 Please refer to the **Product, Pricing and Approval Rules Specification** below to learn how to create and configure Product Rules.
+![Create Quote Template Configuration Section Product Rules in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-Configuration-ProductRules.png)
+
 
 #### 4.2.3. Pricing Section
 
 This section enables an administrator to specify the **Price Book** that is associated with this Quote Template. When an end-user creates a Quote using this template, all **Product/Service Items** added to the Quote will only derive the corresponding Pricing Item from the associated **Price Book**. Typically, a **Product/Service** item in the catalog can have multiple Price Book entries. For example, one for USA region specified in USD, one for EMEA region specified in EUR etc. Accordingly, two different Quote Templates must be created (one for USA Price Book and a separate one associated with the EMA Price Book) that will enable the CPQ System to appropriately pick up the right Price Book Entry for an added Product/Service item.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_pricing.png)
+![Create Quote Template Pricing Section in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-Pricing.png)
+
 
 ##### 4.2.3.1. Pricing Rules
 
 This subsection enables an administrator to specify any number of **Pricing Rules** that govern what pricing changes must be made for **Product/Service** items in the **Global Quote Adjustments**. For example, one can specify a rule based on the current date to automatically add a *End of Month* or *End of Quarter* promotional discount to the Quote. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
 
+![Create Quote Template Pricing Section - Pricing Rules in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-PricingRules.png)
+
 #### 4.2.4. Approvals Section
 
 This section enables the administrator to specify the appropriate **Email Templates** to be be used for **Approved**, **Declined** and **Cancelled** approval requests. In addition, the administrator can optionally set the initial approval status of all Quotes to a custom value. They can also optionally specify a numerical value for **Close After (Days)** that instructs the CPQ System to close the quote (set its status to **Closed**) automatically after the specified number of days from its creation.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval.png)
+![Create Quote Template Approvals Section in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-Approval.png)
+
 
 ##### 4.2.4.1. Approval Rules
 
 This subsection enables an administrator to specify any number of **Approval Rules** that govern under what conditions Approvals are needed. For example, a discount beyond 20% may require a Manager approval. Once can also specify multiple levels of approvals depending on increased discount (escalated approvals) by specifying them in a particular evaluation order. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
-
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval_rule.png)
+![Create Quote Template Approvals Section - Approval Rules in MobileForce CPQ](/images/hubspot/AddAQuoteTemplate/AddAQuoteTemplate-ApprovalRules.png)
 
 #### 4.2.5. Product, Pricing and Approval Rules Specification
 
@@ -397,6 +436,8 @@ The CPQ System manages multiple levels of approvals for Quotes. An approval requ
 
 This section enables administrators to create a named **Approver Group** that consists of a combination of individuals specified by direct emails or role names. An approver group identifies a set of one or more users than can approve a quote. The CPQ System also supports escalated approvals workflow. For example, an approval is first sent to a Manager before it is set to a Vice President and then to a CEO.
 
+![Create Approver Groups in MobileForce CPQ](/images/hubspot/AddApprovalGroups/AddApprovalGroups-1.png)
+
 In addition to specifying whom to notify for approvals, the CPQ System enables an administrator to specify authorized additional approvers who are not notified in the regular approval workflow process but are authorized to login to the system to approve requests on a contingency basis. For example, if a regular approver is out of office and unavailable, an authorized additional approver can step in and approve the request on their behalf.
 
 Each Approval Group has a (required) **Name** field. In addition, Approval Groups typically have the following fields:
@@ -409,15 +450,19 @@ Approvers can be individual users or roles. In addition, approvers can be notifi
 * **User Roles** : A comma separated list of MobileForce roles. All MobileForce users in these roles can approve the quote. These users will be NOT be notified on approval requests.
 * **Dynamic Expression** : An  form expression that returns a comma separated list of email addresses that can approve the quote. These users will be NOT be notified on approval requests.
 
-![Create Approval Groups in MobileForce CPQ](/images/add_edit_approver_groups.png)
+![Create Approver Groups in MobileForce CPQ](/images/hubspot/AddApprovalGroups/AddApprovalGroups-2.png)
 
 Approval Groups splits approvers into two categories: notified approvers and un-notified approvers. Both kinds of approvers can approve the quote. However, only notified approvers receive notifications on approval requests. For example, one may wish to make a supervisor be a notified approver but the supervisor's manager be an un-notified approver. This is done so that the supervisor's manager does not get spammed by day-to-day approval requests but can approve a quote for exceptional cases, (e.g., the supervisor is sick that day.)
+
+![Create Approver Groups in MobileForce CPQ](/images/hubspot/AddApprovalGroups/AddApprovalGroups-3.png)
 
 In future, MobileForce CPQ will support approval history, where every quote will have an associated approval history, for the purposes of creating an audit trail.
 
 ### 5.2. Email Templates
 
 Since quotes are sent for approval by email, it is natural to provide email templates that can be used to generate the approval requests as well as the approval/rejection. The CPQ System not only supports email templates for various approval workflows, it also supports distinct email templates that can be created and saved for subsequent use by different users for different purposes.
+
+![Approval Email Templates in MobileForce CPQ](/images/hubspot/AddApprovalEmailTemplates/AddApprovalEmailTemplates-1.png)
 
 Quotes can have one or more email templates. These templates are used to generate emails as part of the quote process, such as approvals.
 
@@ -438,12 +483,16 @@ Each MobileForce CPQ Email Template has a (required) **Name** field. In addition
   * Text: Body is plain text
   * Html: Body is a HTML document
 
+![Create Approval Email Templates in MobileForce CPQ](/images/hubspot/AddApprovalEmailTemplates/AddApprovalEmailTemplates-2.png)
+
 The MobileForce CPQ System provides a default built-in HTML content for each of the different types of template that can be used as a starting point by an administrator. An administrator can set the email to default content by clicking on *Set Content to Default* button.
 
-![Create Email Templates in MobileForce CPQ](/images/add_edit_email_template.png)
+![Sample HTML Approval Email in a Template in MobileForce CPQ](/images/hubspot/AddApprovalEmailTemplates/AddApprovalEmailTemplate-3.png)
 
 ## 6. Quote and Contract Documents
 A sales contract is a formal agreement between the seller and a buyer, where the seller provides products or services, for payment or a promise of payment from the buyer. Since sales contracts cover legal aspects of a sale, they often have distinct sections such as legal provisions (state laws and arbitration) as well terms and conditions of the sale. In order to simplify the creation of sales contracts, document templates are used. These templates contain customizable sections that provide the presentation of sales  records such as line items, signature fields, and terms and conditions. The sections can be included or excluded.
+
+![Document Template in MobileForce CPQ](/images/hubspot/AddQuoteDocumentTemplates/AddQuoteDocumentTemplates-1.png)
 
 Starting from a quote, MobileForce CPQ can generate a set of documents. Each document is generated from a document template which contains one or more sections. Each section has an associated MS word or excel file containing macro variables that are expanded upon generation. Users  have the option to include or exclude sections from the document.
 
@@ -453,7 +502,7 @@ The following document template is used to generate a proposal for a customer th
 
 Each MobileForce document template has a (required) **Name** field. In addition, document templates typically have the following fields:
 
-![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
+![Document Template in MobileForce CPQ](/images/hubspot/AddQuoteDocumentTemplates/AddQuoteDocumentTemplates-2.png)
 
 * **Owning Quote**: the quote from which the proposal is being generated
 * **Quote must be valid**: a toggle which ensures that only valid quotes can be used to generate a proposal. If set to true, and the owning quote is not a valid quote, then the proposal will not be generated. By default, it is set to True.
