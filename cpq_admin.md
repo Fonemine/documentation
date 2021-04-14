@@ -552,6 +552,12 @@ In addition, the following CPQ-specific functions are supported:
 * **CAT_QTY(categoryName [, productGroup])**: Returns a the sum of the quantities of all products in the given category in the named group.  If the group name is missing, then this is for all groups.
 * **HAS_CAT(productCode [, productGroup])**: Returns true if there is a product in the given category in the named group.  If the group name is blank, then this is for all missing.  This is basically just a shorthand for `(CAT_COUNT(productCode, productGroup) > 0)`.
 * **QTY([productGroup])**: Returns a the sum of the quantities of all products in the named group.  If the group name is missing, then this is for all groups.
+* **PROD_LIST_PRICE(productCode [, productGroup])**: Fetch the total list price for the product, without any discounts.
+* **PROD_SYSTEM_PRICE(productCode [, productGroup])**: Fetch the total list price for the product, with only system (pricing-rule) discounts included. User discounts are not included.
+* **PROD_NET_PRICE(productCode [, productGroup])**: Fetch the total list price for the product, with both system and user discounts included.
+* **CAT_LIST_PRICE(categoryName [, productGroup])**: Fetch the total list price for all products in the given category, without any discounts.
+* **CAT_SYSTEM_PRICE(categoryName [, productGroup])**: Fetch the total list price for all products in the given category, with only system (pricing-rule) discounts included. User discounts are not included.
+* **CAT_NET_PRICE(categoryName [, productGroup])**: Fetch the total list price for all products in the given category, with both system and user discounts included.
 
 ###  7.3. Built-in  Variables
 
