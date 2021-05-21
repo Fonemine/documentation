@@ -20,7 +20,14 @@
 - Go to *User Icon (top right) > Admin > Configure API Platforms* screen
 - Add a new platform with the name *api* and *Save*
 
-## Step 4: Install MobileForce Modules
+## Step 4: If you are on Sugar 11 and later) Configure the Content Security Policy Settings
+- Login to SugarCRM instance as an admin user
+- Find out if you are on Sugar 11 as follows: Go to *User Icon (top right) > Admin > About*
+- If it says sugar version:  "11.x.x" then you need to perform the next two steps.
+- Go to *User Icon (top right) > Admin > Content Security Policy Settings* screen
+- Set the Trusted Domain ('default-src') to take the value  '*.mobileforcesoftware.com' and *Save*
+
+## Step 5: Install MobileForce Modules
 - Download one or more of the MobileForce Module ZIP Files below to your computer
   - [*MobileForce_CPQ* - Configure, Price, Quote Module](/assets/MobileForce_CPQ.zip)
   - [*MobileForce_FSM* - Field Service Management Module](/assets/MobileForce_FSM.zip)
