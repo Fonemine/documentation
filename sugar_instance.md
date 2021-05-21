@@ -20,7 +20,7 @@
 - Go to *User Icon (top right) > Admin > Configure API Platforms* screen
 - Add a new platform with the name *api* and *Save*
 
-## Step 4: If you are on Sugar 11 and later) Configure the Content Security Policy Settings
+## Step 4: Only if you are on Sugar 11 or Later: Configure the Content Security Policy Settings
 - Login to SugarCRM instance as an admin user
 - Find out if you are on Sugar 11 as follows: Go to *User Icon (top right) > Admin > About*
 - If it says sugar version:  "11.x.x" then you need to perform the next two steps.
