@@ -292,6 +292,25 @@ Additionally, the following special variables are defined
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
 
+## 4. Lookup Functions 
+
+Finally, we define Lookup functions, which are actually evaluated on the server side (and not the client side). Due to this distinction, lookup functions are extremely powerful, and if used incorrectly, say  by the novice developer, could cause serious unstability and even crash  MobileForce Applications.
+
+### 4.1 Lookup Table
+
+LOOKUP(table [,filter [, column]]) – Lookup up a value from a different datatable table.  Can be used only in external picklist fields.  Not really used anymore.  Only works for form expressions in datatable forms for form apps.
+
+### 4.2 Lookup Value
+
+LOOKUPVALUE(table [,filter [, column]]) – Lookup up a value from a different datatable table.  Can be used in any field, except for some external picklist fields.  Only works for form expressions in datatable forms for form apps. By far, this is the most commonly used of the LOOKUP* functions.
+
+### 4.3 Lookup Key/Value
+
+LOOKUPKEYVALUE(table [,filter [, column]]) – Lookup up a value from a different datatable table.  Meant solely for setting values of external picklist fields.  Only works for form expressions in datatable forms for form apps.
+
+### 4.4 DTLookupValue : DataTable
+
+DTLOOKUPVALUE(param-prefix, table [, filter [, column]]) - Lookup up a value from a different datatable table, using a datatable adapter different from the current datatable screen.  Can be used in datatable forms, form apps, form-config forms, and CPQ quotes. 
 
 ![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
 
