@@ -10,10 +10,11 @@ Simply put, MobileForce expressions enhance forms with  dynamic functionality th
 When used in CPQ rules, MobileForce expressions specify a trigger condition for a configuration, pricing, or approval rule.  When the trigger condition evaluates to true, the action for that rule is executed.  When used in macro variables, one can specify a MobileForce expression instead of a variable. Please note that MobileForce expressions are much more likely to be used in forms and CPQ rules, and rather lightly used in Macros.  
 
 MobileForce expressions do not exist on their own. Instead, they are treated as attributes of other components such as fields, form sections, or CPQ rules.
+
 In forms, MobileForce expressions are used for:
 * Specifying the value of an input
 * Specifying whether an input is read only or disabled. 
-* * Specifying whether an input, section, table, row, column, or tab is hidden.
+* Specifying whether an input, section, table, row, column, or tab is hidden.
 * Filtering picklist values.
 
 In Quotes, MobileForce expressions are also used for:
