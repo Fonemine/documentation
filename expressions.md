@@ -7,7 +7,26 @@ The common expression language defined here is the common foundation, used to cr
 
 Simply put, MobileForce expressions enhance forms with  dynamic functionality that enable dynamic (i.e., at run-time) changes to the **value** of form fields and sections, and in general any  **form elements**. Furthermore, MobileForce expressions also support dynamic modification to the **visibility** and **editability** of form elements. MobileForce expressions are easy to write using plain text fields within various elements of MobileForce Applications such as CPQ, and potentially also Field Service. Within MobileForce CPQ, expressions are specifically used to enhance Rules, Triggers, Macros, Email Templates etc.
 
-## 1. MobileForce Expression Language (MFEL)s.
+When used in CPQ rules, MobileForce expressions specify a trigger condition for a configuration, pricing, or approval rule.  When the trigger condition evaluates to true, the action for that rule is executed.  When used in macro variables, one can specify a MobileForce expression instead of a variable. Please note that MobileForce expressions are much more likely to be used in forms and CPQ rules, and rather lightly used in Macros.  
+
+MobileForce expressions do not exist on their own. Instead, they are treated as attributes of other components such as fields, form sections, or CPQ rules.
+In forms, MobileForce expressions are used for:
+* Specifying the value of an input
+* Specifying whether an input is read only or disabled. 
+* * Specifying whether an input, section, table, row, column, or tab is hidden.
+* Filtering picklist values.
+
+In Quotes, MobileForce expressions are also used for:
+* Triggers for configuration, pricing, or approval rules
+* Reading email addresses from a form for an approval group.
+* Macro variables in email templates or approver emails.
+* Filtering document templates
+* Control of Visibility of generated docs and doc templates
+
+MobileForce expressions are almost invariably computed on the **client** side: the dynamic evaluation of expressions enables the Form elements within which MobileForce expressions are used to be highly responsive. Form expressions are evaluated locally in the form element to which they are tied, and make no changes to the surrounding context outside the form element. Hence their evaluation does not result in any side effects. MobileForce expressions include not only traditional values, identifiers, and variables combined using operators, but also include some pre-defined functions that enhance expressions. It must be noted that there are a select few pre-defined functions, specifically the **LOOKUPVALUE()** functions, which are actually evaluated on the **server side**, typically as a result of  invocation of database operations, but other than these functions, MobileForce expressions are invariably computed on the client side. Please note also that **Lookup** functions are not supported in CPQ rules or macro variables.
+
+
+## 1. MobileForce Expression Language (MFEL).
 
 Often, expressions in MobileForce are used in form expressions, CPQ rules, triggers, macros, email templates, etc. All of these uses  build upon **MFEL** in unique ways.
 
