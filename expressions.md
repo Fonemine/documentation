@@ -31,7 +31,15 @@ MobileForce expressions are almost invariably computed on the **client** side: t
 
 Often, expressions in MobileForce are used in forms, CPQ rules, triggers, macros, email templates, etc. All of these uses  build upon **MFEL** in unique ways.
 
-### 2. Form Formula
+### 2. Primitive Values
+
+The only supported primitive values are strings, numbers, and JSON key/value objects.  Numbers will be represented internally as double precision numbers.  Strings will be automatically converted to numbers when necessary and vice versa.  There is no boolean type.  A value is considered to be false if it is the empty string, zero or the string "0".  Otherwise, it is considered to be true.
+
+A JSON key/value object is a string that follows the [JSON object format](https://www.json.org/).  The JSON object must have a "key" and a "value" field.  An example JSON key/value object is `{"key": 1, "value": "One"}`.  The "key" field contains the actual or stored value while the "value" field contains the user-displayable string.  JSON key/value objects are often used for picklist inputs.  For example, a "user" picklist input may have its database ID stored in the "key" field and the user's name in the "value" field.
+
+A JSON key/value value in any arithmetic or conditional expression will be automatically converted to its key.  For example '{"key": 1, "value": "One"}' + 3 will be evluated to 4.
+
+### 3. Form Formula
 
 ```abnf
 formula              =  "=" expression
@@ -46,7 +54,7 @@ Formulae can also be used in a Row Element or Col Element which represent a row 
 Formula can also be used in the Input Attributes of an Input Element, specifically within the **readonly** type field, the **hidden** and **value** fields, **disabled** attribute, the **invalidmessage** attribute, the **listitemfilter**, the **readonly** and the **validate** attributes, 
 
 
-#### 2.1. Form Expressions
+#### 3.1. Form Expressions
 
 ```abnf
 expression           =  "(" *WSP expression *WSP ")"
@@ -91,7 +99,7 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
-### 2.2. Form Built-in Functions 
+#### 3.2. Form Built-in Functions 
 
 The following built-in functions are supported in MobileForce expressions:
 
@@ -124,19 +132,13 @@ The following built-in functions are supported in MobileForce expressions:
 * **JOIN(separator, array)**: Returns a string that is a concatenation of the given array values separated by the given separator string.  For example, `JOIN(',', ['A', 'B', 'C'])` will return 'A,B,C'.  If the second argument is not an array, this function will return it unchanged.
 * **CASE(value, key1, expr1, key2, expr2, ...)**:  This function acts similar to a switch statement in other languages, or to a nested sequence of IF() form expressions, (that is, `IF(value=key1, expr1, IF(value=key2, expr2, ...))`).  The first argument will be evaluated and will be compared against all even arguments (2x) of the function.  If it is equal to a particular argument (2x), the next argument (2x+1) is evaluated and returned.  Otherwise, the first argument is returned.  For example, `CASE(2, 1, 'a', 2, 'b', 3, 'c')` will return 'b' and`CASE(4, 1, 'a', 2, 'b', 3, 'c')` will return 4.
 
-### 2.3. Primitive Values
 
-The only supported primitive values are strings, numbers, and JSON key/value objects.  Numbers will be represented internally as double precision numbers.  Strings will be automatically converted to numbers when necessary and vice versa.  There is no boolean type.  A value is considered to be false if it is the empty string, zero or the string "0".  Otherwise, it is considered to be true.
 
-A JSON key/value object is a string that follows the [JSON object format](https://www.json.org/).  The JSON object must have a "key" and a "value" field.  An example JSON key/value object is `{"key": 1, "value": "One"}`.  The "key" field contains the actual or stored value while the "value" field contains the user-displayable string.  JSON key/value objects are often used for picklist inputs.  For example, a "user" picklist input may have its database ID stored in the "key" field and the user's name in the "value" field.
-
-A JSON key/value value in any arithmetic or conditional expression will be automatically converted to its key.  For example '{"key": 1, "value": "One"}' + 3 will be evluated to 4.
-
-## 3. CPQ Formula, Rules, Expressions, Functions and Variables
+### 4. CPQ Formula, Rules, Expressions, Functions and Variables
 
 Products and Quotes may have one or more rules that are used in **Configuration**, **Pricing** and **Approvals**. A rule specifies an automated action that should be performed on a product or quote when some event occurs on that product or quote.
 
-### 3.1. CPQ Rule Formula and Expressions Syntax
+#### 4.1. CPQ Rule Formula and Expressions Syntax
 
 CPQ Rule expressions can be composed using a combination of built-in system variables, user-specified custom variables, built-in functions and built-in operators (logical and arithmetic). Rule expressions are modeled after the familiar Microsoft Excel formula syntax.  More exactly, only string and numeric scalar data types are supported and the set of allowed functions are listed below.  The variables in the formula can be referenced by their names.  A formula can only reference variables that are either built-in system variables listed below or input field names that are specified in **Quote UI Layout** or a **Product UI Layout**. 
 
@@ -187,7 +189,7 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
-### 3.2. Built-in CPQ Functions
+#### 4.2. Built-in CPQ Functions
 
 The following standard Microsoft Excel-like functions are supported:
 
@@ -231,11 +233,11 @@ In addition, the following CPQ-specific functions are supported:
 * **HAS_CAT(productCode [, productGroup])**: Returns true if there is a product in the given category in the named group.  If the group name is blank, then this is for all missing.  This is basically just a shorthand for `(CAT_COUNT(productCode, productGroup) > 0)`.
 * **QTY([productGroup])**: Returns a the sum of the quantities of all products in the named group.  If the group name is missing, then this is for all groups.
 
-###  3.3. Built-in CPQ Formula Variables
+####  4.3. Built-in CPQ Formula Variables
 
 One can access any attribute, group, or CPQ-computed value using the formula and naming syntax described in the previous section. In the CPQ system, all the variables and values in the entire Quote is stored as a JSON object with nested fields. The top level JSON object will contain data for the entire quote.  Each attribute or product group (line items array) defined for the quote will be a field in this JSON object. So, a standard JSON notation can be used to refer to any variable contained in the quote using nested level references for hierarchy. In general, for non-primitive system or input variables, say, **arrays**, a JSON-object notation can be used to refer to variables inside them. For example: **line_items[1].cpq_quantity** will refer to the value of the Quantity field of the 2nd line item added in the Quote. By convention, the names of all CPQ-specific inputs will be prefixed with or contain 'cpq_'. Users are free to define their own inputs (variables) in **Product UI Layouts** or **Quote UI Layouts** with names that do not have 'cpq_' in them.
 
-#### 3.3.1. Quote Level System Variables
+##### 4.3.1. Quote Level System Variables
 
 The quote object will have the following CPQ specific fields:
 
@@ -251,7 +253,7 @@ The quote object will have the following CPQ specific fields:
 * **cpq_user_discount_type**: Type of the user discount.  Can be either "percent" or "amount".
 * **cpq_total**: Total price of the quote after discounts.
 
-#### 3.3.2. Product Group (Line Items in a Quote) System Variables
+##### 4.3.2. Product Group (Line Items in a Quote) System Variables
 
 A product or quote can have one or more product groups, each of which can contain one or more products.  The data for a product group named '{PG}' will be stored in fields starting with '{PG}'.  CPQ specific fields will start with '{PG}\_cpq\_'.  For example, the ID field for a product group named 'line_items' will be stored in 'line_items_cpq_id'.  These fields are as follows.
 
@@ -265,7 +267,7 @@ A product or quote can have one or more product groups, each of which can contai
 * **{PG}_user_discount_subtotal**: Total percentage user discount for all products in the product group.  This is computed via the formula (**{PG}_cpq_system_subtotal** - **{PG}_cpq_net_subtotal**) / **{PG}_cpq_system_subtotal**
 * **{PG}_cpq_system_total**:  **{PG}_cpq_net_subtotal** with product-group system discounts (price-rules) applied.
 
-#### 3.3.3. Product-related System Variables
+##### 4.3.3. Product-related System Variables
 
 Each configured product is stored as a JSON object.  Each attribute or product group defined for the product will be a field in this JSON object.
 
@@ -287,7 +289,7 @@ Additionally, the following special variables are defined
 
 * **this**: The object that the condition or formula is attached to.
 
-#### 3.3.4. OpenTBS Variables in Document Templates
+##### 4.3.4. OpenTBS Variables in Document Templates
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
 
