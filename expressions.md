@@ -41,6 +41,11 @@ To allow the dynamic updating of certain fields based on the data provided by ot
 
 Formulae are allowed in the "value" attribute of inputs of type "readonly" and "hidden". Formulae can also occur in the "hidden" and "disabled" attributes for inputs.
 
+Formulae can be used in **FormSection** attributes, specifically the **hidden** and **lock** attributes.
+Formulae can also be used in a Row Element or Col Element which represent a row or a column of fields in a section. Specifically, the **hidden** attributes of these elements can include a formula.
+Formula can also be used in the Input Attributes of an Input Element, specifically within the **readonly** type field, the **hidden** and **value** fields, **disabled** attribute, the **invalidmessage** attribute, the **listitemfilter**, the **readonly** and the **validate** attributes, 
+
+
 ## 3. Expressions
 
 ```abnf
