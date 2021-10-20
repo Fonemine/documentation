@@ -86,6 +86,8 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
+## 4. Built-in Functions 
+
 The following built-in functions are supported in MobileForce expressions:
 
 * **ABS(number)**: Return the absolute value of the given number.
@@ -116,6 +118,8 @@ The following built-in functions are supported in MobileForce expressions:
 * **NOW()**: Return todays's date and time.
 * **JOIN(separator, array)**: Returns a string that is a concatenation of the given array values separated by the given separator string.  For example, `JOIN(',', ['A', 'B', 'C'])` will return 'A,B,C'.  If the second argument is not an array, this function will return it unchanged.
 * **CASE(value, key1, expr1, key2, expr2, ...)**:  This function acts similar to a switch statement in other languages, or to a nested sequence of IF() form expressions, (that is, `IF(value=key1, expr1, IF(value=key2, expr2, ...))`).  The first argument will be evaluated and will be compared against all even arguments (2x) of the function.  If it is equal to a particular argument (2x), the next argument (2x+1) is evaluated and returned.  Otherwise, the first argument is returned.  For example, `CASE(2, 1, 'a', 2, 'b', 3, 'c')` will return 'b' and`CASE(4, 1, 'a', 2, 'b', 3, 'c')` will return 4.
+
+## 5. Primitive Values
 
 The only supported primitive values are strings, numbers, and JSON key/value objects.  Numbers will be represented internally as double precision numbers.  Strings will be automatically converted to numbers when necessary and vice versa.  There is no boolean type.  A value is considered to be false if it is the empty string, zero or the string "0".  Otherwise, it is considered to be true.
 
