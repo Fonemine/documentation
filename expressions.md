@@ -31,6 +31,15 @@ MobileForce expressions are almost invariably computed on the **client** side: t
 
 Often, expressions in MobileForce are used in form expressions, CPQ rules, triggers, macros, email templates, etc. All of these uses  build upon **MFEL** in unique ways.
 
+##2. Formula
+
+```abnf
+formula              =  "=" expression
+```
+
+To allow the dynamic updating of certain fields based on the data provided by other fields, expressions can be used in some of the input attributes. These expressions will always start with a '=' character and are inspired-by/use a subset of MS Excel formula syntax. Only string and numeric scalar data types are supported together with a limited  set of allowed functions. The input fields of formula can be referenced by their names. A formula can only reference input fields that have been specified previously the current input.
+
+Formulae are allowed in the "value" attribute of inputs of type "readonly" and "hidden". Formulae can also occur in the "hidden" and "disabled" attributes for inputs.
 
 ![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
 
