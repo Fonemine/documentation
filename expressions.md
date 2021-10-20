@@ -41,5 +41,50 @@ To allow the dynamic updating of certain fields based on the data provided by ot
 
 Formulae are allowed in the "value" attribute of inputs of type "readonly" and "hidden". Formulae can also occur in the "hidden" and "disabled" attributes for inputs.
 
+##3. Expressions
+
+```abnf
+expression           =  "(" *WSP expression *WSP ")"
+expression           =/ prefix-operator *WSP expression
+expression           =/ expression *WSP infix-operator *WSP expression
+expression           =/ expression *WSP postfix-operator
+expression           =/ constant
+expression           =/ variable
+expression           =/ function
+
+prefix-operator      =  "-" / "!"
+
+postfix-operator     =  "%"  ; Percent operator.  Divides value by 100
+
+infix-operator       =  arithmetic-operator
+infix-operator       =/ concatenate-operator
+infix-operator       =/ comparison-operator
+infix-operator       =/ logical-operator
+
+arithmetic-operator  =  "^" / "*" / "/" / "+" / "-"
+
+concatenate-operator =  "&"
+
+comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">="
+
+logical-operator     =  "&&" / "||"
+
+constant             =  numeric-constant / string-constant
+
+numeric-constant     =  1*DIGIT ["." 1*DIGIT]
+numeric-constant     =/ "." 1*DIGIT
+
+string-constant      =  DQUOTE *CHAR DQUOTE  ; Double quote chars are escaped via '""'
+string-constant      =/ "'" *CHAR "'"  ; Single quote chars are escaped via "''"
+
+variable             =  name
+variable             =/ variable *WSP "[" *WSP expression *WSP "]"
+variable             =/ variable *WSP "." *WSP name
+
+function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression ) *WSP ")"
+
+name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
+```
+
 ![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
 
