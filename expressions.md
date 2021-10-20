@@ -31,7 +31,7 @@ MobileForce expressions are almost invariably computed on the **client** side: t
 
 Often, expressions in MobileForce are used in form expressions, CPQ rules, triggers, macros, email templates, etc. All of these uses  build upon **MFEL** in unique ways.
 
-##2. Formula
+## 2. Formula
 
 ```abnf
 formula              =  "=" expression
@@ -41,7 +41,7 @@ To allow the dynamic updating of certain fields based on the data provided by ot
 
 Formulae are allowed in the "value" attribute of inputs of type "readonly" and "hidden". Formulae can also occur in the "hidden" and "disabled" attributes for inputs.
 
-##3. Expressions
+## 3. Expressions
 
 ```abnf
 expression           =  "(" *WSP expression *WSP ")"
