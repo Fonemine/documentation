@@ -86,5 +86,43 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
+The following built-in functions are supported in MobileForce expressions:
+
+* **ABS(number)**: Return the absolute value of the given number.
+* **AND(arg1, arg2, ..._)**: Return the logical AND of the given arguments.
+* **IF(cond, then-expr, else-expr)**: If the first argument is true, return the second argument, else return the third argument.
+* **INT(number)**: Round the given number down to the nearest integer.
+* **MAX(num1, num2, ...)**: Return the maximum value of the given arguments.
+* **MIN(num1, num2, ...)**: Return the minimum value of the given arguments.
+* **NOT(expr)**: Return the logical NOT of the given argument.
+* **OR(arg1, arg2, ...)**: Return the logical OR of the given arguments.
+* **ROUND(number [, num-digits])**: Round the given number to the nearest integer.  If `num-digits` is specified, then the specified number of digits after the decimal point will be displayed.
+* **SEARCH(needle, haystack [, offset])**:  Return the index of the needle string within the haystack string.  If the needle is not in the haystack, return -1.
+* **COUNT(array)**: Returns the count of the number of elements in the given array.
+* **SUM(array [, fieldName])**: Returns the sum of all the elements in the given array.  If 'fieldName' is specified, then the array is assumed to be an array of objects instead of an array of numbers.  'fieldName` specifies which field in the array of objects should be summed together.
+* **AVG(array [, fieldName])**: Returns the average of all the elements in the given array.  If 'fieldName' is specified, then the array is assumed to be an array of objects instead of an array of numbers.  'fieldName` specifies which field in the array of objects should be averaged together.
+* **ARRAY_MIN(array [, fieldName])**: Returns the minimum of all the elements in the given array.  If 'fieldName' is specified, then the array is assumed to be an array of objects instead of an array of numbers.  'fieldName` specifies which field in the array of objects should be read.
+* **ARRAY_MAX(array [, fieldName])**: Returns the maximum of all the elements in the given array.  If 'fieldName' is specified, then the array is assumed to be an array of objects instead of an array of numbers.  'fieldName` specifies which field in the array of objects should be read.
+* **IN(element, array)**:  Return true if the given element is in the given array.  If the second argument is not an array, then return true if the two arguments are equal.
+* **ACLMATCH(acl [, array])**: Return true if the given ACL matches the given array.  The ACL uses MobileForce's ADL ACL syntax.  The array must be an array of strings.  If the second argument is missing, an array of the currently logged in user's roles is used.  
+* **CURRENCY_FORMAT(number [, format [, locale] ])**: Format the given number as a currency, using PHP's money_format() function.  The 'format' and 'locale' arguments are deprecated.
+* **NUMBER_FORMAT(number [, decimals [, decPoint [, thousandsSep] ] ])**: Format the given number using PHP's number_format() function.
+* **DATE_FORMAT(date [, format [, timezone] ])**: Format the given date or date/time using the PHP's date() function.
+* **KEY(arg)**: If the given argument is a JSON key/value object, return the 'key' field of the object.  Otherwise, return the argument unchanged.
+* **VALUE(arg)**: If the given argument is a JSON key/value object, return the 'value' field of the object.  Otherwise, return the argument unchanged.
+* **KEYVALUE(key, value)**: return a JSON key/value object, whose key and value are the given arguments.
+* **DATEADD(date, val, unit)**: Adds the given value to the given date or date/time.  'date' must be a valid date or date/time string in ISO-8601 format. 'val' must be an integer.  'unit' identifies the unit-type of the value. 'unit' must be one of: 'y', 'm', 'd', 'w', 'h', 'i', or 's'.  ('m' is months, 'i' is minutes).
+* **TODAY()**: Return today's date
+* **NOW()**: Return todays's date and time.
+* **JOIN(separator, array)**: Returns a string that is a concatenation of the given array values separated by the given separator string.  For example, `JOIN(',', ['A', 'B', 'C'])` will return 'A,B,C'.  If the second argument is not an array, this function will return it unchanged.
+* **CASE(value, key1, expr1, key2, expr2, ...)**:  This function acts similar to a switch statement in other languages, or to a nested sequence of IF() form expressions, (that is, `IF(value=key1, expr1, IF(value=key2, expr2, ...))`).  The first argument will be evaluated and will be compared against all even arguments (2x) of the function.  If it is equal to a particular argument (2x), the next argument (2x+1) is evaluated and returned.  Otherwise, the first argument is returned.  For example, `CASE(2, 1, 'a', 2, 'b', 3, 'c')` will return 'b' and`CASE(4, 1, 'a', 2, 'b', 3, 'c')` will return 4.
+
+The only supported primitive values are strings, numbers, and JSON key/value objects.  Numbers will be represented internally as double precision numbers.  Strings will be automatically converted to numbers when necessary and vice versa.  There is no boolean type.  A value is considered to be false if it is the empty string, zero or the string "0".  Otherwise, it is considered to be true.
+
+A JSON key/value object is a string that follows the [JSON object format](https://www.json.org/).  The JSON object must have a "key" and a "value" field.  An example JSON key/value object is `{"key": 1, "value": "One"}`.  The "key" field contains the actual or stored value while the "value" field contains the user-displayable string.  JSON key/value objects are often used for picklist inputs.  For example, a "user" picklist input may have its database ID stored in the "key" field and the user's name in the "value" field.
+
+A JSON key/value value in any arithmetic or conditional expression will be automatically converted to its key.  For example '{"key": 1, "value": "One"}' + 3 will be evluated to 4.
+
+
 ![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
 
