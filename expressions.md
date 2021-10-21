@@ -332,12 +332,16 @@ HAS_CAT('TimeClocks: NXG LE (Wifi) (NR)') || HAS_CAT('TimeClocks: Touch Clock (N
 HAS_CAT('TimeClocks: Velocity 800 (NR)') || HAS_CAT('TimeClocks: Velocity 850 (NR)') || 
 HAS_CAT('TimeClocks: Virtual Clock (NR)') || HAS_CAT('TimeForce (NR)')) && ((opportunity_type == 'New Business') && HAS_PROD('7796'))
 ```
-In CPQ Product Rules **Response**
+In Quote UI Layout **Form** access-control hide-condition
 
 ```
-Delete product 'Marketplace Access (FEIN)' (???)
-Show error 'ESA Quantity needs to match number clocks purchased'
-Add product 'Payroll Implementation' (7806-NR)
+In Quote: 
+
+!(HAS_PROD('3709') || HAS_PROD('3712') || HAS_PROD('3706') || HAS_PROD('3714') || HAS_PROD('5409') || HAS_PROD('5410') || HAS_PROD('5408') || HAS_PROD('5407')  || HAS_PROD('5413') || HAS_PROD('5414') || HAS_PROD('5412') || HAS_PROD('5411'))
+
+In Generated Docs: 
+
+cpq_approval_needed || cpq_approval_in_progress || !contact || is_primary == 'no'
 
 ```
 
