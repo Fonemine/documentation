@@ -344,6 +344,7 @@ Add product 'Payroll Implementation' (7806-NR)
 In CPQ Pricing Rules **Condition** 
 ```
 benefits_pricing == 'minimum'
+is_network_opportunity == 'yes'
 ```
 
 In Approval Rules and Approvers
