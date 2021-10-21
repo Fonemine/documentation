@@ -316,7 +316,7 @@ MobileForce Expressions can be used in the following context within CPQ
 
 ## 4. Lookup Functions 
 
-Finally, we define Lookup functions, which are actually evaluated on the server side (and not the client side). Due to this distinction, lookup functions are extremely powerful, and if used incorrectly, say  by the novice developer, could cause serious unstability and even crash  MobileForce Applications.
+Finally, we define Lookup functions, which are actually evaluated on the server side (and not the client side). Due to this distinction, lookup functions are extremely powerful, and if used incorrectly, say  by the novice developer, could cause serious unstability and even crash  MobileForce Applications. Thus, lookup functions should be used with caution, and only by expert developers.
 
 ### 4.1 Lookup Table
 
