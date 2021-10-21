@@ -292,6 +292,28 @@ Additionally, the following special variables are defined
 
 The same JSON-style references to variables can be used in the Microsoft Word or other supported Office documents, as placeholders for their respective values in Quote and Contract Document Templates. The CPQ system will process and substitute these variables with their respective values at run-time during the production of a finalized document. Refer to the **Quote and Contract Documents** section above for more details.
 
+### 3.4 Expression usage in CPQ
+
+MobileForce Expressions can be used in the following context within CPQ
+
+* Product -> Approval
+	* in Trigger conditions
+	* in Approval Reason: as macro expressions written using the syntax ${expr}
+* Product, Pricing, or Approval Rules
+	* in Trigger conditions
+	* in Response section
+		* action type == "Add Discount"
+		* action type == "Needs Approval" : as macro expressions written using the syntax ${expr}
+* Approver Groups
+	* in email addresses
+* Email Templates
+	*  the subject and body of email templates can contain macro variables of the form ‘${form-expr}’
+* Document Templates
+	* in Hidden Condition
+	* in Disabled Condition
+	* Generated File Hidden Condition
+	* SourceFileName
+
 ## 4. Lookup Functions 
 
 Finally, we define Lookup functions, which are actually evaluated on the server side (and not the client side). Due to this distinction, lookup functions are extremely powerful, and if used incorrectly, say  by the novice developer, could cause serious unstability and even crash  MobileForce Applications.
