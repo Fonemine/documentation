@@ -314,17 +314,47 @@ DTLOOKUPVALUE(param-prefix, table [, filter [, column]]) - Lookup up a value fro
 
 ## 5 Examples of MobileForce Expressions
 
-In CPQ Quote Templates:
+In CPQ Product Rules **Condition** :
 ```
 HAS_PROD('7782') && ! HAS_PROD('7779') && (opportunity_type == 'New Business')
 
+(PROD_QTY('7783') > 1 && PROD_QTY('7783') < 50)
 	
 HAS_PROD('7789') && (! HAS_PROD('7779') || ! HAS_PROD('7792'))
 
-(HAS_CAT('TimeClock: Accessories (NR)') || HAS_CAT('TimeClock: Parts (NR)') || HAS_CAT('TimeClock: Sage (NR)') || HAS_CAT('TimeClocks: NXG G2+ Ethernet Clock (NR)') || HAS_CAT('TimeClocks: NXG G2+CN - Cellular Biometric Clock (NR)') || HAS_CAT('TimeClocks: NXG G2+EFN - Ethernet Biometric Clock (NR)') || HAS_CAT('TimeClocks: NXG G2+WFN - WiFi Biometric Clock (NR)') || HAS_CAT('TimeClocks: NXG G2+WN - WiFi Clock (NR)') || HAS_CAT('TimeClocks: NXG G7 Ethernet Biometric Clock (NR)') || HAS_CAT('TimeClocks: NXG G7 Ethernet Clock (NR)') || HAS_CAT('TimeClocks: NXG LE (Ethernet) (NR)') || HAS_CAT('TimeClocks: NXG LE (Wifi) (NR)') || HAS_CAT('TimeClocks: Touch Clock (NR)') || HAS_CAT('TimeClocks: Velocity 800 (NR)') || HAS_CAT('TimeClocks: Velocity 850 (NR)') || HAS_CAT('TimeClocks: Virtual Clock (NR)') || HAS_CAT('TimeForce (NR)')) && ((opportunity_type == 'New Business') && HAS_PROD('7796'))
+(HAS_CAT('TimeClock: Accessories (NR)') || HAS_CAT('TimeClock: Parts (NR)') || HAS_CAT('TimeClock: Sage (NR)') || 
+HAS_CAT('TimeClocks: NXG G2+ Ethernet Clock (NR)') || HAS_CAT('TimeClocks: NXG G2+CN - Cellular Biometric Clock (NR)') || 
+HAS_CAT('TimeClocks: NXG G2+EFN - Ethernet Biometric Clock (NR)') || 
+HAS_CAT('TimeClocks: NXG G2+WFN - WiFi Biometric Clock (NR)') || 
+HAS_CAT('TimeClocks: NXG G2+WN - WiFi Clock (NR)') || HAS_CAT('TimeClocks: NXG G7 Ethernet Biometric Clock (NR)') || 
+HAS_CAT('TimeClocks: NXG G7 Ethernet Clock (NR)') || HAS_CAT('TimeClocks: NXG LE (Ethernet) (NR)') || 
+HAS_CAT('TimeClocks: NXG LE (Wifi) (NR)') || HAS_CAT('TimeClocks: Touch Clock (NR)') || 
+HAS_CAT('TimeClocks: Velocity 800 (NR)') || HAS_CAT('TimeClocks: Velocity 850 (NR)') || 
+HAS_CAT('TimeClocks: Virtual Clock (NR)') || HAS_CAT('TimeForce (NR)')) && ((opportunity_type == 'New Business') && HAS_PROD('7796'))
+```
+In CPQ Product Rules **Response**
+
+```
+Delete product 'Marketplace Access (FEIN)' (???)
+Show error 'ESA Quantity needs to match number clocks purchased'
+Add product 'Payroll Implementation' (7806-NR)
 
 ```
 
-![Create Price Book in MobileForce CPQ](/images/add_edit_price_book.png)
+In CPQ Pricing Rules **Condition** 
+```
+benefits_pricing == 'minimum'
+```
+
+In Approval Rules and Approvers
+```
+term_years == '4' || term_years == '5'
+
+ARRAY_MAX(line_items, 'cpq_user_discount') > 40 && (!HAS_CAT('Advanced Service (NR)')) && (!HAS_CAT('Advanced Service'))
+
+SVP Approval Group (Individual Product >40% Discount))
+
+```
+
 
 
