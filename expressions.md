@@ -343,6 +343,35 @@ In Generated Docs:
 
 cpq_approval_needed || cpq_approval_in_progress || !contact || is_primary == 'no'
 
+In Layouts: making fields READ-ONLY for specific roles: Note the use of single quote (') to demarcate roles since roles can have blank spaces.
+
+ACLMATCH(‘role1’)
+!ACLMATCH(‘role2')
+ACLMATCH(‘role1 | role2’)
+ACLMATCH(‘role1 & role2’)
+```
+
+In Quote UI Layouts: Access control to make fields **visible** or **hidden** or **conditional** based on roles that can be combined using MobileForce expressions, i.e., using and(&) as well as or(|). 
+
+
+In the case of **conditional** visibility , a condition can further be specified, which is based on expressions that are created using variables that are previously defined in the same CPQ form element.
+
+```
+ As an example, we can control the visibility of a section based on the ACL that expresses that the product 3709 or 3712 have NOT been selected.
+
+!(HAS_PROD('3709') || HAS_PROD('3712'))
+
+```
+
+
+```
+Example: the quote_summary section is made visible only for roles 'admin' or 'sales-admin' by writing the Visibility ACL as:
+
+admin | sales-admin
+
+Example: the discount field is made visible only if the total
+
+
 ```
 
 In CPQ Pricing Rules **Condition** 
