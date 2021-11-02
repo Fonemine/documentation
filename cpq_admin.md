@@ -82,23 +82,23 @@ The quantity attribute has the following fields:
 
 This section specifies the different ways that the product can be priced.
 
-- **Price Recurrence**: Specifies how often the user is charged.  Can be one of the following:
- - **One Time**: Price is applied only once.
- - **Per Minute**: Price is applied per minute.
- - **Hourly**: Price is applied per hour.
- - **Weekly**: Price is applied per week
- - **Bi-weekly**: Price is applied every two weeks.
- - **Semi Monthly**: Price is applied twice a month.
- - **Monthly**: Price is applied once a month.
- - **Quarterly**: Price is applied every three months.
- - **Half Yearly**: Price is applied twice a year.
- - **Yearly**: Price is applied once a year.
+**Price Recurrence**: Specifies how often the user is charged.  Can be one of the following:
+ * **One Time**: Price is applied only once.
+ * **Per Minute**: Price is applied per minute.
+ * **Hourly**: Price is applied per hour.
+ * **Weekly**: Price is applied per week
+ * **Bi-weekly**: Price is applied every two weeks.
+ * **Semi Monthly**: Price is applied twice a month.
+ * **Monthly**: Price is applied once a month.
+ * **Quarterly**: Price is applied every three months.
+ * **Half Yearly**: Price is applied twice a year.
+ * **Yearly**: Price is applied once a year.
 
 - **Allow Discount**: Boolean indicating whether the user can specify a discount for this product.
 - **Discount Unit**: Unit type of discount.  Can be one of the following
- - **Amount**: Discount is a fixed amount.
- - **Percent**: Discount is a percentage.
- - **Both**: Discount can be either a fixed amount or percentage.  The sales rep will select the type in the quote.
+ * **Amount**: Discount is a fixed amount.
+ * **Percent**: Discount is a percentage.
+ * **Both**: Discount can be either a fixed amount or percentage.  The sales rep will select the type in the quote.
 
 If the discount unit is percentage, then two additional fields provide the range of allowed discount percentage.
 
