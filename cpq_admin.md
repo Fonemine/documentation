@@ -94,8 +94,8 @@ This section specifies the different ways that the product can be priced.
  * **Half Yearly**: Price is applied twice a year.
  * **Yearly**: Price is applied once a year.
 
-- **Allow Discount**: Boolean indicating whether the user can specify a discount for this product.
-- **Discount Unit**: Unit type of discount.  Can be one of the following
+**Allow Discount**: Boolean indicating whether the user can specify a discount for this product.
+**Discount Unit**: Unit type of discount.  Can be one of the following
  * **Amount**: Discount is a fixed amount.
  * **Percent**: Discount is a percentage.
  * **Both**: Discount can be either a fixed amount or percentage.  The sales rep will select the type in the quote.
@@ -116,12 +116,13 @@ The price book entries sub-section within pricing section enables the product pr
 Under **Prices** sub-section, the two fields that can be specified are **List Price** and **Method** 
 
 - **Method**: Method to use to compute the product's subtotal from the product's quantity.  It can be one of the following:
-  - **Flat Fee**: Subtotal is a flat fee.  Quantity is ignored.
-  - **Per Unit**: Subtotal is the list price multiplied by the quantity.
-  - **Volume**: Subtotal is determined by looking up the list price from the price matrix, then multiplying it by the quantity.
-  - **Tiered**: Similar to the **volume** method except the subtotal is computed by summing up the per tier prices.  For example, if tier 1 is $10 for 1-50 items and tier 2 is $8 for 51-100 items, then the price for a 70 items would be 50 x $10 + 20 x $8 = $660. This is different from the **volume** method, where the subtotal would be 70 * $8 = $560.
-  - **Block**: Similar to the **volume** method except the value read from the table is not multiplied by the quantity.  For example, if the table has $500 for 51-100 items, then the subtotal for 70 items will be $500.
-- **List Price**: Unit price for the product.  Used by the **Flat Fee** and **Per Unit** methods.
+  * **Flat Fee**: Subtotal is a flat fee.  Quantity is ignored.
+  * **Per Unit**: Subtotal is the list price multiplied by the quantity.
+  * **Volume**: Subtotal is determined by looking up the list price from the price matrix, then multiplying it by the quantity.
+  * **Tiered**: Similar to the **volume** method except the subtotal is computed by summing up the per tier prices.  For example, if tier 1 is $10 for 1-50 items and tier 2 is $8 for 51-100 items, then the price for a 70 items would be 50 x $10 + 20 x $8 = $660. This is different from the **volume** method, where the subtotal would be 70 * $8 = $560.
+  * **Block**: Similar to the **volume** method except the value read from the table is not multiplied by the quantity.  For example, if the table has $500 for 51-100 items, then the subtotal for 70 items will be $500.
+   
+**List Price**: Unit price for the product.  Used by the **Flat Fee** and **Per Unit** methods.
 
 ##### 3.1.3.1. Price Book Item Tier
 
