@@ -189,13 +189,13 @@ A **Quote UI Layout** in MobileForce CPQ Graphical UI Layout Builder has 5 secti
 
 This has general information such as **Name** and the choices to show/hide or enable/disable explicit user-action buttons to **Save**, **Validate** and **Close/Reopen** a Quote.
 
-![Create Quote General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_general.png)
+![Create Quote General Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutGeneral.png)
 
 #### 4.1.2. Types Section
 
 This section enabled the administrator to create their own **Custom Data Types** that extend the CPQ Systems built-in input field types. For example: you can define your own compound type called **Address** made up of 5 primitive data types in it - **Street Address**, **City**, **State or Province**, **Postal Code**, **Country**. This custom **Address** type can then be used as a type for an input field specified in the form described in the next section. The CPQ System will detect that it is a custom type and render all the component fields at once so an end-user can populate all the components when specifying an **Address**.
 
-![Create Quote Types Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_types.png)
+![Create Quote Types Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutTypes.png)
 
 #### 4.1.3. Form Section
 
@@ -207,44 +207,44 @@ The CPQ System comes with a built-in **Default Quote UI Layout** that has the fo
 
 This is where the end-user can select an Account, Opportunity and Contact to prepare the Quote for. It also has their own contact information and their company information.
 
-![Create Quote Forms General Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_general.png)
+![Create Quote Forms General Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutFormC.png)
 
 ##### 4.1.3.2. Quote Tab
 
 This tab has a combination of common Quote fields such as dates, status etc. at the top followed by one or more **Line Items** tables where the end-user can add Product/Service line items from the catalog. This table also has sub-totals and total fields. It also has designated areas to specify line-item level discounts or global discounts.
 
-![Create Quote Forms Quote Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_quote.png)
+![Create Quote Forms Quote Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutFormQ.png)
 
 ##### 4.1.3.3. Approvals Tab
 
 This tab shows the history of all Quote Approvals including approval requests that are pending. It enables the end-user to submit and track quote approvals status in one place.
 
-![Create Quote Forms Approvals Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_approvals.png)
+![Create Quote Forms Approvals Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutFormA.png)
 
 ##### 4.1.3.4. Signatures Tab
 
 This tab enables the end-user to collect Digital Signatures. This is especially helpful in scenarios where sales or service personnel are at customer premises and would like to capture a digital signature on a touch-enabled device like a Tablet or a Smartphone, so they can accelerate the contracting process.
 
-![Create Quote Forms Signature Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_signatures.png)
+![Create Quote Forms Signature Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutFormS.png)
 
 ##### 4.1.3.5. Generated Docs
 
 This tab enables the end-user to Generate the final quote, proposal or a multi-page contract document in a PDF format by utilizing a pre-configured document template (see **Document Templates** section below). The CPQ System will utilize all the information from the Quote and infuse appropriate values into the selected document template to generate a PDF document. The end-user can then view the generated document, share it with the customer via email and also click on the *Save to CRM* button to save this entire quote with line items and generated document to a CRM Opportunity.
 
-![Create Quote Forms Documents Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_generated_docs.png)
+![Create Quote Forms Documents Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutFormG.png)
 
 #### 4.1.4. Actions Section
 
 This section in the Graphical Form Builder UI contains built-in and custom actions to be performed by the CPQ System, each of which are tied to specific **Events** during the CPQ process. For example, there are built-in actions like *Validate Action* that get triggered when the end-user clicks on the *Validate* button in the UI, that results in the CPQ System validating all elements of the Quote configured thus far. Similarly, an administrator can define custom actions that are specific to their business and can extend the system easily by writing server-side action scripts that are coded to the CPQ System specification.
 
-![Create Quote Actions Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_action.png)
+![Create Quote Actions Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutAction.png)
 
 
 #### 4.1.5. Summary Section
 
 This section enables the administrator to choose which input variables to show as columns in the list view of all the Quotes. It comes with default columns such as name, status and id. The administrator can add and tailor the columns to what the end-users would like to see in the list view.
 
-![Create Quote Summary Section in MobileForce CPQ](/images/add_edit_quote_ui_layout_form_summary.png)
+![Create Quote Summary Section in MobileForce CPQ](/zendesk_images/QuoteUILayoutSummary.png)
 
 ### 4.2. Quote Templates
 
@@ -261,13 +261,13 @@ This section primarily consists of informational attributes such as **Name** and
 - **Effective Date**: A date starting which this template is available to authorized end-users to create Quotes.
 - **Expiration Date**: A date after which this template will no longer be available to authorized end-users to create Quotes.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_general.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplateGeneral.png)
 
 #### 4.2.2. Configuration Section
 
 This section consists of constraints and rules that govern how the CPQ System renders a Quote and validates. Every Quote Template must have an associated **Quote UI Layout** that is specified here.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplateConfig.png)
 
 ##### 4.2.2.1. Line Item Tables
 
@@ -277,7 +277,7 @@ One or more **Product Groups or Line Item Tables** must be added to the Quote te
 
 Each **Product Group or Line Item Table** can be configured to only allow adding **Product/Service** items from specific **Product/Service Categories** and can also be constrained to have a **Minimum** and **Maximum** number of items.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_line_item_table.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplateLineItems.png)
 
 ##### 4.2.2.2. Product Rules
 
