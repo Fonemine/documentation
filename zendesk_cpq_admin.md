@@ -289,7 +289,7 @@ Please refer to the **Product, Pricing and Approval Rules Specification** below 
 
 This section enables an administrator to specify the **Price Book** that is associated with this Quote Template. When an end-user creates a Quote using this template, all **Product/Service Items** added to the Quote will only derive the corresponding Pricing Item from the associated **Price Book**. Typically, a **Product/Service** item in the catalog can have multiple Price Book entries. For example, one for USA region specified in USD, one for EMEA region specified in EUR etc. Accordingly, two different Quote Templates must be created (one for USA Price Book and a separate one associated with the EMA Price Book) that will enable the CPQ System to appropriately pick up the right Price Book Entry for an added Product/Service item.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_pricing.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplatePricing.png)
 
 ##### 4.2.3.1. Pricing Rules
 
@@ -299,13 +299,13 @@ This subsection enables an administrator to specify any number of **Pricing Rule
 
 This section enables the administrator to specify the appropriate **Email Templates** to be be used for **Approved**, **Declined** and **Cancelled** approval requests. In addition, the administrator can optionally set the initial approval status of all Quotes to a custom value. They can also optionally specify a numerical value for **Close After (Days)** that instructs the CPQ System to close the quote (set its status to **Closed**) automatically after the specified number of days from its creation.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplateApproval.png)
 
 ##### 4.2.4.1. Approval Rules
 
 This subsection enables an administrator to specify any number of **Approval Rules** that govern under what conditions Approvals are needed. For example, a discount beyond 20% may require a Manager approval. Once can also specify multiple levels of approvals depending on increased discount (escalated approvals) by specifying them in a particular evaluation order. The CPQ System evaluates these rules in the specified **Rule Evaluation Order**. The CPQ System always evaluates all the **Product Rules** before it proceeds to evaluate all the **Pricing Rules** and finally the **Approval Rules**.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_add_edit_approval_rule.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplateApprovalRule.png)
 
 #### 4.2.5. Product, Pricing and Approval Rules Specification
 
@@ -325,7 +325,7 @@ First, one must specify what type of action in the CPQ System triggers this rule
 **Pricing Rules** can only be triggered by **Price Computation**.
 **Approval Rules** can only be triggered by **Approval Check**.
 
-![Create Quote Template in MobileForce CPQ](/images/add_edit_quote_template_configuration_add_edit_rule.png)
+![Create Quote Template in MobileForce CPQ](/zendesk_images/QuoteTemplatePricingRule.png)
 
 In a **Product Rule** if the **Triggered By** field is set to a **User Action**, then the following additional action type must be specified.
 * **Trigger Action**: Name of the user-defined action that should trigger the rule. 
@@ -378,7 +378,7 @@ Approvers can be individual users or roles. In addition, approvers can be notifi
 * **User Roles** : A comma separated list of MobileForce roles. All MobileForce users in these roles can approve the quote. These users will be NOT be notified on approval requests.
 * **Dynamic Expression** : An  form expression that returns a comma separated list of email addresses that can approve the quote. These users will be NOT be notified on approval requests.
 
-![Create Approval Groups in MobileForce CPQ](/images/add_edit_approver_groups.png)
+![Create Approval Groups in MobileForce CPQ](/zendesk_images/ApprovalGroups.png)
 
 Approval Groups splits approvers into two categories: notified approvers and un-notified approvers. Both kinds of approvers can approve the quote. However, only notified approvers receive notifications on approval requests. For example, one may wish to make a supervisor be a notified approver but the supervisor's manager be an un-notified approver. This is done so that the supervisor's manager does not get spammed by day-to-day approval requests but can approve a quote for exceptional cases, (e.g., the supervisor is sick that day.)
 
@@ -409,7 +409,7 @@ Each MobileForce CPQ Email Template has a (required) **Name** field. In addition
 
 The MobileForce CPQ System provides a default built-in HTML content for each of the different types of template that can be used as a starting point by an administrator. An administrator can set the email to default content by clicking on *Set Content to Default* button.
 
-![Create Email Templates in MobileForce CPQ](/images/add_edit_email_template.png)
+![Create Email Templates in MobileForce CPQ](/zendesk_images/EmailTemplate.png)
 
 ## 6. Quote and Contract Documents
 A sales contract is a formal agreement between the seller and a buyer, where the seller provides products or services, for payment or a promise of payment from the buyer. Since sales contracts cover legal aspects of a sale, they often have distinct sections such as legal provisions (state laws and arbitration) as well terms and conditions of the sale. In order to simplify the creation of sales contracts, document templates are used. These templates contain customizable sections that provide the presentation of sales  records such as line items, signature fields, and terms and conditions. The sections can be included or excluded.
@@ -422,7 +422,7 @@ The following document template is used to generate a proposal for a customer th
 
 Each MobileForce document template has a (required) **Name** field. In addition, document templates typically have the following fields:
 
-![Create Proposal with quote in MobileForce CPQ](/images/sugarcrm_proposal_document_template.png)
+![Create Proposal with quote in MobileForce CPQ](/zendesk_images/DocumentTemplate.png)
 
 * **Owning Quote**: the quote from which the proposal is being generated
 * **Quote must be valid**: a toggle which ensures that only valid quotes can be used to generate a proposal. If set to true, and the owning quote is not a valid quote, then the proposal will not be generated. By default, it is set to True.
@@ -444,7 +444,7 @@ Each MobileForce document template has a (required) **Name** field. In addition,
 * **Document Sections** : the various sections in the document template, indicating the order in which they appear, and whether they are optional or not. Furthermore, each section has an associated filename, which describes the file from which the section is generated. Different sections can use different files.
  Document template sections  have the following required fields:
  
- ![Create section in document template for a proposal in MobileForce CPQ](/images/add_edit_proposal_document_template_section.png)
+ ![Create section in document template for a proposal in MobileForce CPQ](/zendesk_images/DocumentTemplateSection.png)
 
   * **Name** : Displayed name for this section.
   * **Order** : Order of this section within the parent document template. Sections within a document template are ordered by this field in ascending order.
