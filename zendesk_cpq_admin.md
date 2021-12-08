@@ -378,7 +378,7 @@ Approvers can be individual users or roles. In addition, approvers can be notifi
 * **User Roles** : A comma separated list of MobileForce roles. All MobileForce users in these roles can approve the quote. These users will be NOT be notified on approval requests.
 * **Dynamic Expression** : An  form expression that returns a comma separated list of email addresses that can approve the quote. These users will be NOT be notified on approval requests.
 
-![Create Approval Groups in MobileForce CPQ](/zendesk_images/ApprovalGroups.png)
+![Create Approval Groups in MobileForce CPQ](/zendesk_images/ApproverGroups.png)
 
 Approval Groups splits approvers into two categories: notified approvers and un-notified approvers. Both kinds of approvers can approve the quote. However, only notified approvers receive notifications on approval requests. For example, one may wish to make a supervisor be a notified approver but the supervisor's manager be an un-notified approver. This is done so that the supervisor's manager does not get spammed by day-to-day approval requests but can approve a quote for exceptional cases, (e.g., the supervisor is sick that day.)
 
