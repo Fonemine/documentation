@@ -418,7 +418,7 @@ Starting from a quote, MobileForce CPQ can generate a set of documents. Each doc
 
 ### 6.1. Document Templates
 
-The following document template is used to generate a proposal for a customer that is based on their use of a CRM such as Zendesk Sell. This document template has the following sections
+The following document template is used to generate a proposal for a customer that is based on their use of a CRM such as Hubspot, SugarCRM and Zendesk Sell. This document template has the following sections
 
 Each MobileForce document template has a (required) **Name** field. In addition, document templates typically have the following fields:
 
