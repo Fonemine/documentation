@@ -56,7 +56,7 @@ This section includes the (required) **Name** field, and in addition, the unique
 An optional field, "Product Category" is used to provide one or more previously created product categories that the product belongs to.
 Additional optional fields include **Description** and **Image**.  
 
-![Create Product General Section in MobileForce CPQ](/zendesk_images/ProductGeneral.png)
+![Create Product General Section in MobileForce CPQ](/zendesk_images/ProductsGeneral.png)
 
 #### 3.1.2. Configuration Section
 
@@ -76,7 +76,7 @@ The quantity attribute has the following fields:
 - **Multiply with Parent Product's Quantity** : Yes/No indicating whether the final quantity should be this product's quantity times the parent product's final quantity. For example, if one adds 3 PC computers with 2 hard-disks each, the quote should use a final quantity of 6 to compute the price. By default this field is 0, (false).
 - **Quantity Step** : Numerical step value of the quantity. An entered quantity must be an integer multiple of the step. This step can be fractional, (e.g., 0.01). By default, it is 1.
 
-![Create Product Configuration Section in MobileForce CPQ](/zendesk_images/ProductConfig.png)
+![Create Product Configuration Section in MobileForce CPQ](/zendesk_images/ProductsConfig.png)
 
 #### 3.1.3. Pricing Section
 
@@ -110,7 +110,7 @@ If the discount unit is an amount, then two additional fields provide the range 
 - **Discount Amount Min**: Minimum fixed discount that a user can enter.  Default is 0.
 - **Discount Amount Max**: Maximum fixed discount that a user can enter.  Default is 1,000,000.
 
-![Create Product Pricing Section in MobileForce CPQ](/zendesk_images/ProductPricing.png)
+![Create Product Pricing Section in MobileForce CPQ](/zendesk_images/ProductsPricing.png)
 
 The price book entries sub-section within pricing section enables the product pricing to be specified in multiple price books. The following UI describes how this is done. First, the price book for which pricing is being provided is specified. Next, the product is specified. Both are required fields.
 Under **Prices** sub-section, the two fields that can be specified are **List Price** and **Method** 
