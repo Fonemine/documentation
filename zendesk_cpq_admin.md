@@ -30,7 +30,7 @@ In the MobileForce CPQ, this entity is simply called a **Product Category** to r
 
 A product or service category can be nested within another category. Products/Services can belong to multiple categories. For a Product/Service to be usable and added to a Quote, it must belong to at least one product category.
 
-![Create Product Category in MobileForce CPQ](/images/add_product_category.png)
+![Create Product Category in MobileForce CPQ](/zendesk_images/ProductCategories.png)
 
 Each MobileForce CPQ Product Category has a (required) **Name** field. In addition, it can have a **Parent** field, indicating the product category hierarchy to which this product category belongs. Additional optional fields include **Description** and **Image**.
 
@@ -56,7 +56,7 @@ This section includes the (required) **Name** field, and in addition, the unique
 An optional field, "Product Category" is used to provide one or more previously created product categories that the product belongs to.
 Additional optional fields include **Description** and **Image**.  
 
-![Create Product General Section in MobileForce CPQ](/images/add_product_general.png)
+![Create Product General Section in MobileForce CPQ](/zendesk_images/ProductGeneral.png)
 
 #### 3.1.2. Configuration Section
 
@@ -76,7 +76,7 @@ The quantity attribute has the following fields:
 - **Multiply with Parent Product's Quantity** : Yes/No indicating whether the final quantity should be this product's quantity times the parent product's final quantity. For example, if one adds 3 PC computers with 2 hard-disks each, the quote should use a final quantity of 6 to compute the price. By default this field is 0, (false).
 - **Quantity Step** : Numerical step value of the quantity. An entered quantity must be an integer multiple of the step. This step can be fractional, (e.g., 0.01). By default, it is 1.
 
-![Create Product Configuration Section in MobileForce CPQ](/images/add_product_configuration.png)
+![Create Product Configuration Section in MobileForce CPQ](/zendesk_images/ProductConfig.png)
 
 #### 3.1.3. Pricing Section
 
@@ -110,7 +110,7 @@ If the discount unit is an amount, then two additional fields provide the range 
 - **Discount Amount Min**: Minimum fixed discount that a user can enter.  Default is 0.
 - **Discount Amount Max**: Maximum fixed discount that a user can enter.  Default is 1,000,000.
 
-![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing.png)
+![Create Product Pricing Section in MobileForce CPQ](/zendesk_images/ProductPricing.png)
 
 The price book entries sub-section within pricing section enables the product pricing to be specified in multiple price books. The following UI describes how this is done. First, the price book for which pricing is being provided is specified. Next, the product is specified. Both are required fields.
 Under **Prices** sub-section, the two fields that can be specified are **List Price** and **Method** 
@@ -136,13 +136,13 @@ Each row in this matrix has the following fields.
 - **To**: End quantity of this tier.
 - **List Price**: Unit price for this tier.
 
-![Create Product Pricing Section in MobileForce CPQ](/images/add_product_pricing_pricebook.png)
+![Create Product Pricing Section in MobileForce CPQ](/zendesk_images/ProductPricingPriceBook.png)
 
 #### 3.1.4. Approval Section
 
 In this section, we specify the **rules** that are used to decide how the product pricing in a quote is approved. Note that ONLY individual product-related rules are specified here. Most **rules** are typically specified at the Quote level (see **Quote Templates** under the **Quotes** section below). Product-level rules typically only make sense for **Configurable Products** or products with nested child products.  They only apply within scope of the product itself. You can use them to validate custom fields, (e.g., end date must be less than start date), or make constraints or actions for line tables inside the product. 
 
-![Create Product Approval Section in MobileForce CPQ](/images/add_product_approval.png)
+![Create Product Approval Section in MobileForce CPQ](/zendesk_images/ProductApproval.png)
 
 The individual approval rules are specified as follows. Each rule has the following **required** fields:
 
@@ -158,7 +158,7 @@ In addition, the following **Optional** fields can be specified.
 
 * **Skip later rules after trigger** : Once a specific rule is triggered, this toggle enables the remaining rules to be skipped. The default is that the remaining rules are not skipped, and instead evaluated.
 
-![Create Product Approval Rule in MobileForce CPQ](/images/CPQApprovalRule.png)
+![Create Product Approval Rule in MobileForce CPQ](/zendesk_images/CPQApprovalRule.png)
 
 
 ### 3.2. Product UI Layouts
