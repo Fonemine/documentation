@@ -40,7 +40,7 @@
 ![Module Loader in SugarCRM](/images/sugar_module_loader.png)
 
 ## Step 5: Install Custom Buttons UI Module
-- Download [*wRecordButtons* Module ZIP File](/assets/wRecordButtons_v5.22.zip) to your computer
+- Download [*wRecordButtons* Module ZIP File](/assets/wRecordButtons v6.08.zip) to your computer
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Module Loader*
 - Upload the Module ZIP File you downloaded to install the Module
