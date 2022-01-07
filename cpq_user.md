@@ -1,6 +1,7 @@
+Configure, Price, Quote End-user Guide
 
 
- 1. **Creating a CPQ Quote**: The following are the easy steps you can follow to quickly start quoting with the CPQ application.
+**Creating a CPQ Quote**: The following are the easy steps you can follow to quickly start quoting with the CPQ application.
  
 Click Add to start a new CPQ Session or start a new CPQ Session from a Deal or Opportunity record page in your CRM
 Customer Tab – Fill in customer information as required. Some of the fields may be auto-populated from your CRM.
