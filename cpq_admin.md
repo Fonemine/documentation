@@ -1,7 +1,6 @@
-**Please note:**  This document is intended for use by an Administrator: as such it provides a description of steps to be taken by an Administrator before the CPQ software can be used by Sales and Service teams. In order to use this CPQ Admin Guide, you must have  control of (i.e., knowledge and access and update to) (a) Price books: reflecting the currency and the geographies in which you sell your products (b) Product Categories (c) Products (d) Pricing (e) Sales Quotes and Proposals that are typically sent to customers (f) Marketing and Legal elements to be included in Sales Quotes. (g) Pricing rules and Approval rules: for special pricing (h) Users with Email Addresses & Roles
+**Please note:**  This document is intended for use by an **Administrator**: as such it provides a description of steps to be taken by an Administrator before the CPQ software can be used by Sales and Service teams (referred to jointly as the *Seller*) . In order to use this CPQ Admin Guide, you must have  control of (i.e., knowledge and access and update to) (a) Price books: reflecting the currency and the geographies in which you sell your products (b) Product Categories (c) Products (d) Pricing (e) Sales Quotes and Proposals that are typically sent to customers (f) Marketing and Legal elements to be included in Sales Quotes. (g) Pricing rules and Approval rules: for special pricing (h) Users with Email Addresses & Roles
 
 # Configure, Price, Quote Admin Guide
-
 
 An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
 
@@ -11,8 +10,25 @@ Then the document goes into details of the CPQ Administration.
 ## Setup and Quick Start to Administering your CPQ
 
 1. **Create Price Books**: typically one, per geography/currency where you sell your products. Please pay attention to currency, channels, and any uplifts in pricing, when organizing price books.
+2. **Create/Add Product Categories**: Product Categories help organize the products and services you sell . Examples of Product Categories include Hardware Products, Software Products, Subscription Products, Professional Services, Labor etc. Your CPQ system already includes some sample product categories which are already populated in your CPQ instance. You can continue to use them as-is, rename them or delete them and add your own product categories if the builtin categories are not applicable to your business.
+3. **Add Products**: Products (or services) represent anything that you sell to your customers. Despite the name, this can be an actual product or it could refer to a service you provide. It typically has a unique code or SKU  among other attributes. When you add a product, you must add four sections :
+    a) General Attributes
+    b) Pricing
+    c) Configuration Rules
+    d) Approval Rules.
+We will go into details of each of these sections later in this document
 
-Please refer to the sections below for more details on the different components of your CPQ system and how to administer each of them.
+4. **Add/Update the Quote UI Layout**: This layout represents the seller experience and can be controlled precisely to optimize the CPQ session for your seller users. It is a Form-based experience that is suitable to create wizard-like workflows that are very easy for sellers to use while creating a quote. Keep in mind that your sellers may not only be sales personnel, but also service personnel, sometimes in the field. The CPQ system has a built-in Quote UI Layout which you acn use as is, or more often than not, modify it for your sales workflow and steps.
+
+The sample quote layout in your instance has a multi-tab form layout that can be modified to suit your needs by editing it using the built-in Form editor. The layout has both presentation directives and actual input form fields which are either populated by the seller during the quoting process or are auto populated with information from a 3rd party system like a CRM. It is best to use the sample quote layout by trying to create an actual quote (just as a seller typically would), in order to understand the directives as well as the form fields. Then you can easily modify the quote UI layout for your specific needs.
+
+5. **Upload Output Template Files**: The CPQ system generates a professional quote PDF document using one or more source template documents – typically Microsoft Word or Excel documents. These source template documents typically contain a proposal boilerplate, marketing information, customer testimonials and legal terms and conditions. The source documents can also have OpenTBS (https://www.tinybutstrong.com) macros embedded : these macros  map to information (form) fields contained in the quote instance. These form fields have unique names that can be referenced in the template documents. These field names are all defined in the Quote UI Layout (see Step 4 above). Your CPQ system already includes  a couple of sample Microsoft Word based source template files for you to use and adapt to your business needs. You can download them, modify them using Word and then re-upload them back to the CPQ system.
+
+6. **Create or Update Document Templates**: A document template is essentially a consolidated source template that the CPQ system uses to generate the output quote or proposal document. A document template can encapsulate multiple template files you have uploaded in the previous step (see Step 5 above). For example, there is a sample document template in the system that combines a proposal boilerplate file and a terms & conditions template file in that order. You can use or modify this as you see fit, or you can  create your own Document Templates.
+
+7.**Create or Update Quote Template**: A quote template is where all of the previous elements come together. It is used by the CPQ system to render the seller UI experience and also to make decisions during the quote creation session as to what products and services to show to the seller for inclusion in a quote, what configuration rules to apply or enforce, what prices to select, manage any discount and approvals and finally generate an output quote document. Included in your CPQ system is a fully configured sample Quote Template that you can use and adapt to your business needs or modify as you desire.
+
+Please refer to the following sections  for more details on the different components of your CPQ system and how to administer each of them.
 
 ## 1. Price Books
 
