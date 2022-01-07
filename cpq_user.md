@@ -1,4 +1,4 @@
-Configure, Price, Quote End-user Guide
+# Configure, Price, Quote End-user Guide
 
 
 **Creating a CPQ Quote**: The following are the easy steps you can follow to quickly start quoting with the CPQ application.
