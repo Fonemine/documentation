@@ -1,5 +1,18 @@
+**Please note:**  This document is intended for use by an Administrator: as such it provides a description of steps to be taken by an Administrator before the CPQ software can be used by Sales and Service teams. In order to use this CPQ Admin Guide, you must have  control of (i.e., knowledge and access and update to) (a) Price books: reflecting the currency and the geographies in which you sell your products (b) Product Categories (c) Products (d) Pricing (e) Sales Quotes and Proposals that are typically sent to customers (f) Marketing and Legal elements to be included in Sales Quotes. (g) Pricing rules and Approval rules: for special pricing (h) Users with Email Addresses & Roles
+
 # Configure, Price, Quote Admin Guide
+
+
 An important aspect of the sales process for any business is the systematization of the processes encompassing pricing of products or services that the business sells. In a typical sales process, setting a price for a product not only impacts the profit margins and market share, it also streamlines the process of product discounts and uplifts in response to market conditions. The basic list of products and their prices is a Price Book, often the starting point of all CPQ systems.
+
+This document first describes the Quick Start Setup sequence of steps that an Administrator needs to perform, in order to enable the rest of the organization to start using the CPQ systems. As a best practice, it behooves an Administrator to perform these steps *in sequence*, so as to best set up the CPQ Software.
+Then the document goes into details of the CPQ Administration.
+
+## Setup and Quick Start to Administering your CPQ
+
+1. **Create Price Books**: typically one, per geography/currency where you sell your products. Please pay attention to currency, channels, and any uplifts in pricing, when organizing price books.
+
+Please refer to the sections below for more details on the different components of your CPQ system and how to administer each of them.
 
 ## 1. Price Books
 
