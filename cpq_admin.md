@@ -28,6 +28,8 @@ We will go into details of each of these sections later in this document
 
 Please refer to the following sections  for more details on the different components of your CPQ system and how to administer each of them.
 
+## CPQ Administration: Detailed Operations
+
 ## 1. Price Books
 
 Typically, the first thing a CPQ Administrator does is to create one or more price books. 
