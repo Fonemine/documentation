@@ -29,7 +29,7 @@ From within a CRM, there are two ways to access the MobileForce CPQ
 
 **(a)** As a standalone CPQ solution at the top level. Typically, MobileForce CPQ shows a list of previously created quotes and gives you the option to edit or view an existing quote, or to create a new quote. When creating a new quote this way, the customer and contact information will need to be filled in, because the quote isn't being created in the context of an existing deal or opportunity.
 
-**(b)** Contextually, from within the CRM Opportunity (SugarCRM, SalesForce) or Deal (Hubspot, Zendesk). This access makes sense since the process of creating a quote starts from an opportunity, where the account and contact info are automatically pulled into the quote  by MobileForce CPQ, so as to provide the context for the quote.  
+**(b)** Contextually, from within the CRM Opportunity (SugarCRM, SalesForce) or Deal (Hubspot, Zendesk). This access makes sense since the process of creating a quote starts from an opportunity, where the account and contact info are automatically pulled into the quote  by MobileForce CPQ, so as to provide the context for the quote.  What fields are automatically pre-filled in various Quote Tabs is determined by the CPQ Setup, so if you would like specific fields to be pre-filled by specific CRM attributes, please talk with your CRM or CPQ Administrator.
 
 The following screenshot shows these two ways of accessing the MobileForce CPQ:
 
@@ -50,7 +50,7 @@ Similarly, the following screenshot shows the MobileForce CPQ UI embedded within
 ## 2 Creating a Quote
 
 When creating a quote, if you  start from a deal or an opportunity, the quote will auto-populate many fields of the customer tab using information from your CRM.
-The Quote creation process in MobileForce is made simple via a wizard which consists of multiple tabs that are filled in left to right order. The left to right order of filling information in the quote creation process captures the quote workflow, and can be customized to use as few or as many tabs as your business workflow mandates. 
+The Quote creation process in MobileForce is made simple via a wizard which consists of multiple tabs that are filled in left to right order. The left to right order of filling information in the quote creation process captures the quote workflow, and can be customized to use as few or as many tabs as your business workflow mandates. Similarly the fields that are shown in individual tabs can also be customized in the CPQ Setup (talk with your CRM/CPQ Admin if you need specific CRM Attributes to show up as fields in your quoting process and hence in your quote.
 
 At every stage of the quoting process, you can validate the data you've entered, as well as save the partial quote that you've completed so far, thus finding and fixing errors as they occur, as well as giving you the flexibility to create a quote in multiple sessions (rather than all at once).
 
@@ -84,6 +84,10 @@ The quote tab looks as follows:
 ![Quote Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/ZendeskQuoteTab.png)
 
 Once the Price Book, and Contract Term attributes are selected, the real work of the CPQ begins with the selection of Product (and Service) Line Items.
+
+The action of adding Line Items brings up the product catalog displayed as hierarchical product categories from which you can drill down and select specific products to add to the line items, as shown inthe following screensho
+
+![Quote Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/ZendeskLineItemProductSelection.png)
 
 
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
@@ -123,7 +127,7 @@ The following objects and terms are often mentioned, when using MobileForce CPQ.
 
 * **Line Item** An entry that appears on a separate line in the Quote and describes the quantity, prices, and the discounts specific to a single product or service. A quote consists of many line items, one for each product or service being sold in the quote.
 
-* **Price Book** The basic list of products and their prices, for a specific country or geography or region. Price books can also be specific to specific currencies or even specific customers. Price Books are the starting point for CPQ Activities.
+* **Price Book** The basic list of products and their prices, for a specific country or geography or region. Price books can also be specific to specific currencies or even specific customer segments or customers. Price Books are the starting point for CPQ Activities.
 
 * **Price Recurrence** In today's world of flexible pricing, one important characteristic of any price is "how often a user is charged".Price recurrence sets the time period for which the Product is charged to the Customer. The MobileForce CPQ Solution offers flexibility in specifying Price recurrence  from "one time" (i.e., no recurrence) to a sliding recurrence scale:  from "each minute", all the way to "yearly".
 
