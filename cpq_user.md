@@ -150,13 +150,14 @@ You can view the prepared document online. You can also download it and email it
 
 ![Generated Docs](/images/cpq_user_guide_images/GeneratedDocs.png)
 
+Each time a quote is saved, a new version of the quote is created. This enables you to keep track of all the versions of the quote. In the screenshot above (under the **Generated Docs** Tab) you can see all the quotes that have been created and saved for a specific deal or opportunity. You can also download any quote and send it using your own email client to the customer.
 
 ### 2.1 Create a Quote Video Walkthrough 
 
 For additional details, You can use this full walkthrough video 
 https://youtu.be/6_L25kqDq_g
 
-## CPQ Terminology ## 
+## 3. CPQ Terminology ## 
 
 The following objects and terms are often mentioned, when using MobileForce CPQ.
 
