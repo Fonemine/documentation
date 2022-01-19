@@ -11,7 +11,7 @@ MobileForce CPQ is used in the sales process, so it is natural to expect the CPQ
 
 This document assumes that an Administrator (either a Sales or SalesOps admin, or an IT admin) has already installed, configured, and set up the MobileForce CPQ within the CRM. To verify that you have access to the MobileForce CPQ Solution from within your CRM, you can go on Zendesk to **Settings --> Integrations --> Apps** and you'll see MobileForce CPQ, or on Hupspot, you can go to **Settings --> Integrations --> Connected Apps** and verify that you can see MobileForce CPQ. Similarly, on SugarCRM, you can go to **Settings --> Developer Tools --> Module Loader** to verify that MobileForce CPQ has been installed on your instance.
 
-The following screenshots show MobileForce CPQ installed within a CRM.
+The following screenshots show MobileForce CPQ installed within a CRM. If you don't find the MobileForce CRM installed on your CRM, please contact your CRM Administrator.
 
 ![MobileForce CPQ in Zendesk](/images/cpq_user_guide_images/ZendeskSettingsMF.png)
 
@@ -23,9 +23,9 @@ The MobileForce CPQ Solution is accessed from within the same CRM that is alread
 
 From within a CRM, there are two ways to access the MobileForce CPQ 
 
-**(a)** As a standalone CPQ solution at the top level.
+**(a)** As a standalone CPQ solution at the top level. Typically, MobileForce CPQ shows a list of previously created quotes and gives you the option to edit or view an existing quote, or to create a new quote. When creating a new quote this way, the customer and contact information will need to be filled in, because the quote isn't being created in the context of an existing deal or opportunity.
 
-**(b)** Contextually, from within the CRM Opportunity (SugarCRM, SalesForce) or Deal (Hubspot, Zendesk). This access makes sense since the process of creating a quote starts from an opportunity, where the account and contact info are pulled into the quote automatically by MobileForce CPQ, so as to provide the context for the quote.  
+**(b)** Contextually, from within the CRM Opportunity (SugarCRM, SalesForce) or Deal (Hubspot, Zendesk). This access makes sense since the process of creating a quote starts from an opportunity, where the account and contact info are automatically pulled into the quote  by MobileForce CPQ, so as to provide the context for the quote.  
 
 The following screenshot shows these two ways of accessing the MobileForce CPQ:
 
