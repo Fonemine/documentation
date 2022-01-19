@@ -23,7 +23,7 @@ From within a CRM, there are two ways to access the MobileForce CPQ
 
 The following screenshot shows these two ways of accessing the MobileForce CPQ:
 
-![Accessing MobileForce CPQ](/images/cpq_user_guide_images/PriceBook.png)
+![Accessing MobileForce CPQ](/images/cpq_user_guide_images/AccessingMFCPQ.png)
 The setup and administration of MobileForce CPQ is an admin function and is outside the scope of this document.
 
 ### 1.3 MobileForce CPQ UI 
