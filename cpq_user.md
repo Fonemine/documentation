@@ -75,6 +75,11 @@ The Customer Tab in MobileForce CPQ on Zendesk looks quite similar:
 
 **(c) Quote Tab** – Choose a Price Book, enter contractual term attributes and add Product & Service Line Items
 
+The quote tab looks as follows:
+
+![Quote Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/ZendeskQuoteTab.png)
+
+
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
 
 **(e) Signature Tab** – If you’d like to incorporate your digital signature in the output PDF document, please include it here along with signatory information
