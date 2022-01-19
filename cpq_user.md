@@ -17,6 +17,10 @@ The following screenshots show MobileForce CPQ installed within a CRM. If you do
 
 ![MobileForce CPQ in Hubspot](/images/cpq_user_guide_images/HubspotSettingsMF.png)
 
+The information that MobileForce CPQ automatically pulls from a CRM include Deals (or Opportunities), Contacts, and Customer Information. The power of MobileForce CPQ lies in its seamless integration with a variety of CRM systems for read as well as write of this information. 
+
+When you access the MobileForce CPQ for the first time, you'll receive a pop-up alert request asking you to confirm the integration between your CRM and MobileForce. Please accept this request in order for MobileForce CPQ to access (for read and write) CRM objects. From then onwards, information flows seamlessly between your CRM and MobileForce CPQ. Please note that both your CRM and MobileForce CPQ are on their specific clouds and none of your CRM information persists on the MobileForce side, thus providing you with a secure CPQ use scenario.
+
 ### 1.2 Accessing the MobileForce CPQ
 
 The MobileForce CPQ Solution is accessed from within the same CRM that is already being used by the seller. The seller just logs into their CRM like they always do using their CRM Credentials. The MobileForce CPQ magically appears within the  CRM UI, either as a top level Tab (e.g., SugarCRM), or as a card on the right side panel (e.g., Hubspot, Zendesk). Of course, features of the MobileForce CPQ can be controlled by setting up roles, so what a seller sees within their CPQ Solution depends on their own role in their CRM setup and what permissions that role has to create, list, read, update, or delete. 
