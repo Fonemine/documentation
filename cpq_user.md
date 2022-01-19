@@ -44,9 +44,16 @@ Similarly, the following screenshot shows the MobileForce CPQ UI embedded within
 
 ## 2 Creating a Quote
 
-**Creating a CPQ Quote**: The following are the easy steps you can follow to quickly start quoting with the CPQ application.
+When creating a quote, if you  start from a deal or an opportunity, the quote will auto-populate many fields of the customer tab.
+
+**Creating a CPQ Quote**: Here are some easy steps that you can follow to quickly start quoting with the MobileForce CPQ application. 
  
 **(a) Add** Click Add to start a new CPQ Session or start a new CPQ Session from a Deal or Opportunity record page in your CRM
+
+The following screenshot shows how you can start a new CPQ session directly from a Deal in Zendesk. Please note that Zendesk provides two UI Options for accessing the CPQ: (a) as a popup window or (b) as a new browser tab. These two ways are identical except for the UI Placement. Some users prever to see the surrounding Deal context when creating a quote, whereas others prefer the CPQ quote to be a completely new tab within their browser.
+
+![Add a new CPQ Quote in Zendesk](/images/cpq_user_guide_images/ZendeskAddQuote.png)
+
 
 **(b) Customer Tab** – Fill in customer information as required. Some of the fields may be auto-populated from your CRM.
 
