@@ -17,9 +17,9 @@ The following screenshots show MobileForce CPQ installed within a CRM. If you do
 
 ![MobileForce CPQ in Hubspot](/images/cpq_user_guide_images/HubspotSettingsMF.png)
 
-The information that MobileForce CPQ automatically pulls from a CRM include Deals (or Opportunities), Contacts, and Customer Information. The power of MobileForce CPQ lies in its seamless integration with a variety of CRM systems for read as well as write of this information. 
+The information that MobileForce CPQ automatically pulls from a CRM include Deals (or Opportunities), Contacts, and Customer Information. The power of MobileForce CPQ lies in its seamless integration with a variety of CRM systems for read as well as write of a quote information back to the CRM when a quote is completed. 
 
-When you access the MobileForce CPQ for the first time, you'll receive a pop-up alert request asking you to confirm the integration between your CRM and MobileForce. Please accept this request in order for MobileForce CPQ to access (for read and write) CRM objects. From then onwards, information flows seamlessly between your CRM and MobileForce CPQ. Please note that both your CRM and MobileForce CPQ are on their specific clouds and none of your CRM information persists on the MobileForce side, thus providing you with a secure CPQ use scenario.
+When you access the MobileForce CPQ for the first time, you'll receive a pop-up alert requesting you to confirm the integration between your CRM and MobileForce. Please accept this request in order for MobileForce CPQ to access (for read and write) CRM objects. From then onwards, information flows seamlessly between your CRM and MobileForce CPQ. Please note that both your CRM and MobileForce CPQ are on their specific clouds and none of your CRM information persists on the MobileForce side, thus providing you with a secure CPQ use scenario.
 
 ### 1.2 Accessing the MobileForce CPQ
 
@@ -46,9 +46,13 @@ Similarly, the following screenshot shows the MobileForce CPQ UI embedded within
 
 ![CPQ UI in Hubspot](/images/cpq_user_guide_images/HubSpotCPQQuoteList.png)
 
+
 ## 2 Creating a Quote
 
-When creating a quote, if you  start from a deal or an opportunity, the quote will auto-populate many fields of the customer tab.
+When creating a quote, if you  start from a deal or an opportunity, the quote will auto-populate many fields of the customer tab using information from your CRM.
+The Quote creation process in MobileForce is made simple via a wizard which consists of multiple tabs that are filled in left to right order. The left to right order of filling information in the quote creation process captures the quote workflow, and can be customized to use as few or as many tabs as your business workflow mandates. 
+
+At every stage of the quoting process, you can validate the data you've entered, as well as save the partial quote that you've completed so far, thus finding and fixing errors as they occur, as well as giving you the flexibility to create a quote in multiple sessions (rather than all at once).
 
 **Creating a CPQ Quote**: Here are some easy steps that you can follow to quickly start quoting with the MobileForce CPQ application. 
  
@@ -63,7 +67,7 @@ A variation of the same experience can be seen in SugarCRM where within a specif
 ![Add a new CPQ Quote in SugarCRM](/images/cpq_user_guide_images/SugarCRMCreateQuote.png)
 
 
-**(b) Customer Tab** – Fill in customer information as required. Many of the fields may be auto-populated from your CRM if you started from an opportunity or a deal. The Customer Tab in MobileForce CPQ on SugarCRM looks as follows: 
+**(b) Customer Tab** – Fill in customer information as required. Many of the fields may be auto-populated from your CRM if you started from an opportunity or a deal. You can always over-ride the pre-filled fields with values specific to your quote scenario. The Customer Tab in MobileForce CPQ on SugarCRM looks as follows: 
 
 ![Customer Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/SugarCRMCustomerTab.png)
 
@@ -78,6 +82,8 @@ The Customer Tab in MobileForce CPQ on Zendesk looks quite similar:
 The quote tab looks as follows:
 
 ![Quote Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/ZendeskQuoteTab.png)
+
+Once the Price Book, and Contract Term attributes are selected, the real work of the CPQ begins with the selection of Product (and Service) Line Items.
 
 
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
@@ -117,7 +123,7 @@ The following objects and terms are often mentioned, when using MobileForce CPQ.
 
 * **Line Item** An entry that appears on a separate line in the Quote and describes the quantity, prices, and the discounts specific to a single product or service. A quote consists of many line items, one for each product or service being sold in the quote.
 
-* **Price Book** The basic list of products and their prices, for a specific country or geography or region. Price Books are the starting point for CPQ Activities.
+* **Price Book** The basic list of products and their prices, for a specific country or geography or region. Price books can also be specific to specific currencies or even specific customers. Price Books are the starting point for CPQ Activities.
 
 * **Price Recurrence** In today's world of flexible pricing, one important characteristic of any price is "how often a user is charged".Price recurrence sets the time period for which the Product is charged to the Customer. The MobileForce CPQ Solution offers flexibility in specifying Price recurrence  from "one time" (i.e., no recurrence) to a sliding recurrence scale:  from "each minute", all the way to "yearly".
 
