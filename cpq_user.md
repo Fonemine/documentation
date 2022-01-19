@@ -136,7 +136,19 @@ The following screenshot shows how a digital signature can be easily created and
 
 
 
-**(f) Generate Docs Tab** – Validate and Save your quote. Then click on Generate Doc button to choose one of the output document templates to generate a professional looking Quote document. View the prepared document online. Download it and email it to your customer via your desktop email client or optionally, email it via your DocuSign account. Finally, click on the Save to CRM button to store the quote document and information in your CRM. 
+**(f) Generate Docs Tab** – Validate and Save your quote. Then click on Generate Doc button to choose one of the output document templates to generate a professional looking Quote document. The following screenshot shows how you can select from a single-page or a multi-page quote layout. 
+The Quote UI Layout determines the exact layout of the created quote. The quote UI Layout can also be customized but this is a CPQ Administrator function so if you need to make changes to the quote layout, please contact your CPQ Administrator.
+
+![Generate Docs UI](/images/cpq_user_guide_images/GenerateDocsUI.png)
+
+Further, if you select a multi-page Quote UI Layout, then you can optionally select specific documents (such as terms and marketing collateral) to include within your quote, as shown in the following screenshot.
+
+![Generate Docs MultiPage](/images/cpq_user_guide_images/GenerateDocsMultiPage.png)
+
+Once the quote documents are generated, they are shown as a list view, on the Generated Docs Tab.
+You can view the prepared document online. You can also download it and email it to your customer via your desktop email client or optionally, email it via your DocuSign account. Finally, click on the Save to CRM button to store the quote document and information back in your CRM. All these actions are shown in the screenshot below:
+
+![Generated Docs](/images/cpq_user_guide_images/GeneratedDocs.png)
 
 
 ### 2.1 Create a Quote Video Walkthrough 
