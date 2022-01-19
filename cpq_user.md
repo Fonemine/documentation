@@ -107,21 +107,34 @@ The Quote Tab also provides action buttons on the far right, that enable the lin
 
 Finally, once the quote has all the products and contract attributes, it can now be submitted for approval, using the Submit button, as shown in the screenshot below:
 
-![Action buttons for Line Items in Quote](/images/cpq_user_guide_images/QuoteSubmit.png)
+![Quote Submit for Approval](/images/cpq_user_guide_images/QuoteSubmit.png)
 
+A quote can also be further validated, and also saved. This is especially useful if the quote isn't complete. This enables the seller to break the quote creation process into multiple sessions and even collaborate with the customer on the saved quote.
 
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
 Once a quote is submitted for approval, a notification (via email) is sent out to the users that are configured (by the CPQ Admin) to approve the quote.
 When an approver logs into the MobileForce CPQ system, they get to see, under the **Approvals** Tab, that the quote is pending approval. They are also given a choice to approve, decline, or if they are also the user who created the quote, they are given the ability to cancel the quote. The following screenshot shows the various elements of the approval tab, prior to a quote being approved.
 
 
-![Action buttons for Line Items in Quote](/images/cpq_user_guide_images/ApprovalsTab.png)
+![Approvals Tab](/images/cpq_user_guide_images/ApprovalsTab.png)
 
 Once the approver approves the quote, the Approvals Tab changes and shows that the quote was approved. The following screenshot shows the various elements of the approval tab, after a quote is approved.
 
-![Action buttons for Line Items in Quote](/images/cpq_user_guide_images/ApprovedTab.png)
+![Approvals Tab after a quote has been approved](/images/cpq_user_guide_images/ApprovedTab.png)
 
 **(e) Signature Tab** – If you’d like to incorporate your digital signature in the output PDF document, please include it here along with signatory information
+In this tab, the seller can provide their signature, and send the quote to the customer so as to obtain the customer's approval and signature. 
+The following screenshot shows the signature tab.
+
+![Signatures Tab](/images/cpq_user_guide_images/SignaturesTab.png)
+
+The MobileForce CPQ system provides built-in digital signature capture, and also integrates with DocuSign for 3rd party signature capture and collaboration.
+The following screenshot shows how a digital signature can be easily created and captured by the MobileForce CPQ system.
+
+![Digital Signature capture](/images/cpq_user_guide_images/SignaturesTab.png)
+
+
+
 
 **(f) Generate Docs Tab** – Validate and Save your quote. Then click on Generate Doc button to choose one of the output document templates to generate a professional looking Quote document. View the prepared document online. Download it and email it to your customer via your desktop email client or optionally, email it via your DocuSign account. Finally, click on the Save to CRM button to store the quote document and information in your CRM. 
 
