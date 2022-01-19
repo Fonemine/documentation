@@ -9,7 +9,12 @@ Here's how one starts using the MobileForce CPQ.
 ### 1.1 The CRM Context
 MobileForce CPQ is used in the sales process, so it is natural to expect the CPQ Solution to be accessible from within the CRM that sellers are most familiar with. Indeed, the MobileForce CPQ is "installed" within the UI for most popular CRMs such as SugarCRM, Hubspot, and ZenDesk. More so, the MobileForce CPQ UI has the same look and feel, color schemes, layout, and user experience as the CRM it is embedded in, making it easy to use for sellers who are already familiar with their own CRM.
 
-This document assumes that an Administrator (either a Sales or SalesOps admin, or an IT admin) has already installed, configured, and set up the MobileForce CPQ within the CRM.
+This document assumes that an Administrator (either a Sales or SalesOps admin, or an IT admin) has already installed, configured, and set up the MobileForce CPQ within the CRM. To verify that you have access to the MobileForce CPQ Solution from within your CRM, you can go on Zendesk to **Settings --> Integrations --> Apps** and you'll see MobileForce CPQ, or on Hupspot, you can go to **Settings --> Integrations --> Connected Apps** and verify that you can see MobileForce CPQ.
+The following screenshots show MobileForce CPQ installed within a CRM.
+
+![MobileForce CPQ in Zendesk](/images/cpq_user_guide_images/ZendeskSettingsMF.png)
+
+![MobileForce CPQ in Hubspot](/images/cpq_user_guide_images/HubspotSettingsMF.png)
 
 ### 1.2 Accessing the MobileForce CPQ
 
