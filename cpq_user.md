@@ -28,6 +28,9 @@ The setup and administration of MobileForce CPQ is an admin function and is outs
 
 ### 1.3 MobileForce CPQ UI 
 
+The following screenshot shows the MobileForce CPQ UI embedded within a Sugar CRM instance. The CPQ UI is a list view of quotes. The actions available are to edit an existing quote or create a new quote.
+
+![CPQ UI](/images/cpq_user_guide_images/CPQUI.png)
 
 ## CPQ Terminology ## 
 
