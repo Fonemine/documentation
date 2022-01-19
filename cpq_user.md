@@ -99,12 +99,20 @@ The following screenshot shows a quote with two line items.
 
 ![Search Products and Product Layouts](/images/cpq_user_guide_images/QuoteLineItems.png)
 
+At this stage you can "validate" the quote by clicking on the validate button on the top right. The process of quote validation runs the various rules for quotes to ensure the correct set of products (with correct quantities, discount and combinations) are included in the quote. Validation can also result in additional line items being added (if for example, a product rule that specified that including a product necessitated adding a warranty line item). Product validation rules prevent mistakes from being made when creating quotes. The set up of Product rules that may include configuration rules (for configurable products), pricing rules, and discounting rules, all of which is done by the CRM/CPQ Administrator ahead of time. 
+
+The Quote Tab also provides action buttons on the far right, that enable the line items to be re-ordered by moving them up or down. Further, line items can also be copied for easy duplication. See the screenshot below.
+
+![Search Products and Product Layouts](/images/cpq_user_guide_images/LineItemsAction.png)
+
+
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
 
 
 **(e) Signature Tab** – If you’d like to incorporate your digital signature in the output PDF document, please include it here along with signatory information
 
-**(f) Generate Docs Tab** – Validate and Save your quote. Then click on Generate Doc button to choose one of the output document templates to generate a professional looking Quote document. View the prepared document online. Download it and email it to your customer via your desktop email client or optionally, email it via your DocuSign account. Finally, click on the Save to CRM button to store the quote document and information in your CRM.
+**(f) Generate Docs Tab** – Validate and Save your quote. Then click on Generate Doc button to choose one of the output document templates to generate a professional looking Quote document. View the prepared document online. Download it and email it to your customer via your desktop email client or optionally, email it via your DocuSign account. Finally, click on the Save to CRM button to store the quote document and information in your CRM. 
+
 
 ### 2.1 Create a Quote Video Walkthrough 
 
