@@ -36,11 +36,11 @@ The setup and administration of MobileForce CPQ is an admin function and is outs
 
 The following screenshot shows the MobileForce CPQ UI embedded within a Sugar CRM instance. The CPQ User Interface shows a list of quotes that have previously been created. The actions available at the top level of the MobileForce CPQ UI are (a) to view/edit an existing quote or (b) to create a new quote.
 
-![CPQ UI](/images/cpq_user_guide_images/CPQUI.png)
+![CPQ UI in SugarCRM](/images/cpq_user_guide_images/CPQUI.png)
 
 Similarly, the following screenshot shows the MobileForce CPQ UI embedded within a Hubspot instance. The CPQ User Interface shows a list of quotes that have previously been created. The actions available at the top level of the MobileForce CPQ UI are (a) to view/edit an existing quote or (b) to create a new quote.
 
-![CPQ UI](/images/cpq_user_guide_images/HubspotCPQQuoteList.png)
+![CPQ UI in Hubspot](/images/cpq_user_guide_images/HubSpotCPQQuoteList.png)
 
 ## 2 Creating a Quote
 
