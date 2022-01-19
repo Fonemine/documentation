@@ -59,9 +59,15 @@ A variation of the same experience can be seen in SugarCRM where within a specif
 ![Add a new CPQ Quote in SugarCRM](/images/cpq_user_guide_images/SugarCRMCreateQuote.png)
 
 
-**(b) Customer Tab** – Fill in customer information as required. Many of the fields may be auto-populated from your CRM if you started from an opportunity or a deal.
+**(b) Customer Tab** – Fill in customer information as required. Many of the fields may be auto-populated from your CRM if you started from an opportunity or a deal. The Customer Tab in MobileForce CPQ on SugarCRM looks as follows: 
 
 ![Customer Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/SugarCRMCustomerTab.png)
+
+The Customer Tab in MobileForce CPQ on Zendesk looks quite similar:
+
+![Customer Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/ZendeskCustomerTab.png)
+
+
 
 **(c) Quote Tab** – Choose a Price Book, enter contractual term attributes and add Product & Service Line Items
 
