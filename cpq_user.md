@@ -103,7 +103,7 @@ At this stage you can "validate" the quote by clicking on the validate button on
 
 The Quote Tab also provides action buttons on the far right, that enable the line items to be re-ordered by moving them up or down. Further, line items can also be copied for easy duplication. See the screenshot below.
 
-![Search Products and Product Layouts](/images/cpq_user_guide_images/LineItemsAction.png)
+![Action buttons for Line Items in Quote](/images/cpq_user_guide_images/LineItemsAction.png)
 
 
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
