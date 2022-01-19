@@ -89,8 +89,18 @@ The action of adding Line Items brings up the product catalog displayed as hiera
 
 ![Quote Tab in CPQ Quote in SugarCRM](/images/cpq_user_guide_images/ZendeskLineItemProductSelection.png)
 
+When adding products in line items, you can not only browse products (via the Product Categories hierarchy as shown above) but also search for products in the search bar. In addition, products can be laid out in a list view (the default) or you can change the layout to a grid view. The following screenshot shows these features.
+
+![Search Products and Product Layouts](/images/cpq_user_guide_images/ProductSearchView.png)
+
+Once products are selected and added to the Line Items, the Quote now contains one or more line items (one for each product that was added). You can now specify the quantity and discount for each line item in the quote.
+
+The following screenshot shows a quote with two line items.
+
+![Search Products and Product Layouts](/images/cpq_user_guide_images/QuoteLineItems.png)
 
 **(d) Approvals Tab** – If your quote requires an approval, Submit for Approval, track Approval Status & History
+
 
 **(e) Signature Tab** – If you’d like to incorporate your digital signature in the output PDF document, please include it here along with signatory information
 
