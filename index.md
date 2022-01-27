@@ -1,13 +1,17 @@
 ## End-user Guides
 
 - ServiceVelocity&trade; Field Service Management Software
-- CPQ Configure, Price, Quote Software
+- [CPQ Configure, Price, Quote Software](cpq_user.html)
 
 ## Admin Guides
 
 - ServiceVelocity&trade; Field Service Management Software
 - [CPQ Configure, Price, Quote Software](cpq_admin.html)
 - AppVelocity&trade; Custom Web Portals and Mobile App Publisher Software
+
+## For Citizen Developers
+
+- [Expressions: Usage in Low Code Application Development](expressions.html)
 
 ## Integration Guides
 
