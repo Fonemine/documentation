@@ -1,7 +1,7 @@
 ## End-user Guides
 
 - ServiceVelocity&trade; Field Service Management Software
-- [CPQ Configure, Price, Quote Software](cpq_user.html)
+- [CPQ Configure, Price, Quote Software](https://docs.mobileforcesoftware.com/cpq_user.html)
 
 ## Admin Guides
 
