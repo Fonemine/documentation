@@ -173,6 +173,26 @@ The following screenshot shows the above actions through the use of the "setting
 
 ![Generated Docs](/images/cpq_user_guide_images/QuoteListViewSettings.png)
 
+### 3.2 Quote Filters
+
+Quotes in CPQ can be filtered using powerful filtering constructs. Quote Filtering is accessed using the filter icon as shown in the following screenshot:
+
+![Generated Docs](/images/cpq_user_guide_images/QuoteFilter.png)
+
+Within quote filters, one can perform the following operations to create filters
+
+* **Group Operations** Filter rules can be grouped using and/or constructs, as shown in the screenshot below:
+![Generated Docs](/images/cpq_user_guide_images/FilterStructGroup.png)
+
+* **Filter Rules** Within a group, multiple rules can be specified and combined using and/or constructs as shown below:
+![Generated Docs](/images/cpq_user_guide_images/FilterStructRules.png)
+
+* **Filter Rule Fields** Each filter rule can filter on a set of fields as specified by the CPQ Admin in the Summary Table in a Quote UI Layout.
+![Generated Docs](/images/cpq_user_guide_images/FilterRuleField.png)
+
+* **Filter Rule Operations** Each field that you want to filter can have the following operations specified on the field values
+![Generated Docs](/images/cpq_user_guide_images/FilterRuleOps.png)
+
 
 ## 4. CPQ Terminology ## 
 
