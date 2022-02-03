@@ -195,6 +195,10 @@ Within quote filters, one can perform the following operations to create filters
 
 Quote Filters can even be shared (or subsequently unshared) by a user with other users, to facilitate ease of viewing of the same set of quotes by different users. This is achieved in the filter UI. Filters can also be copied to enable easy modification and updates to filters. In addition to the user defined filters, MobileForce provides a set of pre-defined global filters that are applicable to any customer quote filtering scenario. These global filters are visible on the top right side of the list view of quotes, and can be used by any user/customer.
 
+### 3.3 Quote Search
+
+Quotes can be searched using a simple textual search, made available on top of the list view of quotes. The search values can be values of any of the fields that are visible in the list view.
+
 ## 4. CPQ Terminology ## 
 
 The following objects and terms are often mentioned, when using MobileForce CPQ.
