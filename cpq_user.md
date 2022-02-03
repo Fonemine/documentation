@@ -157,7 +157,24 @@ Each time a quote is saved, a new version of the quote is created. This enables 
 For additional details, You can use this full walkthrough video 
 https://youtu.be/6_L25kqDq_g
 
-## 3. CPQ Terminology ## 
+## 3. Quote Actions ## 
+Quotes in MobileForce CPQ are rich not only in the data they show, but also in the meta-data that's adorned on a quote, thus enabling a rich set of actions on quotes. In contrast, most CPQ systems present quotes as opaque objects on which not many rich actions can be performed. The following actions on quotes highlight the richness of quotes in MobileForce CPQ.
+
+### 3.1 List View
+
+The list view of Quotes in MobileForce diplays a list of all quotes created for a specific opportunity or at the top level. In the list view, the following actions are supported:
+ 
+ * **Sort on Columns** Each column can be used to sort the list of quotes: quotes are sorted by a column by clicking on the column header.
+ * **Reorder Columns** Columns can be dragged and moved left or right, to create a specific order of columns that are shown in the list view of quotes.
+ * **Select Columns** Specific columns can be selected for inclusion in the list view.
+ * **Export as CSV** The list of quotes can be exported as a csv (including all the columns shown in the view being exported)
+
+The following screenshot shows the above actions through the use of the "settings" in a listview for quotes
+
+![Generated Docs](/images/cpq_user_guide_images/QuoteListViewSettings.png)
+
+
+## 4. CPQ Terminology ## 
 
 The following objects and terms are often mentioned, when using MobileForce CPQ.
 
