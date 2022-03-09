@@ -690,3 +690,50 @@ Here are some example expressions used to compute values for read-only form inpu
 * Add 30 days to the date input 'D':<br/>
   `DATEADD(D, 30, 'd')`
   
+## 8. XML Specifications (For Advanced Admin Users Only)
+ 
+The CPQ System provides powerful mechanisms for power users (or developers) to get fine grain control of Product and Quote UI Layouts via the  XML specifications. Please note that XML specifications are intended only for use by developers and users who understand and are familiar with XML. Since there are powerful XML editors available as developer tools, these UI Layouts can be modified by hand in your XML editor of choice by first exporting them out of the CPQ System and later importing the modified versions.
+
+### 8.1 Accessing the XML Specifications
+
+Product UI Layouts (see Section 3.2) include an XML tab which exposes the XML Specification. See the screenshot below:
+![Product UI Layout XML Tab in MobileForce CPQ](/zendesk_images/ProdUILayoutXML.png)
+
+Clicking on the XML tab, exposes the XML Specification for the Product UI Layout, as seen below:
+![Product UI Layout XML Specification in MobileForce CPQ](/zendesk_images/ProdUILayoutXMLSpec.png)
+
+Similarly, Quote UI Layouts (see Section 4.1) include an XML tab which exposes the XML Specification. See the screenshot below:
+![Quote UI Layout XML Tab in MobileForce CPQ](/zendesk_images/QuoteUILayoutXML.png)
+
+
+Clicking on the XML tab, exposes the XML Specification for the Quote UI Layout, as seen below:
+![Quote UI Layout XML Specification in MobileForce CPQ](/zendesk_images/QuoteUILayoutXMLSpec.png)
+
+Here are some layout controls specified in XML. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
+
+* **Display read-only text in quote screens**
+
+XML Inputs of type read only text or textarea can be used to display fields that are meant to be read-only. However, there are other ways to do this and these other methods have some additional benefits.
+
+There are two informational input types named ‘Informational’ and ‘Separator’.
+
+The ‘Informational’ input type spans the entire width of the column.  So if you don’t want the ‘label: input’ format, where the label takes the first third of the column, you can use this input type instead.
+
+The ‘Separator’ input type acts like a read-only text input, except that its value isn’t saved in the form. 
+
+Input Labels, Column Labels, Informational inputs, and Separator inputs support limited styling, such as colors, bold, italics, and font-awesome icons.
+
+Here are some examples: 
+
+* [b]Bold text[/b]
+* [I]Italic text[/I]
+* [color=#ff333]Red text[/color]
+* [color=#dd8800]Orange text[/color]
+* [color=#00cc00][fa-check][/color]: A green checkmark
+* [color=#cc0000][fa-times][/color]: A red X.
+* [br]: line break
+* [nbsp]: Non breakable space
+
+There are also some field layout tricks you can use.  You can display multiple inputs side by side in a column by setting the ‘Column Width’ field.  The column width takes percentages.  So, you can show two fields side by side, such as a start and end date, by putting two inputs in a column and setting each input’s column width to 50%.  This also works on separator inputs.
+
+Separator and informational inputs support conditional hiding.  So, one can build conditional warning messages.  Or you can conditionally show and hide status icons by using separator inputs with font-awesome icons.
