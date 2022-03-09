@@ -711,7 +711,22 @@ Clicking on the XML tab, exposes the XML Specification for the Quote UI Layout, 
 
 ### 8.2 Structure of Forms
 
-form is specified primarily by two XML elements: the form element and the input element. A form element represents a single form. It contains a list of input elements. Each input element describes a single field in the form.
+In MobileForce CPQ, forms are the underlying common representation used to specify Product and Quote UI Layouts. A form is specified primarily by two XML elements: the **form element** and the **input element**. A form element represents a single form. It contains a list of input elements. Each input element describes a single field in the form.
+
+A form specification is an XML document with the following XML elements (tags).
+
+**form**: Top level element. This element specifies what actions to perform when the form is submitted. The child elements of this object specify the fields to display in the form.
+**data**: Standard ADL property data section. Only form elements can have a data element.
+**prop**: A single property under a data element. This is the standard ADL prop element and represents a single key/value pair.
+**formsection**: This element represents a collection of related input fields.
+**row**: This represents a single row of fields in a section.
+**col**: This represents a single column in a row of fields.
+**input**: This element represents a single input field.
+
+The screenshot above, of a quote UI Layout shows the various sections of the quote UI Layout form.
+
+Form elements may contain an optional data element, followed by zero or more type elements, then followed by zero or more input elements, and then followed by zero or more formsection elements.
+
 
 
 Here are some layout controls specified in XML. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
