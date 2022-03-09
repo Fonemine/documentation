@@ -709,6 +709,11 @@ Similarly, Quote UI Layouts (see Section 4.1) include an XML tab which exposes t
 Clicking on the XML tab, exposes the XML Specification for the Quote UI Layout, as seen below:
 ![Quote UI Layout XML Specification in MobileForce CPQ](/zendesk_images/QuoteUILayoutXMLSpec.png)
 
+### 8.2 Structure of Forms
+
+form is specified primarily by two XML elements: the form element and the input element. A form element represents a single form. It contains a list of input elements. Each input element describes a single field in the form.
+
+
 Here are some layout controls specified in XML. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
 
 **Display read-only text in quote screens**
