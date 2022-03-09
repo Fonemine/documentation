@@ -711,7 +711,7 @@ Clicking on the XML tab, exposes the XML Specification for the Quote UI Layout, 
 
 Here are some layout controls specified in XML. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
 
-* **Display read-only text in quote screens**
+**Display read-only text in quote screens**
 
 XML Inputs of type read only text or textarea can be used to display fields that are meant to be read-only. However, there are other ways to do this and these other methods have some additional benefits.
 
