@@ -715,27 +715,73 @@ In MobileForce CPQ, forms are the underlying common representation used to speci
 
 A form specification is an XML document with the following XML elements (tags).
 
-**form**: Top level element. This element specifies what actions to perform when the form is submitted. The child elements of this object specify the fields to display in the form.
-**data**: Standard ADL property data section. Only form elements can have a data element.
-**prop**: A single property under a data element. This is the standard ADL prop element and represents a single key/value pair.
-**formsection**: This element represents a collection of related input fields.
-**row**: This represents a single row of fields in a section.
-**col**: This represents a single column in a row of fields.
-**input**: This element represents a single input field.
+* **form**: Top level element. This element specifies what actions to perform when the form is submitted. The child elements of this object specify the fields to display in the form.
+* **data**: Standard ADL property data section. Only form elements can have a data element.
+* **prop**: A single property under a data element. This is the standard ADL prop element and represents a single key/value pair.
+* **formsection**: This element represents a collection of related input fields.
+* **row**: This represents a single row of fields in a section.
+* **col**: This represents a single column in a row of fields.
+* **input**: This element represents a single input field.
 
 The screenshot above, of a quote UI Layout shows the various sections of the quote UI Layout form.
 
 Form elements may contain an optional data element, followed by zero or more type elements, then followed by zero or more input elements, and then followed by zero or more formsection elements.
 
+### 8.2 Input Element in Forms XML Specification
+
+An input element represents a single field input. It may be either directly underneath a form element, or within a formsection element. The input element may have the following common attributes:
+
+name: (Required) Unique name for this field. It must be made up of only alphanumeric characters or '_' characters, (more exactly, it must be a legal variable name.) The name must be unique for the enclosing table. Duplicate fields across tables are allowed. This field will not be displayed to the end user.
+type: (Required) Type of the field. The type must be one of the following values:
+text: Field is an arbitrary string. A single-line input element should be displayed for this field.
+password: Field is a password string.
+email: Field contains an email address.
+tel: Field contains a phone number.
+mobile: Field contains a phone number. This phone number is for a mobile device that accepts text messages.
+number: Field contains an signed integer.
+decimal: Field contains a signed number. Decimal points are allowed.
+currency: Field contains an positive number. Decimal points are allowed.
+percent: Field contains a positive integer between 0 and 100.
+slider: Field is a slider.
+textbox: Field is an arbitrary string. A multi-line text box should be displayed for this field.
+checkbox: Field is a boolean and should be displayed as a checkbox. If the checkbox is set, this submitted value for this field will be "1". Otherwise, "0" will be submitted.
+switch: Fields is a boolean and should be displayed as an off/on switch. If the switch is set to "on", the submitted value for this fields should be "1". Otherwise, "0" will be submitted.
+picklist: Field can take one of several values. If possible, it should be displayed as a drop-down list
+radio: Field is a sub-type of the 'picklist' field type where the items are displayed as a vertical list of radio buttons.
+togglebuttons: Field is a sub-type of the 'picklist' field type where the elements are displayed as a horizontal list of toggle-buttons.
+multipicklist: Field can take zero or more values from a list of values. If possible, this list of values should be displayed as a vertical list of checkboxes.
+date: Field contains a date.
+time: Field contains the time of day.
+datetime: Field contains both a date and a time of day.
+file: Field contains the name of a file to be uploaded.
+imageurl: Field contains the URL of a displayable image. The image itself will be displayed when the field is disabled or read-only. When editable, it will be displayed as a text box with an associated image preview.
+header1: Read-only field representing a section header. Only the label is displayed and the label spans the full width of the screen. The name and value fields are ignored.
+header2: Read-only field representing a sub-section header. Only the label is displayed and the label spans the full width of the screen. The name and value fields are ignored.
+info: Read-only field representing read-only informational text. Only the label is displayed and the label spans the full width of the screen. The name and value fields are ignored.
+image: Read-only field representing an image to display in the form. The image will be centered and take up the full width of the form. The URL of the image is in the value field. For autoforms generated in HTML, the label field will contain the alt text for the image. The label field is ignored for native screens. The name field is ignored.
+separator: Read-only field representing a textual separator displayed between other fields on the same line and column. The displayed value is in the label attribute.
+hidden: This field is read-only and not displayed to the user.
+readonly: Read-only field. The label is displayed like most other fields. The value is displayed as plain text in the field portion of the form. This field is useful for displaying non-editable formula results.
+type: This input is a complex data type. The name of this complex type is specified by the subtype attribute.
+empty: This input is an empty placeholder. It is typically used to specify that a particular column should be blank for a given row.
+buttonlink: This input is displayed as a button whose label is the label attribute. Clicking on this button will cause the form to go to the URL specified in the value attribute.
+hidden: If set to a non-empty and non-zero value, then this field will not be displayed to the user. Formulae can be used in this attribute.
+label: Label to be display to the end user.
+listitems : List of possible values for a picklist or multipicklist input types or one of their subtypes. It is required for these input types. It is ignored for other input types. The value of this attribute take the format "value1|label1|value2|label2|...".
+required: If set to a non-empty and non-zero value, then the value of this field cannot be null or the empty string.
+value: Initial value for this input. Formulae can be used in this attribute for some input types, ("readonly" and "hidden").
 
 
-Here are some layout controls specified in XML. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
+
+### 8.3 Using Forms XML Specification to control Quote Layout
+
+Here are some layout controls that can be specified in XML to control Quote Layouts. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
 
 **Display read-only text in quote screens**
 
 XML Inputs of type read only text or textarea can be used to display fields that are meant to be read-only. However, there are other ways to do this and these other methods have some additional benefits.
 
-There are two informational input types named ‘Informational’ and ‘Separator’.
+There are two informational input types named **‘Informational’** and **‘Separator’**.
 
 The ‘Informational’ input type spans the entire width of the column.  So if you don’t want the ‘label: input’ format, where the label takes the first third of the column, you can use this input type instead.
 
