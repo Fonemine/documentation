@@ -467,9 +467,7 @@ Each MobileForce document template has a (required) **Name** field. In addition,
   * xlsx: A MS Excel document. Templates using this format can only have one section. Additionally, that section's template file must be a MS Excel document.
   * pdf: A PDF document. Templates using this format can have one or more sections.
 
-* **Generated Filename** : File name of the generated document.
-
-      You can use macro variables in the ‘Generated Filename’ field to create unique filenames (for example, by using a date expression).  The macro variable syntax is the same as the syntax used for email templates, i.e., **(‘${form-expr}’)**.  For example, the value **"${DATE_FORMAT(NOW(), ‘Mj'}_${customer_name}_proposal.pdf”** would generate **‘Apr1_Spacely Sprockets_proposal.pdf'** if it was invoked on April 1st, and the customer name was Spacely Sprockets.  Note also that in order to ensure that previously created files aren't accidentally overwritten, the quote will still automatically append a ‘ (num)’ to the end of the filename if there is already a file with the same name.
+* **Generated Filename** : File name of the generated document. You can use macro variables in the ‘Generated Filename’ field to create unique filenames (for example, by using a date expression).  The macro variable syntax is the same as the syntax used for email templates, i.e., **(‘${form-expr}’)**.  For example, the value **"${DATE_FORMAT(NOW(), ‘Mj'}_${customer_name}_proposal.pdf”** would generate **‘Apr1_Spacely Sprockets_proposal.pdf'** if it was invoked on April 1st, and the customer name was Spacely Sprockets.  Note also that in order to ensure that previously created files aren't accidentally overwritten, the quote will still automatically append a ‘ (num)’ to the end of the filename if there is already a file with the same name.
 
 
 * **Generated File ACL** : Access Control List (ACL) for the generated document. Users that are authorized by this ACL can view the generated document. Note that this is different than the acl field for this object, which identifies which users can generate the document.
