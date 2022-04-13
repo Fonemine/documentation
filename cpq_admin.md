@@ -794,7 +794,7 @@ The following screenshots show the input type selection options for form fields.
 
 Sometimes, products (especially the customizable complex products) also include an image that visualizes the product. These images flow through from the Quote UI Layout where they are input as "file" inputs, all the way to the output document quote. Image file inputs are supported as follows:
 
-* **Quote UI Layout File Input Creation** In the form section of a Quote UI Layout, a file input field is created.
+* **Quote UI Layout File Input Field Creation** In the form section of a Quote UI Layout, a file input field is created.
 
 ![Creating File Input Fields in Quote UI Layout](/zendesk_images/FileInputSetup.png)
 
@@ -802,7 +802,14 @@ The input type "File" is selected from the Resource/Type fields and used in crea
 
 ![Creating File Input Fields in Quote UI Layout Details](/zendesk_images/FileInputFormSection.png)
 
-* **
+* **Quote File Upload via File Input Field** When filling a quote, the user would upload an image file in the File Input field as follows:
+
+![File Upload via File Input Fields](/zendesk_images/FileInput1.png)
+
+Once a file has been uploaded, the same input provides actions to upload a new file, or clear the existing file that was previously input.
+
+![File Upload via File Input Fields](/zendesk_images/FileInput2.png)
+
 
 The UI for file fields input is different because it is not possible to safely upload file fields when  submitting or saving the form. The File upload dialog is implemented to support file uploads that are done asynchronously.  You can open the dialog by clicking on the pencil icon next to the file field.
 
