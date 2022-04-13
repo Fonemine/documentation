@@ -728,7 +728,7 @@ The screenshot above, of a quote UI Layout shows the various sections of the quo
 
 Form elements may contain an optional data element, followed by zero or more type elements, then followed by zero or more input elements, and then followed by zero or more formsection elements.
 
-### 8.2 Input Element in Forms XML Specification
+### 8.2 Input Elements in Forms XML Specification
 
 An input element represents a single field input. It may be either directly underneath a form element, or within a formsection element. The input element may have the following common attributes:
 
@@ -773,8 +773,25 @@ buttonlink: This input is displayed as a button whose label is the label attribu
 * **value**: Initial value for this input. Formulae can be used in this attribute for some input types, ("readonly" and "hidden").
 
 
+### 8.3 Input Types in Forms XML Specification
 
-### 8.3 Using Forms XML Specification to control Quote Layout
+The various input types supported in Forms convey the richness of the MobileForce Forms Engine that is the underlying basis for CPQ. The supported input types are categorized as follows:
+* **Text Fields**: These include text, multi-line text, password, email address, phone number, mobile phone number, and URL address.
+* **Numeric Fields**: These include number, decimal, percent, currency, slider, and range (now deprecated).
+* **Date/Time Fields**: These include date, time, and datetime.
+* **Selection Fields**: These include picklist, multi-picklist, toggle buttons, radio buttons, switch, one radio button, and checkbox.
+* **Resource/Type Fields**: These include file, image url address, map point, map region, signature, color, and user-defined type.
+* **Read Only Fields**: These include read-only, and hidden fields.
+* **UI Elements**: These include section header (now deprecated), sub-section header, informational, image, separator, empty placeholder (now deprecated) and button.
+
+The following screenshots show the input type selection options for form fields.
+
+![Text, Numeric, Date/Time, and Selection Input Field Types](/zendesk_images/InputTypeA.png)
+
+![Resource/Type Fields, Read-only Fields, UI ELements](/zendesk_images/InputTypeB.png)
+
+
+### 8.4 Using Forms XML Specification to control Quote Layout
 
 Here are some layout controls that can be specified in XML to control Quote Layouts. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
 
