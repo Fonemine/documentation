@@ -788,10 +788,27 @@ The following screenshots show the input type selection options for form fields.
 
 ![Text, Numeric, Date/Time, and Selection Input Field Types](/zendesk_images/InputTypeA.png)
 
-![Resource/Type Fields, Read-only Fields, UI ELements](/zendesk_images/InputTypeB.png)
+![Resource/Type Fields, Read-only Fields, UI ELements Input Field Types](/zendesk_images/InputTypeB.png)
 
+### 8.4 File Input Type Fields in Forms XML Specification
 
-### 8.4 Using Forms XML Specification to control Quote Layout
+Sometimes, products (especially the customizable complex products) also include an image that visualizes the product. These images flow through from the Quote UI Layout where they are input as "file" inputs, all the way to the output document quote. Image file inputs are supported as follows:
+
+* **Quote UI Layout File Input Creation** In the form section of a Quote UI Layout, a file input field is created.
+
+![Creating File Input Fields in Quote UI Layout](/zendesk_images/FileInputSetup.png)
+
+The input type "File" is selected from the Resource/Type fields and used in creating the Quote UI Layout form input where thee end user  who is creating a quote would upload the file image 
+
+![Creating File Input Fields in Quote UI Layout Details](/zendesk_images/FileInputFormSection.png)
+
+* **
+
+The UI for file fields input is different because it is not possible to safely upload file fields when  submitting or saving the form. The File upload dialog is implemented to support file uploads that are done asynchronously.  You can open the dialog by clicking on the pencil icon next to the file field.
+
+Including image file fields in generated documents is supported.  It works identically to including signature fields.  Including non-image file fields is not supported
+
+### 8.5 Using Forms XML Specification to control Quote Layout
 
 Here are some layout controls that can be specified in XML to control Quote Layouts. Please note that this section is not intended to be a complete documentation, nor do we suggest that you use the XML specification, unless you're a power user/developer. If you'd like additional details about how to control Product and Quote UI Layouts using XML, please contact your MobileForce Support Team and request a paid developer consultation.
 
