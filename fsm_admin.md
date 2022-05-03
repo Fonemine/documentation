@@ -28,11 +28,11 @@ In order to use this FSM Admin Guide, you must have  control of (i.e., knowledge
    - Structured forms such as Service Estimates and Sales Quotes. 
    - Integration with Enterprise backend systems or record: such as databases and business applications
 
- 4. **Inventory** which enable recording and tracking the use of products, parts, assets, and product bundles, within various field offices of the Field service Company that uses the Mobileforce FSM Software. Inventory can also be associated with customer accounts (customers of the Field Service Company), captured via a product or bar-code that the inventory item has, and even be related to other inventory items.
+ 4 **Inventory** which enable recording and tracking the use of products, parts, assets, and product bundles, within various field offices of the Field service Company that uses the Mobileforce FSM Software. Inventory can also be associated with customer accounts (customers of the Field Service Company), captured via a product or bar-code that the inventory item has, and even be related to other inventory items.
 
- 5. **Fleet** which enables recording and tracking of vehicles, typically trucks and vans, belonging to the Field Service Company that uses Mobileforce FSM Software. Fleet records include lease/purchase details, vehicle details (including registration, location and odometer), and maintenance details.
+ 5 **Fleet** which enables recording and tracking of vehicles, typically trucks and vans, belonging to the Field Service Company that uses Mobileforce FSM Software. Fleet records include lease/purchase details, vehicle details (including registration, location and odometer), and maintenance details.
 
- 6. **Schedule & Dispatch** which enables the Dispatcher to assign and schedule existing service tasks to specific technicians, to be completed at a specific date/time, and with a specific duration. Service Tasks have an associated "customer location" which is where the technician is dispatched to in order to complete the service task. The act of assigning a specific task to a specific technician, to be completed at a specific date, results in an appointment being created for that task. Service Tasks typically have a 1-1 relationship with appointments. Service Tasks also have a "status" that describes whether they are pending (yet to be scheduled), scheduled (assigned to a technician), in-progress (technician is actively working to complete the service task), or completed. When a "pending" service task is assigned by a dispatcher to a technician, it's status changes from "pending" to "scheduled" (as a result, the service task can no longer be scheduled again). The states of a service task can be configured by the FSM Administrator.
+ 6 **Schedule & Dispatch** which enables the Dispatcher to assign and schedule existing service tasks to specific technicians, to be completed at a specific date/time, and with a specific duration. Service Tasks have an associated "customer location" which is where the technician is dispatched to in order to complete the service task. The act of assigning a specific task to a specific technician, to be completed at a specific date, results in an appointment being created for that task. Service Tasks typically have a 1-1 relationship with appointments. Service Tasks also have a "status" that describes whether they are pending (yet to be scheduled), scheduled (assigned to a technician), in-progress (technician is actively working to complete the service task), or completed. When a "pending" service task is assigned by a dispatcher to a technician, it's status changes from "pending" to "scheduled" (as a result, the service task can no longer be scheduled again). The states of a service task can be configured by the FSM Administrator.
 
 # Field Service Management Admin Guide
 
@@ -91,23 +91,23 @@ The Mobileforce FSM Software is accessed from within your CRM instance. It has t
 
 At the top level, the navigation for Mobileforce apps within your CRM looks as follows:
 
-![MobileForce Apps: Top Level ](/fsm_images/MFTopLevel.png)
+![MobileForce Apps: Top Level ](/fsmimages/MFTopLevel.png)
 
 For Mobileforce Field Service, the "Field Service" tab provides navigation into the Field Service functionality which includes Field Service Setup whereas the "Admin" tab provides navigation into User and Role Management.
 
 Clicking "Field Service" brings you to the Field Service Top Level Screen which looks as follows:
 
-![Field Service Software: Top Level ](/fsm_images/FSMTopLevel.png)
+![Field Service Software: Top Level ](/fsmimages/FSMTopLevel.png)
 
 Clicking now on Field Service Setup brings you to the Setup Screen that looks as follows:
 
-![Field Service Software: Setup  ](/fsm_images/FSMSetup.png)
+![Field Service Software: Setup  ](/fsmimages/FSMSetup.png)
 
 As an FSM Admin, you would configure the following constructs within Field Service Setup.
 
 3. **Field Service Setup: Skills**: Every Field Service Technician has a set of skills, that is used to match them with Service Tasks. In the Skills setup screen, you can create a set of skills. See the following screenshot as an example for the skills that might be created by you.
 
-![Field Service Setup: Skills  ](/fsm_images/Skills.png)
+![Field Service Setup: Skills  ](/fsmimages/Skills.png)
 
 In this example, "multilingual" and "certified" are two examples of skills that a Technician might possess, that a Dispatcher would use to assign the Technician to a Service Task that might need one or more of those skills. Once a set of skills are created on this screen, you can go back to the Mobileforce top level screen, click on "Admin" and then go to the "Users" screen and associate one or more of these skills with each user. 
 
@@ -119,10 +119,10 @@ Each office also has one or more territories that the office services. Mobilefor
 
 New Offices can be added by simply clicking on the "Add" button on the top right of the Offices screen. The following screenshot shows the addition of an office:
 
-![Field Service Setup: Office  ](/fsm_images/AddOffice.png)
+![Field Service Setup: Office  ](/fsmimages/AddOffice.png)
 Every office needs an address, and in addition, a Lat/Long point, which is added as follows:
 
-![Field Service Setup: Office Lat/Long  ](/fsm_images/OfficeLatLong.png) 
+![Field Service Setup: Office Lat/Long  ](/fsmimages/OfficeLatLong.png) 
 If you type an address in the "Enter Address" field, the mapping software will map that address with a marker. You can then submit the marked address as the Lat/Long point for the office.
 
 A territory is a geographic area, around an office that is serviced by technicians assigned to that office. An office can service many territories. Territories are used to (a) divide a large area into well defined smaller areas (b) Automate the assignment of a service request originating from a territory to one or more technicians who service the territory (c) reduce travel by technicians: who would only travel within a territory and never outside the territory (d) business demarcation of geographic areas served by different vendors/technicians/offices, thus eliminating conflict.
@@ -131,16 +131,16 @@ Once an office is created, within the same Create Office screen, you can click o
 
 Adding a territory looks as follows:
 
-![Field Service Setup: Office Territory  ](/fsm_images/AddTerritory.png) 
+![Field Service Setup: Office Territory  ](/fsmimages/AddTerritory.png) 
 Any territory is described by a closed polygon, and in the Add Territory screen, you can click on the "Edit Map" button under the Polygon Points field, to create your own territory.
 
 Once in the map, you can use the polygon tool to  create  a Territory via Polygon points.
 The polygon tool is highlighted here.
-![Field Service Setup:  Polygon Tool ](/fsm_images/TerritoryPolygonTool.png)
+![Field Service Setup:  Polygon Tool ](/fsmimages/TerritoryPolygonTool.png)
 
 Once you've drawn a few points in a polygon, the polygon look as follows:
 
-![Field Service Setup: Office Territory Polygon  ](/fsm_images/TerritoryPolygonPts.png). 
+![Field Service Setup: Office Territory Polygon  ](/fsmimages/TerritoryPolygonPts.png). 
 
 New points are created by simply clicking on the map in sequence, and when the last point is clicked, you can then click "Submit" and the Territory Polygon is saved.
 
@@ -148,43 +148,43 @@ Note that Mobileforce FSM already includes territories represented via polygons 
 
 Each territory needs to be associated with an office: this is done in the territory list view under FSM Setup where the Office can directly be specified. The following screenshot shows the office assignment for a territory.
 
-![Field Service Setup:  Territory Office Assignment  ](/fsm_images/TerritoryOffice.png). 
+![Field Service Setup:  Territory Office Assignment  ](/fsmimages/TerritoryOffice.png). 
 
 5. **Field Service Setup: User Schedules**: Typical organizations operate on certain days of the week and between certain hours. The users of such organizations follow specific work schedules which includes (a) days of the week that they work (b) starting hours (c) ending hours. For example, typical business work week may be Mon-Fri: from 8AM to 5 PM. MobileForce FSM includes a predefined "weekday" schedule which precisely captures a work week. The following screenshot captures this predefined schedule:
 
-![Field Service Setup:  User Schedule  ](/fsm_images/UserSchedule.png). 
+![Field Service Setup:  User Schedule  ](/fsmimages/UserSchedule.png). 
 
 
 The following screenshot captures the typical weekday schedule.
 
-![Field Service Setup:  User Weekday Schedule  ](/fsm_images/WeekdaySchedule.png). 
+![Field Service Setup:  User Weekday Schedule  ](/fsmimages/WeekdaySchedule.png). 
 
 Any changes to the schedule can be made by "Editing" the schedule as follows:
 
-![Field Service Setup:  Edit User  Schedule  ](/fsm_images/EditWeekdaySchedule.png). 
+![Field Service Setup:  Edit User  Schedule  ](/fsmimages/EditWeekdaySchedule.png). 
 
 
 Additional new schedules may be added by clicking on the "+Add" button on the top right of the User Schedules screen. For example, one could create a weekend schedule as follows:
 
-![Field Service Setup:  Add User Schedule  ](/fsm_images/AddUserSchedule.png). 
+![Field Service Setup:  Add User Schedule  ](/fsmimages/AddUserSchedule.png). 
 
 The purpose of User schedules is to ensure that work is not assigned to technicians outside their workday schedule. An attempt to assign a service task to a technician outside of his or her weekday schedule will fail with an appropriate error. Schedules can be modified to incorporate overtime and weekend work.
 
 Each FSM User is assigned a variety of attributes such as an office, a schedule, a skill, etc. The following fields represent the FSM attributes for a user:
 
-![Field Service Setup:   User Attributes  ](/fsm_images/UserScheduleSkill.png). 
+![Field Service Setup:   User Attributes  ](/fsmimages/UserScheduleSkill.png). 
 
 
 6. **Field Service Setup: Holidays** Just as user schedules provide a guidance of what hours a user works during a day, similarly holidays provides a guidance for when a user doesn't work. No work can be scheduled for holidays, thus ensuring technicians are not called up to work during holidays.
 
 Holidays are another table in Field Service Setup, that the Admin creates entries for, by clicking on the "+Add" on the top right of the Holidays Table. Adding Holidays looks as follows:
 
-![Field Service Setup:  Add Holidays  ](/fsm_images/AddHoliday.png). 
+![Field Service Setup:  Add Holidays  ](/fsmimages/AddHoliday.png). 
 
 
 7. **Field Service Setup: Service Task Status**: In Mobileforce FSM, workflow steps encompassing the lifecycle of a service task are modeled via Service Task Status. Mobileforce FSM includes the following service task status values:
 
-![Field Service Setup:  Service Task Status  ](/fsm_images/ServiceTaskStatus.png). 
+![Field Service Setup:  Service Task Status  ](/fsmimages/ServiceTaskStatus.png). 
 
 These service task status values represent the various states of a service task. For example, when a service task is initially created, it is in "Open" status. Once a Dispatcher assigns an open service task to a technician, the service task status changes to "Assigned". Once a service task is completed, its status changes to "Completed". The provided values of Service Task Status often suffice for most FSM users, but if new status needs to be added this can be done by clicking on the "+Add" button on the top right of the Service Task Status table.
 
@@ -192,13 +192,13 @@ These service task status values represent the various states of a service task.
 8. **Field Service Setup: Service Task Types**: Service tasks are classified based on their "types" which represent the various kinds of Service Tasks that the organization addresses. Types enable an easy triage and technician assignment and also help with improved analytics on the kinds of service and support requests that the organization is receiving.
 Mobileforce FSM provides a set of default "Service Task Types" shown here:
 
-![Field Service Setup:  Service Task Types  ](/fsm_images/ServiceTaskTypes.png). 
+![Field Service Setup:  Service Task Types  ](/fsmimages/ServiceTaskTypes.png). 
 The provided values of Service Task Types often suffice for most FSM users, but if new types need to be added, this can be done by clicking on the "+Add" button on the top right of the Service Task Type table.
 
 
 9. **Field Service Setup: Inventory Categories**: In addition to work order management, Mobileforce FSM also provides basic Inventory creation and tracking capabilities. In order to keep track of the often vast inventory of tools and objects needed by a technician to effectively perform field service or support, Mobileforce provides the ability for a FSM Admin to create simple categories into which Inventory objects are organized. The following table illustrates the Inventory categories used by an IT Services company:
 
-![Field Service Setup:  Inventory Categories  ](/fsm_images/InventoryCategories.png). 
+![Field Service Setup:  Inventory Categories  ](/fsmimages/InventoryCategories.png). 
 
 
 10. **Field Service Setup: Inventory Locations**: Inventory is often kept in many different locations such as different offices. The Inventory Locations table enables the attribution of specific locations for inventory objects.
