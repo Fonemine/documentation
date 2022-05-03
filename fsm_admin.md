@@ -200,8 +200,13 @@ The provided values of Service Task Types often suffice for most FSM users, but 
 
 ![Field Service Setup:  Inventory Categories  ](/fsmimages/InventoryCategories.png). 
 
-
 10. **Field Service Setup: Inventory Locations**: Inventory is often kept in many different locations such as different offices. The Inventory Locations table enables the attribution of specific locations for inventory objects.
+
+11 **Field Service: Users**: Under the top level Mobileforce UI, FSM Users are managed by clicking on   **Admin --> Users**
+Users in Mobileforce FSM are viewed as follows:
+
+![Field Service: Admin Users  ](/fsmimages/FSMUsers.png). 
+
 
 ## FSM Administration: Detailed Operations
 
@@ -232,3 +237,5 @@ Please refer to the following sections  for more details on the different compon
 ### 4.1. Inventory Types
 
 ### 4.2. Inventory Categories
+
+
