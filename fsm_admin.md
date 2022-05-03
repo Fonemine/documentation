@@ -239,12 +239,17 @@ In particular, the following fields are required: (a) Type (b) Status (c) CRM Ac
 
 #### 3.1.2. All Skills Match
 
-### 3.2. Auto Scheduling
+### 3.2. Schedule Appointment for a Service Task
 
-### 3.3. Recommend Scheduling
+#### 3.2.1. One Technician
 
-### 3.4. Smart Routing
+#### 3.2.2. Multiple Technician
 
+### 3.3. Reschedule Appointment 
+
+### 3.4. Smart Routing 
+
+### 3.5 Task View of Schedule
 
 ## 4. Inventory Tracking
 
