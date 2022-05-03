@@ -136,7 +136,7 @@ Any territory is described by a closed polygon, and in the Add Territory screen,
 
 Once in the map, you can use the polygon tool to  create  a Territory via Polygon points.
 The polygon tool is highlighted here.
-![Field Service Setup:  Polygon Tool ](/fsmimages/TerritoryPolygonTool.png)
+![Field Service Setup:  Polygon Tool ](/fsmimages/PolygonTool.png)
 
 Once you've drawn a few points in a polygon, the polygon look as follows:
 
