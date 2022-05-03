@@ -249,7 +249,15 @@ In particular, the following fields are required: (a) Type (b) Status (c) CRM Ac
 
 ### 3.4. Smart Routing 
 
-### 3.5 Task View of Schedule
+### 3.5  Views of Schedule & Dispatch
+
+#### 3.5.1  Default (Technician) View of Schedule & Dispatch
+
+![Schedule & Dispatch: Technican View  ](/fsmimages/ScheduleByTech.png)
+
+#### 3.5.2  Task View of Schedule & Dispatch
+
+![Schedule & Dispatch: Task View  ](/fsmimages/ScheduleByTask.png)
 
 ## 4. Inventory Tracking
 
