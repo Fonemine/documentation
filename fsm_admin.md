@@ -55,7 +55,7 @@ https://app.hubspot.com/ecosystem/9190475/marketplace/apps/sales/sales-enablemen
 
 The following screenshot shows MobileForce Application in Hubspot Marketplace
 
-![MobileForce in Hubspot Marketplace ](/fsm_images/MFinHubspot.png)
+![MobileForce in Hubspot Marketplace ](/fsmimages/MFinHubspot.png)
 
 Once installed, you can find the Mobileforce app in your Hubspot instance under **Preferences --> Integrations --> Connected Apps**
 
@@ -66,7 +66,7 @@ https://www.zendesk.com/marketplace/apps/sell/618399/mobileforce-cpq/
 
 The following screenshot shows MobileForce Application in Zendesk Marketplace
 
-![MobileForce in Zendesk Marketplace ](/fsm_images/MFinZendesk.png)
+![MobileForce in Zendesk Marketplace ](/fsmimages/MFinZendesk.png)
 
 Once installed, you can find the Mobileforce app in your Zendesk instance under **Settings --> Integrations --> Apps**
 
@@ -78,13 +78,13 @@ This installation will give you a free 30-day trial of MobileForce in your Zende
 
  The following screenshot captures the information you need to provide. Pay close attention to the two fields (a) Your Account Name and (b) Work Email, which will be used to tie together your SugarCRM instance with your FSM Software Instance.
 
-![Set up a MobileForce Free Trial for FSM](/fsm_images/MFFreeTrial.png)
+![Set up a MobileForce Free Trial for FSM](/fsmimages/MFFreeTrial.png)
 
 Eventually, Sugar will also migrate to a new Marketplace (Sugar Outfitters), from where you'd be able to install Mobileforce as well, but for now, please instead use the free trial described above.
 
 The following screenshot shows MobileForce Application in the new Sugar Outfitter Sugar Marketplace. At a later point, this would be the starting place to install and try MobileForce from within Sugar.
 
-![MobileForce in Sugar Outfitter Marketplace ](/fsm_images/MFinSugarOutfitter.png)
+![MobileForce in Sugar Outfitter Marketplace ](/fsmimages/MFinSugarOutfitter.png)
 
 2. **Field Service Top Level Navigation**:
 
