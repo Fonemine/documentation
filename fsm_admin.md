@@ -205,6 +205,10 @@ Users in Mobileforce FSM are viewed as follows:
 
 ![Field Service: Admin Users  ](/fsmimages/FSMUsers.png). 
 
+Each FSM User has the following attributes (a) Role (b) Office (c) Schedule (d) Skills. The following screenshot shows an FSM User with these and additional attributes.
+
+![Field Service: Admin User Attributes  ](/fsmimages/FSMUserDetails.png). 
+
 
 ## FSM Administration: Detailed Operations
 
