@@ -16,7 +16,7 @@ A technician often has a fixed schedule for a day, that has been set up previous
 
 In order to use this FSM Admin Guide, you must have  control of (i.e., knowledge as well as read/write access to) the following objects/records in the Field Service Management Software:
 
- 1 **Work Orders**: which contains all the details of the work that needs to be done. Work orders are typically larger in scope, and can contain several individual work items, to be performed in sequence. Work orders can last from hours to several days, and are typically used as a starting point, to co-ordinate resources and schedule activities. A work order structurally consists of several smaller indivisible components, called service-tasks. 
+ 1 **Work Orders**: which contains all the details of the work that needs to be done. Work orders are typically larger in scope, and can contain several individual work items, to be performed in sequence. Work orders can last from hours to several days, and are typically used as a starting point, to co-ordinate resources and schedule activities. A work order structurally consists of several smaller indivisible components, called service-tasks. Work orders are optional so one can use Mobileforce FSM without work orders, and just use service tasks directly.
  
  2 **Service Tasks**: a service task is a single indivisible  unit of work, that can often be scheduled to be performed by one or more technicians. A service task, if scheduled, involves a field service user, often a technician, traveling to a specific customer location and performing a task such as a repair, maintenance, or some activity at the customer location. Service tasks are typically smaller in scope, and can be performed in minutes to hours.
  
@@ -216,8 +216,18 @@ Please refer to the following sections  for more details on the different compon
 
 ## 1. Work Orders
 
+The following work order illustrates how the various attributes of a work order together help organize work to be done.
+Please note that work orders are optional and used primarily to combine multiple service tasks into a single work unit. In the example below, the work order comprises of 6 service tasks.
+
+![Field Service: Service Task Details  ](/fsmimages/WorkOrder.png). 
+
 
 ## 2. Service Tasks
+
+The following service task illustrates how the various attributes of a service task together help schedule the task.
+In particular, the following fields are required: (a) Type (b) Status (c) CRM Account (d) Customer Location (e) Skills required (f) Skills required constraint (g) Office (h) Territory (i) Service Estimated Hours. A work order is optional and if provided, it encapsulates the parent work order of which the service task is one component.
+
+![Field Service: Service Task Details  ](/fsmimages/ServiceTasks.png). 
 
 ## 3. Schedule and Dispatch
 
