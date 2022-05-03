@@ -45,9 +45,7 @@ As a best practice, it behooves an Administrator to perform the following steps 
 
 Mobileforce FSM supports the following underlying CRMs: SugarCRM, Zendesk and Hubspot. Several objects and structures are automatically inherited (via API access) from the underlying CRM to Mobileforce FSM. For example, Users and roles are inherited from the underlying CRM into Mobileforce FSM. Similarly, certain features of CRMs (e.g., Cases in SugarCRM) are used as an FSM starting point and mapped to Work Orders and Service Tasks. Additionally, accounts and office objects in SugarCRM are also used to provide location information for tasks as well as schedule & dispatch. Since many of these objects are not implemented similarly across CRMs, this document uses SugarCRM as the underlying CRM, in order to describe the FSM Setup process. Nevertheless, for the most part, the process is similar across the CRMs.
 
-
-
-1. **Bind your CRM to your FSM**: 
+1 **Bind your CRM to your FSM**: 
 
 - If your CRM is Hubspot, please login to your hubspot instance, navigate to the Hubspot marketplace, and find and Install MobileForce from the marketplace. Alternatively you can use the following link to install the Mobileforce app from the Hubspot marketplace: 
 https://app.hubspot.com/ecosystem/9190475/marketplace/apps/sales/sales-enablement/mobileforce-cpq-237933
@@ -85,7 +83,7 @@ The following screenshot shows MobileForce Application in the new Sugar Outfitte
 
 ![MobileForce in Sugar Outfitter Marketplace ](/fsmimages/MFinSugarOutfitter.png)
 
-2. **Field Service Top Level Navigation**:
+2 **Field Service Top Level Navigation**:
 
 The Mobileforce FSM Software is accessed from within your CRM instance. It has the same look and feel as your CRM UI, and hence is very easy to use for anyone who's already familiar with their CRM. All you do is log in to your CRM just as you always do, and you'll see Mobileforce FSM within your CRM Instance.
 
@@ -105,7 +103,7 @@ Clicking now on Field Service Setup brings you to the Setup Screen that looks as
 
 As an FSM Admin, you would configure the following constructs within Field Service Setup.
 
-3. **Field Service Setup: Skills**: Every Field Service Technician has a set of skills, that is used to match them with Service Tasks. In the Skills setup screen, you can create a set of skills. See the following screenshot as an example for the skills that might be created by you.
+3 **Field Service Setup: Skills**: Every Field Service Technician has a set of skills, that is used to match them with Service Tasks. In the Skills setup screen, you can create a set of skills. See the following screenshot as an example for the skills that might be created by you.
 
 ![Field Service Setup: Skills  ](/fsmimages/Skills.png)
 
@@ -113,7 +111,7 @@ In this example, "multilingual" and "certified" are two examples of skills that 
 
 Skills matching in Mobileforce FSM can be performed one of two ways: finding a Technician that posesses either **ANY** or **ALL** of the skills required to complete a service task. The service task describes whether skills matching is performed via **ANY** or **ALL** matching. The  default behavior of skills matching is to use **ANY** matching, and a specific service task can override this behavior.
 
-4. **Field Service Setup: Offices**: Field Service Operations are broken down into Offices, which correspond to Offices/Locations that the Organization operates. Each office covers a specific "territory" where customers reside. Initially, Mobileforce Field Service comes with one sample office: "Mobileforce Software", which includes an address, and a Lat/Long point on a map, describing the Office location.
+4 **Field Service Setup: Offices**: Field Service Operations are broken down into Offices, which correspond to Offices/Locations that the Organization operates. Each office covers a specific "territory" where customers reside. Initially, Mobileforce Field Service comes with one sample office: "Mobileforce Software", which includes an address, and a Lat/Long point on a map, describing the Office location.
 
 Each office also has one or more territories that the office services. Mobileforce FSM Software includes pre-defined territories for each zip code in the US, but you can create your own territories by drawing polygons around an office.
 
@@ -150,7 +148,7 @@ Each territory needs to be associated with an office: this is done in the territ
 
 ![Field Service Setup:  Territory Office Assignment  ](/fsmimages/TerritoryOffice.png). 
 
-5. **Field Service Setup: User Schedules**: Typical organizations operate on certain days of the week and between certain hours. The users of such organizations follow specific work schedules which includes (a) days of the week that they work (b) starting hours (c) ending hours. For example, typical business work week may be Mon-Fri: from 8AM to 5 PM. MobileForce FSM includes a predefined "weekday" schedule which precisely captures a work week. The following screenshot captures this predefined schedule:
+5 **Field Service Setup: User Schedules**: Typical organizations operate on certain days of the week and between certain hours. The users of such organizations follow specific work schedules which includes (a) days of the week that they work (b) starting hours (c) ending hours. For example, typical business work week may be Mon-Fri: from 8AM to 5 PM. MobileForce FSM includes a predefined "weekday" schedule which precisely captures a work week. The following screenshot captures this predefined schedule:
 
 ![Field Service Setup:  User Schedule  ](/fsmimages/UserSchedule.png). 
 
@@ -175,32 +173,32 @@ Each FSM User is assigned a variety of attributes such as an office, a schedule,
 ![Field Service Setup:   User Attributes  ](/fsmimages/UserScheduleSkill.png). 
 
 
-6. **Field Service Setup: Holidays** Just as user schedules provide a guidance of what hours a user works during a day, similarly holidays provides a guidance for when a user doesn't work. No work can be scheduled for holidays, thus ensuring technicians are not called up to work during holidays.
+6 **Field Service Setup: Holidays** Just as user schedules provide a guidance of what hours a user works during a day, similarly holidays provides a guidance for when a user doesn't work. No work can be scheduled for holidays, thus ensuring technicians are not called up to work during holidays.
 
 Holidays are another table in Field Service Setup, that the Admin creates entries for, by clicking on the "+Add" on the top right of the Holidays Table. Adding Holidays looks as follows:
 
 ![Field Service Setup:  Add Holidays  ](/fsmimages/AddHoliday.png). 
 
 
-7. **Field Service Setup: Service Task Status**: In Mobileforce FSM, workflow steps encompassing the lifecycle of a service task are modeled via Service Task Status. Mobileforce FSM includes the following service task status values:
+7 **Field Service Setup: Service Task Status**: In Mobileforce FSM, workflow steps encompassing the lifecycle of a service task are modeled via Service Task Status. Mobileforce FSM includes the following service task status values:
 
 ![Field Service Setup:  Service Task Status  ](/fsmimages/ServiceTaskStatus.png). 
 
 These service task status values represent the various states of a service task. For example, when a service task is initially created, it is in "Open" status. Once a Dispatcher assigns an open service task to a technician, the service task status changes to "Assigned". Once a service task is completed, its status changes to "Completed". The provided values of Service Task Status often suffice for most FSM users, but if new status needs to be added this can be done by clicking on the "+Add" button on the top right of the Service Task Status table.
 
 
-8. **Field Service Setup: Service Task Types**: Service tasks are classified based on their "types" which represent the various kinds of Service Tasks that the organization addresses. Types enable an easy triage and technician assignment and also help with improved analytics on the kinds of service and support requests that the organization is receiving.
+8 **Field Service Setup: Service Task Types**: Service tasks are classified based on their "types" which represent the various kinds of Service Tasks that the organization addresses. Types enable an easy triage and technician assignment and also help with improved analytics on the kinds of service and support requests that the organization is receiving.
 Mobileforce FSM provides a set of default "Service Task Types" shown here:
 
 ![Field Service Setup:  Service Task Types  ](/fsmimages/ServiceTaskTypes.png). 
 The provided values of Service Task Types often suffice for most FSM users, but if new types need to be added, this can be done by clicking on the "+Add" button on the top right of the Service Task Type table.
 
 
-9. **Field Service Setup: Inventory Categories**: In addition to work order management, Mobileforce FSM also provides basic Inventory creation and tracking capabilities. In order to keep track of the often vast inventory of tools and objects needed by a technician to effectively perform field service or support, Mobileforce provides the ability for a FSM Admin to create simple categories into which Inventory objects are organized. The following table illustrates the Inventory categories used by an IT Services company:
+9 **Field Service Setup: Inventory Categories**: In addition to work order management, Mobileforce FSM also provides basic Inventory creation and tracking capabilities. In order to keep track of the often vast inventory of tools and objects needed by a technician to effectively perform field service or support, Mobileforce provides the ability for a FSM Admin to create simple categories into which Inventory objects are organized. The following table illustrates the Inventory categories used by an IT Services company:
 
 ![Field Service Setup:  Inventory Categories  ](/fsmimages/InventoryCategories.png). 
 
-10. **Field Service Setup: Inventory Locations**: Inventory is often kept in many different locations such as different offices. The Inventory Locations table enables the attribution of specific locations for inventory objects.
+10 **Field Service Setup: Inventory Locations**: Inventory is often kept in many different locations such as different offices. The Inventory Locations table enables the attribution of specific locations for inventory objects.
 
 11 **Field Service: Users**: Under the top level Mobileforce UI, FSM Users are managed by clicking on   **Admin --> Users**
 Users in Mobileforce FSM are viewed as follows:
