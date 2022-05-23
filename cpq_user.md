@@ -209,8 +209,7 @@ can save shared search filters.  Saved search filters also remember the displaye
 
 ## Configuration
 
-Search filters can be configured by ADL properties.  The most important ADL property is 'search-filter-enable'
-which enables search filter for datatable screens.
+Search filters can be configured by ADL properties such as 'search-filter-enable' which enables search filter for datatable screens.
 
 All supported ADL properties are shown below.
 
@@ -222,8 +221,8 @@ All supported ADL properties are shown below.
 
 ## UI
 
-When advanced search filters are enabled a funnel icon will be displayed to the right of the search box.  When
-clicked, the search filter dialog will be opened.  This dialog will allow one to create or select search filters.
+When advanced search filters are enabled a funnel icon is displayed to the right of the search box, clicking on which
+opens the search filter dialog.  This dialog allows creation and selection of search filters.
 
 All search filters are named.  Users a can select an existing search filter or create a new one.  Search filters
 can also be copied, renamed or deleted.
@@ -231,11 +230,11 @@ can also be copied, renamed or deleted.
 There are two kinds of search filters: user and shared.  User search filters are private to the user.  Only that
 user can view or edit those filters.  User search filters are saved as part of the user's configuration.  Shared
 search filters are visible by all users.  Only users with the appropriate permissions can create shared search
-filters.  The search filter name dropwdown will display all user filters, then all shared filters.
+filters.  The search filter name dropwdown first displays all user filters, then all shared filters.
 
-Search filters are per table.  That is, different tables will have different saved search filters.  User search filter
-names and shared search filter names must be unique per table.  However, it is allowed for a user search filter and
-shared search filter to have the same name.
+Search filters are per table.  That is, different tables have different saved search filters.  User search filter
+names and shared search filter names must be unique per table.  However,  a user search filter and
+shared search filter can have the same name.
 
 One can specify a list of conditional rules to filter by for a search filter.  Each rule applies to a single
 table column.  The conditional operators allowed in a rule is based on the column's type.  The allowed operators
