@@ -209,9 +209,9 @@ can save shared search filters.  Saved search filters also remember the displaye
 
 ## Configuration
 
-Search filters can be configured by ADL properties such as 'search-filter-enable' which enables search filter for datatable screens.
+Search filters can be configured by CPQ Configuration properties such as 'search-filter-enable' which enables search filter for datatable screens.
 
-All supported ADL properties are shown below.
+All supported CPQ Configuration properties are shown below.
 
 | Property | Default | Description |
 | --- | --- | --- |
