@@ -195,9 +195,86 @@ Within quote filters, one can perform the following operations to create filters
 
 Quote Filters can even be shared (or subsequently unshared) by a user with other users, to facilitate ease of viewing of the same set of quotes by different users. This is achieved in the filter UI. Filters can also be copied to enable easy modification and updates to filters. In addition to the user defined filters, MobileForce provides a set of pre-defined global filters that are applicable to any customer quote filtering scenario. These global filters are visible on the top right side of the list view of quotes, and can be used by any user/customer.
 
-### 3.3 Quote Search
+### 3.3 Quote Search and Advanced Filters
 
 Quotes can be searched using a simple textual search, made available on top of the list view of quotes. The search values can be values of any of the fields that are visible in the list view.
+To support more complex searches, MobileForce datatable screens support advanced search filters.
+using which one can specify filters on a per-field basis.  These filters are
+context sensitive based on the type the field.  Additionally,
+these filters can be combined with boolean OR and AND operators.
+
+Mobileforce allows one to save and reuse one's search filters.  One can save both personal and shared
+search filters, where shared search filters are visible by all.  Only users with sufficient permission
+can save shared search filters.  Saved search filters also remember the displayed columns as part of the filter.
+
+## Configuration
+
+Search filters can be configured by ADL properties.  The most important ADL property is 'search-filter-enable'
+which enables search filter for datatable screens.
+
+All supported ADL properties are shown below.
+
+| Property | Default | Description |
+| --- | --- | --- |
+| search-filter-enable | 0 | If 1, enable search filters. |
+| search-filter-update-shared | 0 | If 1, allow the saving of shared search filters. |
+| search-filter-action | list | (Deprecated)  Specifies with columns that are filterable.  Can be 'list' or 'read'.  If 'list' only columns visible in the list view are filterable.  If 'read', only columns visible on the view screen are filterable.  This property is ignored for AG Grid tables.  For AG grid tables, all selectable columns are filterable. |
+
+## UI
+
+When advanced search filters are enabled a funnel icon will be displayed to the right of the search box.  When
+clicked, the search filter dialog will be opened.  This dialog will allow one to create or select search filters.
+
+All search filters are named.  Users a can select an existing search filter or create a new one.  Search filters
+can also be copied, renamed or deleted.
+
+There are two kinds of search filters: user and shared.  User search filters are private to the user.  Only that
+user can view or edit those filters.  User search filters are saved as part of the user's configuration.  Shared
+search filters are visible by all users.  Only users with the appropriate permissions can create shared search
+filters.  The search filter name dropwdown will display all user filters, then all shared filters.
+
+Search filters are per table.  That is, different tables will have different saved search filters.  User search filter
+names and shared search filter names must be unique per table.  However, it is allowed for a user search filter and
+shared search filter to have the same name.
+
+One can specify a list of conditional rules to filter by for a search filter.  Each rule applies to a single
+table column.  The conditional operators allowed in a rule is based on the column's type.  The allowed operators
+per column type are:
+
+| Operator | Allowed Types | Description |
+| --- | --- | --- |
+| equals | text, picklist, numeric, date, time, datetime | True if the given field is equal to the given value |
+| not equals | text, picklist, numeric, date, time, datetime | True if the given field is not-equal to the given value |
+| empty | text, picklist, numeric, date, time, datetime | True if the given field is empty ('') |
+| not empty | text, picklist, numeric, date, time, datetime | True if the given field is not empty ('') |
+| contains | text | True if the given field contains the given string value |
+| not contains | text | True if the given field does not contain the given string value |
+| starts with | text | True if the given field starts with the given string value |
+| not starts with | text | True if the given field does not start with the given string value |
+| ends with | text | True if the given field ends with the given string value |
+| not ends with | text | True if the given field does not end with the given string value |
+| less than | numeric, date, time, datetime | True if the given field is less than the given value |
+| less equal | numeric, date, time, datetime | True if the given field is less than or equal to the given value |
+| greater than | numeric, date, time, datetime | True if the given field is greater than the given value |
+| greater equal | numeric, date, time, datetime | True if the given field is greater than or equal to the given value |
+| between | numeric, date, time, datetime | True if the given field is between the two given values |
+| not between | numeric, date, time, datetime | True if the given field is not between the two given values |
+| today | date, datetime | True if the given field's date is today |
+| last N days | date, datetime | True if the given field's date occurs in the last N days, where N is the given value |
+| next N days | date, datetime | True if the given field's date occurs in the next N days, where N is the given value |
+| older than N days | date, datetime | True if the given field's date occurs before N days agoe, where N is the given value |
+
+The entered values for each rule are also restricted by the column's type.  For example, one must select a picklist
+value for picklist column, or a date picker will be displayed for a date column.
+
+Rules can be grouped together by boolean conditions: AND or OR.  For the AND group, the filter is true if only all
+rules are true.  For the OR group, the filter is true if just one of the rules are true.  One can nest conditional
+groups for more complex boolean operations.
+
+When one saves a search filter, one can also optionally save the displayed columns along with it.  If a
+search filter has saved columns, selecting that filter will also automatically set the table's columns to
+the saved columns.
+
 
 ## 4. CPQ Terminology ## 
 
