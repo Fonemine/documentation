@@ -15,4 +15,7 @@
 
 ## Integration Guides
 
-- [SugarCRM Instance Integration1](sugar_instance.html)
+- [SugarCRM Instance Integration](sugar_instance.html)
+
+## Axerve API Guide
+ - [MobileForce API Integration](mf_api_doc.md)
