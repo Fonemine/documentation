@@ -15,4 +15,4 @@
 
 ## Integration Guides
 
-- [SugarCRM Instance Integration](sugar_instance.html)
+- [SugarCRM Instance Integration1](sugar_instance.html)
