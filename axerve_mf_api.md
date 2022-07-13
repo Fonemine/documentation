@@ -8,7 +8,6 @@ MobileForce API can be used be other application to create/update MobileForce sp
 |---|---|
 |Production | https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php|
 |Stage | https://apps.mobileforcesoftware.com/stage/adlwebui/service/mf_api.php|
-|dev | https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php|
 
 ## HTTP Header:
     api_key: <api-key provide by MobileForce Support>
