@@ -423,5 +423,25 @@ SVP Approval Group (Individual Product >40% Discount))
 
 ```
 
+### 5.1 Using quotes around expressions
+
+The following is an incorrect use of DTLOOKUPVALUE
+
+DTLOOKUPVALUE('easyclm-','MFCPQProduct','code=@test_product_code','id'))
+
+The problem is that the value of the 'code=@test_product_code’ filter is not surrounded by quotes.  Hence if it is the empty string, the filter expands to ‘code=‘, which is not a legal SQL where expression
+
+To fix this error, the correct expression syntax is: 
+
+DTLOOKUPVALUE('easyclm-','MFCPQProduct',’code='’@test_product_code''','id’).
+
+There are two ways you can put a quote in a string.
+
+Strings can be surrounded by either single or double quotes.  So you can just use the other kind of quote.  For example “id=‘@id’”.
+One can escape out a quote by entering it twice.  Two single quotes in a row or double quotes in a row will be printed out a single quote character.  For example ‘id=‘’@id’''
+
+Here is another example of DTLOOKUPVALUE with correct quotes around expressions:
+
+DTLOOKUPVALUE('easyclm-','MFCPQPriceBookItem',’productId='’@test_product_id''',’listPrice’))
 
 
