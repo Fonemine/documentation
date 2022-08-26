@@ -129,7 +129,7 @@ Content-Type: application/json
 
 ### Update action
 
-For update action "d_id" must be specified. Object with "d_id" will be updated accordingly.
+For update action "id" must be specified. Object with "id" will be updated accordingly.
 
 
 ```text
@@ -141,7 +141,7 @@ POST DATA
 ------------------------------------
 action=update
 object=ServiceTask
-d_id=213074
+id=213074
 d_name=Name
 d_service_task_status_id=1
 d_service_task_type_id=9
@@ -186,7 +186,13 @@ Content-Type: application/json
 {
   "status": "success",
   "message": "",
-  "id": 213074
+  "id": 213074,
+  "items" : [
+    {"name":"name","label":"Name","value":"Test API11 update3"},
+    {"name":"service_task_status_id","label":"Service Task Status","value":"4"},
+    .....
+    .....
+   ]
 }
 ```
 
@@ -224,3 +230,158 @@ Content-Type: application/json
 * d_data_pianificazione__c -  `<yyyy-mm-dd>`
 * d_reinvio_pianificazione__c - Number format
 * d_note_task_piani__c - Free form text. Max 255 characters
+    
+    
+### Delete action
+
+For delete action "id" must be specified. Object with "id" will be deleted accordingly.
+
+
+```text
+POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
+
+POST DATA
+------------------------------------
+action=delete
+object=ServiceTask
+id=213074
+```
+
+Response
+----------
+
+```text
+Content-Type: application/json
+
+{
+  "status": "success",
+  "message": "Record deleted successfully",
+  "id": 213074,
+  "items" : []
+}
+```
+    
+### Search/list action
+
+
+
+```text
+POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
+
+POST DATA
+------------------------------------
+action=list
+object=ServiceTask
+offset=0
+length=10
+search=name like '%test%'
+```
+
+Response
+----------
+
+```text
+Content-Type: application/json
+
+{
+  "status": "success",
+  "message": "",
+  "items": [
+    {
+      "label": "Test API111",
+      "id": "213119",
+      "icon": "",
+      "link": "datatableformscreen.php?path=Home%3Beasyclm-ServiceTask&action=read&table=ServiceTask&s=eJxLrEgtKkutyc1PysxJTcsvSk6tMQQCAzMTMxMLo5pI1-CamhqDGkM9Az0DEKPGK6_Y19DJ0SUivDIDAJ8BFNc&layouttype=&id=213119",
+      "info": [
+        {
+          "name": "name",
+          "label": "Nome",
+          "value": "Test API111",
+          "valueType": "text",
+          "numLines": 1
+        },
+        {
+          "name": "service_task_status_id",
+          "label": "Stato",
+          "value": "Chiuso",
+          "valueType": "text",
+          "numLines": 1
+        },
+    
+    ....
+    ....
+    }
+   ]
+}
+```    
+    
+    
+### Curl examples
+    
+#### Create action
+    
+```sh
+curl -X POST \
+-H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
+-F 'action=create' \
+-F 'object=ServiceTask' \
+-F 'd_name=Test API111' \
+-F 'd_service_task_status_id=4' \
+-F 'd_service_task_type_id=9' \
+-F 'd_email=test@test.com' \
+-F 'd_description=test description' \
+-F 'd_office_id=13' \
+-F 'd_sugarcrm_account__c={"key":"140177","value":"TOT PER LA MUSICA"}' \
+-F 'd_skill_ids=1,2' \
+-F 'd_data_ape__c=2022-01-01 21:59:59' \
+-F 'd_ttdatult__c=2022-01-01' \
+https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+```
+#### Update action
+    
+```sh
+curl -X POST \
+-H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
+-F 'action=create' \
+-F 'object=ServiceTask' \
+-F 'id=213112' \
+-F 'd_name=Test API11 update3' \
+-F 'd_service_task_status_id=4' \
+-F 'd_service_task_type_id=9' \
+-F 'd_email=test@test.com' \
+-F 'd_description=test description' \
+-F 'd_office_id=13' \
+-F 'd_sugarcrm_account__c={"key":"140177","value":"TOT PER LA MUSICA"}' \
+-F 'd_skill_ids=1,2' \
+-F 'd_data_ape__c=2022-01-01 21:59:59' \
+-F 'd_ttdatult__c=2022-01-01' \
+https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+```  
+    
+#### Delete action
+    
+```sh
+curl -X POST \
+-H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
+-F 'action=delete' \
+-F 'object=ServiceTask' \
+-F 'id=213112' \
+https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+```   
+
+#### List/Search action
+    
+```sh
+curl -X POST \
+-H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
+-F 'action=list' \
+-F 'object=ServiceTask' \
+-F "search=id='213119'" \
+-F 'offset=0' \
+-F 'length=1' \
+https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+```   
