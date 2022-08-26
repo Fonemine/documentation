@@ -265,7 +265,7 @@ Content-Type: application/json
     
 ### Search/list action
 
-
+Default value for "length" is 10. You sepecify SQL like search string. 
 
 ```text
 POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
