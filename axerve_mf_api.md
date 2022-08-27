@@ -262,6 +262,41 @@ Content-Type: application/json
   "items" : []
 }
 ```
+### Read action
+
+For read action "id" must be specified. Object with "id" will be read accordingly.
+
+
+```text
+POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
+
+POST DATA
+------------------------------------
+action=read
+object=ServiceTask
+id=213074
+```
+
+Response
+----------
+
+```text
+Content-Type: application/json
+
+{
+  "status": "success",
+  "message": "Record deleted successfully",
+  "id": 213074,
+  "items" : [
+    {"name":"name","label":"Name","value":"Test API11 update3"},
+    {"name":"service_task_status_id","label":"Service Task Status","value":"4"},
+    .....
+    .....
+   ]
+}
+```
     
 ### Search/list action
 
