@@ -103,6 +103,8 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
 
+**Note**: You can now use ‘${expr}’ macros in any string literal in form expressions.  So rather than typing “id = ‘” & id & “‘”, you can now use “id = ‘${id}’” instead.
+
 ### 2.2. Form Built-in Functions 
 
 The following built-in functions are supported in MobileForce expressions:
@@ -183,7 +185,7 @@ arithmetic-operator  =  "^" / "*" / "/" / "+" / "-"
 
 concatenate-operator =  "&"
 
-comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">="
+comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">=" / "===" / "!=="
 
 logical-operator     =  "&&" / "||"
 
