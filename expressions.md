@@ -82,7 +82,7 @@ arithmetic-operator  =  "^" / "*" / "/" / "+" / "-"
 
 concatenate-operator =  "&"
 
-comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">="
+comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">=" / "===" / "!=="
 
 logical-operator     =  "&&" / "||"
 
@@ -203,6 +203,9 @@ function             =  name *WSP "(" *WSP expression *(*WSP "," *WSP expression
 
 name                 =  (ALPHA / "_") *( ALPHA / DIGIT / "_")
 ```
+
+**Note**: You can now use ‘${expr}’ macros in any string literal in form expressions.  So rather than typing “id = ‘” & id & “‘”, you can now use “id = ‘${id}’” instead.
+
 
 ### 3.2. Built-in CPQ Functions
 
@@ -354,6 +357,9 @@ HAS_PROD('7782') && ! HAS_PROD('7779') && (opportunity_type == 'New Business')
 (PROD_QTY('7783') > 1 && PROD_QTY('7783') < 50)
 	
 HAS_PROD('7789') && (! HAS_PROD('7779') || ! HAS_PROD('7792'))
+ 
+ As of Q2, 2022: comparisons also include identity comparison operators, which does comparisons **without** conversions.  
+ So “1” == 1 is true but “1" === 1 is false.
 
 (HAS_CAT('TimeClock: Accessories (NR)') || HAS_CAT('TimeClock: Parts (NR)') || HAS_CAT('TimeClock: Sage (NR)') || 
 HAS_CAT('TimeClocks: NXG G2+ Ethernet Clock (NR)') || HAS_CAT('TimeClocks: NXG G2+CN - Cellular Biometric Clock (NR)') || 
@@ -364,6 +370,8 @@ HAS_CAT('TimeClocks: NXG G7 Ethernet Clock (NR)') || HAS_CAT('TimeClocks: NXG LE
 HAS_CAT('TimeClocks: NXG LE (Wifi) (NR)') || HAS_CAT('TimeClocks: Touch Clock (NR)') || 
 HAS_CAT('TimeClocks: Velocity 800 (NR)') || HAS_CAT('TimeClocks: Velocity 850 (NR)') || 
 HAS_CAT('TimeClocks: Virtual Clock (NR)') || HAS_CAT('TimeForce (NR)')) && ((opportunity_type == 'New Business') && HAS_PROD('7796'))
+
+You can now use ‘${expr}’ macros in any string literal in form expressions.  So rather than typing “id = ‘” & id & “‘”, you can now use “id = ‘${id}’” instead.
 ```
 In Quote UI Layout **Form** access-control hide-condition
 
