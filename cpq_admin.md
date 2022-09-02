@@ -498,6 +498,8 @@ Rule expressions can be composed using a combination of built-in system variable
 
 The grammar for formula is as follows.  This grammar is written in [Augmented Backus-Naur Form](https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form).
 
+Note: the description below may periodically be out of date. However, you can always find the latest version of the expressions syntax in the design document [Expressions: Usage in Low Code Application Development](https://docs.mobileforcesoftware.com/expressions.html)
+
 ```abnf
 formula              =  "=" expression
 
@@ -522,7 +524,7 @@ arithmetic-operator  =  "^" / "*" / "/" / "+" / "-"
 
 concatenate-operator =  "&"
 
-comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">="
+comparison-operator  =  "=" / "==" / "<>" / "!=" / "<" / "<=" / ">" / ">=" / "===" / "!=="
 
 logical-operator     =  "&&" / "||"
 
