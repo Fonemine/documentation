@@ -137,11 +137,18 @@ The following built-in functions are supported in MobileForce expressions:
 * **NOW()**: Return todays's date and time.
 * **JOIN(separator, array)**: Returns a string that is a concatenation of the given array values separated by the given separator string.  For example, `JOIN(',', ['A', 'B', 'C'])` will return 'A,B,C'.  If the second argument is not an array, this function will return it unchanged.
 * **CASE(value, key1, expr1, key2, expr2, ...)**:  This function acts similar to a switch statement in other languages, or to a nested sequence of IF() form expressions, (that is, `IF(value=key1, expr1, IF(value=key2, expr2, ...))`).  The first argument will be evaluated and will be compared against all even arguments (2x) of the function.  If it is equal to a particular argument (2x), the next argument (2x+1) is evaluated and returned.  Otherwise, the first argument is returned.  For example, `CASE(2, 1, 'a', 2, 'b', 3, 'c')` will return 'b' and`CASE(4, 1, 'a', 2, 'b', 3, 'c')` will return 4.
-* **IS_SET(arg)** returns true if the given argument is set. Arguments can be a variable, a field access, or an array access as follows:
+
+
+
+* **FOR_ALL(array, var, expr)**: Iterate over each element in the given array and evaluated the given expression, where the current array element is set to the given variable. If the expression evaluates for true for all array elements, return true. Otherwise, return false.
+
+* **IS_SET(expr)**: Return true if the given variable, array access or field access has a defined value (i.e., is set). An error is generated if the given expression is not a variable, array access or field access. Arguments can be a variable, a field access, or an array access as follows:
 
     * IS_SET(x)
     * IS_SET(x.y)
     * IS_SET(a[2])
+
+* **THERE_EXISTS(array, var, expr)**: Iterate over each element in the given array and evaluated the given expression, where the current array element is set to the given variable. If the expression evaluates for true for any array element, return true. Otherwise, return false.
 
 * **THERE_EXISTS(table, x, x.field = ‘value’ && boolean-expression)** returns true if in the **table** there exists a variable **x** which satisfies the expression **x.field = ‘value’ && boolean-expression** 
 
