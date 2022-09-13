@@ -1,23 +1,27 @@
-# Mobilefoce AXERVE postupdate Hook
+# Mobilefoce WebHook To Forwarding Changes To Customers
 
-## For ServiceTask/(=Ticket)
+## For Any EasyCLM client
 
-We have built the ability for Axerve App to take 2 properties
+We have built the ability for Any EasyCLM app to takes these properties and sent a callback transaction to specified customer's receiver.
 
 |Property| Sample Value|
 |---|---|
-|external-callback-url|https://apps.mobileforcesoftware.com/customers/axerve/mobileforce/test_callback.php|
-|external-api-key|Vt3lNExI5CGasaBDXhvLvfiLkRTvLeqhrD3QHG5aR89Mctw4mADDsDSTZEZhwdBSBVCtHJ7|
+|external-webhook-tables|List of tables to check and sent changes|
+|external-webhook-url|https://apps.mobileforcesoftware.com/customers/axerve/mobileforce/test_callback.php|
+|external-webhook-api-key|Vt3lNExI5CGasaBDXhvLvfiLkRTvLeqhrD3QHG5aR89Mctw4mADDsDSTZEZhwdBSBVCtHJ7|
 
 ### Callback Format
-For every change in ServiceTask, the callback-url will receive a package with 4 Attributes
+For every create or update in specified tables, the callback-url will receive a package with 6 Attributes
 
 |Attribute Name|Description|
 |---|---|
 |api-key|API Key from property|
-|service_task_id|ID number for ServiceTask|
-|data|Array of values of ServiceTask after change|
-|old_data|Array of values of ServiceTask before change|
+|action|'create' or 'update'|
+|table|The Table of created or changed data|
+|id|ID number of created or updated record|
+|data|Array of values of table record after change|
+|old_data|Array of values of table record before change.  Field not exist for 'create' action|
+* Param prefix which is usually easyclm- must preced these properties
 
 ### Example
 If ServiceTask field Stato Change has value changed 
@@ -31,7 +35,9 @@ Then the callback URL will receive a package of
 ```text
 (
     [api-key] => Vt3lNExI5CGasaBDXhvLvfiLkRTvLeqhrD3QHG5aR89Mctw4mADDsDSTZEZhwdBSBVCtHJ7
-    [service_task_id] => 213074
+    [action] => create
+    [table] => ServiceTask
+    [id] => 213074
     [data] => Array
         (
             [id] => 213074
