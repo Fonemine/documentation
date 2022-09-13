@@ -9,6 +9,7 @@ We have built the ability for Any EasyCLM app to takes these properties and sent
 |external-webhook-tables|List of tables to check and sent changes|
 |external-webhook-url|https://apps.mobileforcesoftware.com/customers/axerve/mobileforce/test_callback.php|
 |external-webhook-api-key|Vt3lNExI5CGasaBDXhvLvfiLkRTvLeqhrD3QHG5aR89Mctw4mADDsDSTZEZhwdBSBVCtHJ7|
+* Param prefix which is usually easyclm- must preced these properties
 
 ### Callback Format
 For every create or update in specified tables, the callback-url will receive a package with 6 Attributes
@@ -21,7 +22,6 @@ For every create or update in specified tables, the callback-url will receive a 
 |id|ID number of created or updated record|
 |data|Array of values of table record after change|
 |old_data|Array of values of table record before change.  Field not exist for 'create' action|
-* Param prefix which is usually easyclm- must preced these properties
 
 ### Example
 If ServiceTask field Stato Change has value changed 
