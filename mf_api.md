@@ -1,6 +1,6 @@
 # MobileForce API Documentation
 
-MobileForce API can be used be other application to create/update MobileForce specific objects like ServiceTasks, Accounts, Contacts etc. API is authenticated thru API key which is generated onetime by MobileForce administrator. External application should make sure API key is securely stored and all network connection should use "https" protocol.
+MobileForce API can be used be other application to create, update, delete and list actions on specific objects like ServiceTasks, Accounts, Contacts etc. API is authenticated thru API key which is generated onetime by MobileForce administrator. External application should make sure API key is securely stored and all network connection should use "https" protocol.
 
 ## URI
 
