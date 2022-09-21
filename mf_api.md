@@ -382,7 +382,7 @@ https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
 ```sh
 curl -X POST \
 -H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
--F 'action=create' \
+-F 'action=update' \
 -F 'object=ServiceTask' \
 -F 'id=213112' \
 -F 'd_name=Test API11 update3' \
