@@ -403,7 +403,7 @@ https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```sh
 curl -X POST \
 -H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
--F 'action=update' \
+-F 'action=read' \
 -F 'object=ServiceTask' \
 -F 'id=213112' \
 https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
@@ -420,7 +420,21 @@ curl -X POST \
 https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```   
 
-#### List/Search action
+#### List action (All)
+    
+```sh
+curl -X POST \
+-H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
+-F 'action=list' \
+-F 'object=ServiceTask' \
+-F 'offset=0' \
+-F 'length=1' \
+https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
+```   
+
+#### List action with search
+ 
+You need to specify "search" post parameter. 
     
 ```sh
 curl -X POST \
@@ -432,3 +446,4 @@ curl -X POST \
 -F 'length=1' \
 https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```   
+ 
