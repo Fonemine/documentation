@@ -71,7 +71,7 @@ On create/update action, the response will always have "id" field which correspo
 "d_name" should be unique value, otherwise API will return error response.
 
 ```text
-POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+POST https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
 
@@ -133,7 +133,7 @@ For update action "id" must be specified. Object with "id" will be updated accor
 
 
 ```text
-POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+POST https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
 
@@ -238,7 +238,7 @@ For delete action "id" must be specified. Object with "id" will be deleted accor
 
 
 ```text
-POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+POST https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
 
@@ -268,7 +268,7 @@ For read action "id" must be specified. Object with "id" will be read accordingl
 
 
 ```text
-POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+POST https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
 
@@ -303,7 +303,7 @@ Content-Type: application/json
 Default value for "length" is 10. You sepecify SQL like search string. 
 
 ```text
-POST https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php HTTP/1.1
+POST https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 api_key: $mf3$AwGOfDJYhfFjN3RVlF+rlR1dCe7f3JvmqZwv3
 
@@ -375,7 +375,7 @@ curl -X POST \
 -F 'd_skill_ids=1,2' \
 -F 'd_data_ape__c=2022-01-01 21:59:59' \
 -F 'd_ttdatult__c=2022-01-01' \
-https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```
 #### Update action
     
@@ -395,9 +395,20 @@ curl -X POST \
 -F 'd_skill_ids=1,2' \
 -F 'd_data_ape__c=2022-01-01 21:59:59' \
 -F 'd_ttdatult__c=2022-01-01' \
-https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```  
     
+#### Read action
+    
+```sh
+curl -X POST \
+-H 'api_key: $mf3$AwEfE5I0gCL7YalrOoqZrVc1Swwo038n+me2Vt3lNExI5CGBDXhvLvfiLkRTvLeq3QHG5aR89Mctw4mAsDSTZEZhwdBSBVCtHJ7+ao/OfnIPfGXLGKFKrx92gzeYErCGbMPP/bj083/+39cFyDL4ghkNwetJt0WoNnxKQsv0cbtA8w==' \
+-F 'action=update' \
+-F 'object=ServiceTask' \
+-F 'id=213112' \
+https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
+```  
+
 #### Delete action
     
 ```sh
@@ -406,7 +417,7 @@ curl -X POST \
 -F 'action=delete' \
 -F 'object=ServiceTask' \
 -F 'id=213112' \
-https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```   
 
 #### List/Search action
@@ -419,5 +430,5 @@ curl -X POST \
 -F "search=id='213119'" \
 -F 'offset=0' \
 -F 'length=1' \
-https://apps01.mobileforcesoftware.com/prabu/adlwebui/service/mf_api.php
+https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```   
