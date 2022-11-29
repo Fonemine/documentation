@@ -29,9 +29,8 @@
 
 ## Step 5: Install MobileForce Modules
 - Download one or more of the MobileForce Module ZIP Files below to your computer
-  - [*MobileForce_CPQ* - Configure, Price, Quote Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.9/MobileForce_CPQ.zip)
-  - [*MobileForce_FSM* - Field Service Management Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.9/MobileForce_FSM.zip)
-  - [*MobileForce_DSR* - Dynamic Scheduling & Route Optimization Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.9/MobileForce_DSR.zip)
+  - [*MobileForce_CPQ* - Configure, Price, Quote Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.10/MobileForce_CPQ.zip)
+  - [*MobileForce_FSM* - Field Service Management Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.10/MobileForce_FSM.zip)
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Module Loader*
 - Upload each of the Module ZIP File you downloaded, one by one
@@ -39,54 +38,7 @@
 
 ![Module Loader in SugarCRM](/images/sugar_module_loader.png)
 
-## Step 5: Install Custom Buttons UI Module
-- Download [*wRecordButtons* Module ZIP File](/assets/wRecordButtons v6.08.zip) to your computer
-- Login to SugarCRM instance as an admin user
-- Go to *User Icon > Admin > Module Loader*
-- Upload the Module ZIP File you downloaded to install the Module
-
-![Module Loader in SugarCRM](/images/sugar_module_loader.png)
-
-## Step 6: Add Custom Buttons to Opportunity and Case Record Views: Deep Links to MobileForce Modules
-- Login to SugarCRM instance as an admin user
-- Go to *User Icon > Admin > Studio > Opportunities Module > Fields*
-- Add a Custom Field of type wRecord Buttons
-![Custom Button Field in Opportunities Module in SugarCRM](/images/sugar_custom_button_field.png)
-
-- Configure the wRecord Custom Button as shown in the screenshot below
-![Custom Button Field Configuration in SugarCRM](/images/sugar_configure_custom_button.png)
-- For the Base URL textbox field in the custom button configuration, please copy and paste the following URL
-
-```
-https://<instance_name>/#mfcpq_MobileForce_CPQ/{id}/{name}/{account_id}/{account_name}
-```
-
-- Replace <instance_name> in the above URL with your full instance domain name (ex: sg-mobileforce.demo.sugarcrm.com)
-- Click *Save* on the Configuration screen. Then click on *Save* in the Edit Field screen
-- Next, Go to *User Icon > Admin > Studio > Cases Module > Fields*
-- Add a Custom Field of type wRecord Buttons
-- Configure the wRecord Custom Button as shown in the screenshot above, except name the button as *+ Service Task*
-- For the Base URL textbox field in the custom button configuration, please copy and paste the following URL
-
-```
-https://<instance_name>/#mffsm_MobileForce_FSM/{id}/{name}/{account_id}/{account_name}
-```
-
-- Replace <instance_name> in the above URL with your full instance domain name (ex: sg-mobileforce.demo.sugarcrm.com)
-- Click *Save* on the Configuration screen. Then click on *Save* in the Edit Field screen
-- Finally, Go back to *User Icon > Admin > Studio > Cases Module > Fields*
-- Add a Custom Field of type wRecord Buttons
-- Configure the wRecord Custom Button as shown in the screenshot above, except name the button as *+ Sales Task*
-- For the Base URL textbox field in the custom button configuration, please copy and paste the following URL
-
-```
-https://<instance_name>/#mfdsr_MobileForce_DSR/{id}/{name}/{account_id}/{account_name}
-```
-
-- Replace <instance_name> in the above URL with your full instance domain name (ex: sg-mobileforce.demo.sugarcrm.com)
-- Click *Save* on the Configuration screen. Then click on *Save* in the Edit Field screen
-
-## Step 7: Rebuild and Update Your SugarCRM Instance
+## Step 6: Rebuild and Update Your SugarCRM Instance
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Repair > Quick Repair and Rebuild*
 - Please wait. This will take 15-30 seconds to rebuild the system and will print out the log.
@@ -94,18 +46,16 @@ https://<instance_name>/#mfdsr_MobileForce_DSR/{id}/{name}/{account_id}/{account
 
 ![Quick Build and Repair in SugarCRM](/images/sugar_quick_repair_rebuild.png)
 
-## Step 8: Login and Use Your SugarCRM Instance
+## Step 7: Login and Use Your SugarCRM Instance
 - Login to SugarCRM instance as a regular user
 - **CPQ**, **Field Service** and **Scheduler** Module names with no sub-menus will be shown in Mega Menu Navigation Bar 
-- When user clicks on the **CPQ** or **Field Service** or **Scheduler** in Navigation Bar it will load the iframe to MobileForce
+- When user clicks on the **CPQ** or **Field Service** in Navigation Bar it will load the iframe to MobileForce
 - **CPQ** list of existing prosposals/quotes screen is shown. It may be empty on first login.
 - Click *Add* button on the bottom toolbar to create a new Quote/Proposal
-- Alternatively, go to any open *Opportunity* record in SugarCRM
-- Click on **+ CPQ** custom button at the top to create a new Quote/Proposal for that *Opportunity*
 
 ![Create New Quote/Proposal in SugarCRM](/images/sugar_cpq_launch_points.png)
 
-## Step 9: Move Up the MobileForce Module Tabs on the Main Menu for the Logged-in User
+## Step 8: Move Up the MobileForce Module Tabs on the Main Menu for the Logged-in User
 - Login to SugarCRM instance as any test user
 - Go to *User Icon > Profile*
 - Click on *Edit* button
