@@ -2,8 +2,8 @@
 
 ## Introduction
 
-The MobileForce API allows one to view and modify tables used in the MobileForce platform.
-Example tables are are ServiceTasks, Accounts, Contacts, and so on.  One can create, read,
+The MobileForce API allows one to view and modify objects used in the MobileForce platform.
+Example objects are are ServiceTasks, Accounts, Contacts, and so on.  One can create, read,
 update, and delete individual objects in the table, as well as fetch multiple objects in a table.
 
 ## Calling the API
@@ -48,8 +48,8 @@ Use `multipart/form-data` if you need to upload a file.  Otherwise, use `applica
 
 The following POST parameters are required for all API actions:
 
-* `table`: The name of the MobileForce table to read or update.
-* `action`: Type of action to perform on this MobileForce table.  Must be: `create`, `read`, `update`, `delete`, or `list`.
+* `object`: The name of the MobileForce object to read or update.
+* `action`: Type of action to perform on this MobileForce object.  Must be: `create`, `read`, `update`, `delete`, or `list`.
 
 Additional POST parameters may be required or accepted based on the action type.
 
@@ -95,7 +95,7 @@ not in this subset, include it in the `additionalcolumns` parameter.
 
 #### Request
 
-* `table`: *(required)* The name of the MobileForce table to read or update.
+* `object`: *(required)* The name of the MobileForce object to read or update.
 * `action`: *(required)* Must be `list`.
 * `search`: Expression to search by.  This expression uses SQL WHERE condition syntax.  Example search expressions are `owner_id = 123` or `name LIKE '%john%' AND is_lead = 1`.
 * `additionalcolumns`: Comma-separated list of additional columns to read.
@@ -181,11 +181,11 @@ Content-Type: application/json
 
 ### Read Action
 
-The `read` action reads the object with the given ID in the given table.
+The `read` action reads the object with the given ID.
 
 #### Request
 
-* `table`: *(required)* The name of the MobileForce table to read or update.
+* `object`: *(required)* The name of the MobileForce object to read or update.
 * `action`: *(required)* Must be `read`.
 * `id`: *(required)* The ID of the object to read.
 
@@ -241,7 +241,7 @@ Content-Type: application/json
 
 The `create` action accepts the following POST parameters:
 
-* `table`: *(required)* The name of the MobileForce table to read or update.
+* `object`: *(required)* The name of the MobileForce object to read or update.
 * `action`: *(required)* Must be `create`.
 * `d_<field-name>`: Value of the field to update in object.  One can specify multiple
   fields by providing a `d_<field-name>` parameter for each field
@@ -316,12 +316,11 @@ Content-Type: application/json
 
 ### Update Action
 
-The `update` action updates one or more fields in the object with the given ID
-in the given table.
+The `update` action updates one or more fields in the object with the given ID.
 
 #### Request
 
-* `table`: *(required)* The name of the MobileForce table to read or update.
+* `object`: *(required)* The name of the MobileForce object to read or update.
 * `action`: *(required)* Must be `update`.
 * `id`: *(required)* The ID of the object to update.
 * `d_<field-name>`: Value of the field to update in object.  One can specify multiple
@@ -408,11 +407,11 @@ Content-Type: application/json
 
 ### Delete Action
 
-The `delete` action deleted the object with the given ID in the given table.
+The `delete` action deleted the object with the given ID.
 
 #### Request
 
-* `table`: *(required)* The name of the MobileForce table to read or update.
+* `object`: *(required)* The name of the MobileForce object to read or update.
 * `action`: *(required)* Must be `delete`.
 * `id`: *(required)* The ID of the object to delete.
 
@@ -548,13 +547,13 @@ curl -X POST \
 https://apps.mobileforcesoftware.com/adlwebui/service/mf_api.php
 ```
 
-## MobileForce Tables
+## MobileForce objects
 
-This section provides more information about the fields for selected MobileForce tables
+This section provides more information about the fields for selected MobileForce objects
 
 ### ServiceTask
 
-The ServiceTask table contains data for a single schedulable task.
+The ServiceTask objects contains data for a single schedulable task.
 
 * `d_name`: *(required)* Must be unique
 * `d_service_task_type_id` *(required)* Expected values : 1 - Aperto, 2 - Pianificato, 3 - In consegna, 4 - Chiuso, 5 - Annullato, 9 - Chiuso da eliminare, 10 - Chiuso KO, 11 - Consegnato
