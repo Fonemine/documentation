@@ -94,7 +94,7 @@ Assuming your sugar instance has an admin user **sguser** whose password is **sg
 Assuming your OAuth client id key in **Action 1, Step 1** is **ConsumerKey**
 Assuming your OAuth client id secret in **Action 1, Step 1** is **ConsumeSecret**
 
-
+`
 1. <prop key="sugarcrm-sugarurl">sugar-instance-url</prop>
 2. <prop kev="sugarcrm-oauth-accesstokenurl">sugar-instance-url/rest/v10/oauth2/token</prop>
 3. <prop key="sugarcrm-sugarurl">sugar-instance-url</prop>
@@ -102,4 +102,4 @@ Assuming your OAuth client id secret in **Action 1, Step 1** is **ConsumeSecret*
 5. <prop key="sugarcrm-oauth-service-password">sgpwd</prop>
 6. <prop key="sugarcrm-oauth-clientid">ConsumerKey</prop>
 7  <prop key="sugarcrm-oauth-clientsecret">ConsumerSecret</prop>
-
+`
