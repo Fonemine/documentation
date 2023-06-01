@@ -6,7 +6,9 @@ A**ssumptions:** This document assumes that you have a Sugar Instance with Sugar
 
 
 1.**Action 1**: Install Mobileforce within your Sugar Instance: You need to be a Sugar Admin to complete the steps in this action
+
 2. **Action 2**:  Create a Mobileforce cloud Instance for Mobileforce FSM and Mobileforce CPQ:  You will need to run a (new) Mobileforce script to create a Mobileforce cloud Instance for FSM and CPQ. This instance is different from your  Sugar Instance. Anyone can run this script, but you need to know some details (specifically admin email) about your Mobileforce Admin user/roles in order to complete this action.
+
 3. **Action 3**: Finally  you need to make changes to your Mobileforce Instance to tie together your sugar instance with your Mobileforce Instance. You need to be a Mobileforce Solutions consultant to complete this step.
 
 
