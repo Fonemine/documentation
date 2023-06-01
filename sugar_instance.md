@@ -81,7 +81,25 @@ A**ssumptions:** This document assumes that you have a Sugar Instance with Sugar
 
 # Action 2:  Create a Mobileforce Cloud Instance for Mobileforce FSM and Mobileforce CPQ (Mobileforce Business User: with Mobileforce Admin email)
 
+Run the script https://apps.mobileforcesoftware.com/website/provision.php
+This script specifically uses the information you provide for **Account Name, Work email , and  CRM**, to automatically create a Mobileforce Cloud Instance that is specifically customized for you and your CRM.
 
 
 # Action 3:  Configure your Mobileforce Cloud Instance to integrate with your Sugar Instance (Mobileforce Solution Consultant).
+
+Specify the following Prop keys in your Mobileforce Cloud Instance ADL by using your Sugar Instance URL
+
+Assuming your sugar instance URL is abstracted as **sugar-instance-url**
+Assuming your sugar instance has an admin user **sguser** whose password is **sgpwd**
+Assuming your OAuth client id key in **Action 1, Step 1** is **ConsumerKey**
+Assuming your OAuth client id secret in **Action 1, Step 1** is **ConsumeSecret**
+
+
+1. <prop key="sugarcrm-sugarurl">sugar-instance-url</prop>
+2. <prop kev="sugarcrm-oauth-accesstokenurl">sugar-instance-url/rest/v10/oauth2/token</prop>
+3. <prop key="sugarcrm-sugarurl">sugar-instance-url</prop>
+4. <prop key="sugarcrm-oauth-service-username">sguser</prop>
+5. <prop key="sugarcrm-oauth-service-password">sgpwd</prop>
+6. <prop key="sugarcrm-oauth-clientid">ConsumerKey</prop>
+7  <prop key="sugarcrm-oauth-clientsecret">ConsumerSecret</prop>
 
