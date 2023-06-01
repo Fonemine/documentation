@@ -5,7 +5,7 @@ This document is updated (Summer 2023) to describe three distinct actions that n
 A**ssumptions:** This document assumes that you have a Sugar Instance with Sugar Sell (in order to use Mobileforce CPQ) and Sugar Serve (in order to use Mobileforce FSM). It also assumes you have Admin credentials for your Sugar Instance in order to complete **Action 1** below, and Admin credentials to Mobileforce in order to complete **Action 3** below.
 
 
-1.**Action 1**: Install Mobileforce within your Sugar Instance: You need to be a Sugar Admin to complete the steps in this action
+1. **Action 1**: Install Mobileforce within your Sugar Instance: You need to be a Sugar Admin to complete the steps in this action
 
 2. **Action 2**:  Create a Mobileforce cloud Instance for Mobileforce FSM and Mobileforce CPQ:  You will need to run a (new) Mobileforce script to create a Mobileforce cloud Instance for FSM and CPQ. This instance is different from your  Sugar Instance. Anyone can run this script, but you need to know some details (specifically admin email) about your Mobileforce Admin user/roles in order to complete this action.
 
