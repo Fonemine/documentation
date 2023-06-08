@@ -43,8 +43,8 @@ A**ssumptions:** This document assumes that you have a Sugar Instance with Sugar
 
 ## Step 5: Install MobileForce Modules
 - Download one or more of the MobileForce Module ZIP Files below to your computer
-  - [*MobileForce_CPQ* - Configure, Price, Quote Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.13/MobileForce_CPQ.zip)
-  - [*MobileForce_FSM* - Field Service Management Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.13/MobileForce_FSM.zip)
+  - [*MobileForce_CPQ* - Configure, Price, Quote Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.14/MobileForce_CPQ.zip)
+  - [*MobileForce_FSM* - Field Service Management Module](https://apps.mobileforcesoftware.com/sugarcrm/modules/1.0.14/MobileForce_FSM.zip)
 - Login to SugarCRM instance as an admin user
 - Go to *User Icon > Admin > Module Loader*
 - Upload each of the Module ZIP File you downloaded, one by one
