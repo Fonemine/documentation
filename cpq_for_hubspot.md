@@ -734,7 +734,9 @@ Here are some example expressions used to compute values for read-only form inpu
   
 ## Uninstalling Mobileforce CPQ (that was previously installed from the HubSpot Marketplace)
 
-In order to uninstall Mobileforce CPQ
+In order to uninstall Mobileforce CPQ from your HubSpot instance:
+
+
 * go into HubSpot > Settings > Integrations > Connected Apps and
 * Select the Mobileforce App in to Mobileforce CPQ and hit Uninstall – This would uninstall the previous Mobileforce CPQ
 
