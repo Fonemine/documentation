@@ -1,17 +1,22 @@
 
-# MobileForce Configure, Price, Quote Setup for HubSpot
+# Mobileforce Configure, Price, Quote Setup for HubSpot
+
+Mobileforce CPQ (Configure, Price, Quote) is a turnkey SaaS (Software as a Subscription), that enhances HubSpot CRM, specifically HubSpot Sales Hub  with a powerful quoting capability for complex products (which might need to be correctly configured before being sold or used), as well as complex pricing (with tiers, subscriptions, discounts, approvals, and guardrails to prevent errors). Mobileforce CPQ transforms cumbersome paper and spreadsheet quotes to a quick and easy online configure, price, and quote process. Mobileforce CPQ is easy to use with Hubspot Sales Hub, with out-of-the-box integrations with Hubspot Sales Hub objects such as deals, as well as contacts and quotes.
 
 ## Step 1: Find and Install MobileForce CPQ from the HubSpot Marketplace
 This step is easy: Just head over to the HubSpot marketplace, search for (and find) MobileForce CPQ, and click on the orange "Install app" button on the top right.
-![Install MobileForce CPQ from HubSpot Marketplace](/images/hubspot/1_MFInstallHubspotMarketplace.png)
+<img width="1423" alt="Screenshot 2023-12-08 at 10 38 11 AM" src="https://github.com/Fonemine/documentation/assets/2068304/f591eb5f-7214-426e-baac-57e25eca835b">
+
 
 ## Step 2: Select the HubSpot Instance on which to Install MobileForce CPQ
 If you have more than one HubSpot instances, you'll be given the choice to select the one on which you'd like to access MobileForce CPQ.
-![Select the HubSpot Instance on which to Install MobileForce CPQ](/images/hubspot/2_SelectHubspotInstanceOnWhichToInstallMF.png)
+<img width="613" alt="Screenshot 2023-12-08 at 10 50 46 AM" src="https://github.com/Fonemine/documentation/assets/2068304/4eed9a7a-edad-4bc8-95ef-66857418c946">
+
 
 ### Step 2a:  MobileForce   will request access to connect with your HubSpot Account
 Please accept the request which will enable MobileForce to access specific HubSpot objects as specified in the Data and Permissions section of the MobileForce CPQ listing on the HubSpot Marketplace.
-![Accept the MobileForce request to access your HubSpot instance](/images/hubspot/3_ConnectMFCPQToHubspot.png)
+<img width="517" alt="Screenshot 2023-12-08 at 10 56 46 AM" src="https://github.com/Fonemine/documentation/assets/2068304/3669070d-a86a-429c-8e24-f4b3cb82692f">
+
 
 
 ### Step 2b: A new MobileForce CPQ Instance will be created for your HubSpot Instance
