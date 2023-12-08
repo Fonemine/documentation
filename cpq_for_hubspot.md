@@ -732,3 +732,12 @@ Here are some example expressions used to compute values for read-only form inpu
 * Add 30 days to the date input 'D':<br/>
   `DATEADD(D, 30, 'd')`
   
+## Uninstalling Mobileforce CPQ (that was previously installed from the HubSpot Marketplace)
+
+In order to uninstall Mobileforce CPQ
+* go into HubSpot > Settings > Integrations > Connected Apps and
+* Select the Mobileforce App in to Mobileforce CPQ and hit Uninstall – This would uninstall the previous Mobileforce CPQ
+
+<img width="379" alt="UninstallMFInHubspot" src="https://github.com/Fonemine/documentation/assets/2068304/cbdd794e-4657-423d-8f77-756b24801997">
+
+Please note: none of your HubSpot Sales objects such as  Deals, or Contacts would be affected by the uninstall of Mobileforce CPQ. You will not however be able to create a new quote using Mobileforce CPQ, or update an existing quote using Mobileforce CPQ.
