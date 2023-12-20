@@ -33,7 +33,7 @@ In addition, you will also receive an email message (to the email address you us
 * Embedded Access within  App
 * Direct Access on MobileForce CPQ App: accessible via SSO with your  credentials
 
-![MobileForce CPQ setup complete](/images//6_MFEmailConfirmation.png)
+![MobileForce CPQ setup complete](/images/hubspot/6_MFEmailConfirmation.png)
 
 
 # MobileForce Configure, Price, Quote  Use Guide for 
@@ -44,8 +44,8 @@ An important aspect of the sales process for any business is the systematization
 Typically, the first thing a CPQ Administrator does is to create one or more price books. 
 MobileForce CPQ supports the creation of multiple price books that can also be related to one another via a hierarchical parent relationship. For instance, Businesses could create one price book for local or national use with the local currency, and another price book for each international market they operate in (each with its own currency). Price books allow one to assign different prices for products for different regions with different currencies or for different markets. In order to create a quote, a user **must** select a price book.
 
-![Create Price Book in MobileForce CPQ](/images//AddAPriceBook/AddAPriceBook-2.png)
-![Create Price Book in MobileForce CPQ](/images//AddAPriceBook/AddAPriceBook-1.png)
+![Create Price Book in MobileForce CPQ](/images/hubspot/AddAPriceBook/AddAPriceBook-2.png)
+![Create Price Book in MobileForce CPQ](/images/hubspot/AddAPriceBook/AddAPriceBook-1.png)
 
 
 Each MobileForce CPQ price book has a (required) **name** field. In addition, price books typically have the following fields:
